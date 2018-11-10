@@ -1,0 +1,22 @@
+{
+  "name": "dnd2019",
+  "version": "1.0.0",
+  "description": "Dallas and Drew's Autumn Wedding Celebration website",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dallashuggins/dnd2019.git"
+  },
+  "keywords": [
+    "wedding"
+  ],
+  "author": "Dallas Huggins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dallashuggins/dnd2019/issues"
+  },
+  "homepage": "https://github.com/dallashuggins/dnd2019#readme"
+}
