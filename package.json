@@ -2,21 +2,33 @@
   "name": "dnd2019",
   "version": "1.0.0",
   "description": "Dallas and Drew's Autumn Wedding Celebration website",
-  "main": "index.js",
+  "author": "Dallas Huggins",
+  "license": "ISC",
+  "private": true,
+  "dependencies": {
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1",
+    "react-scripts": "2.1.1"
+  },
   "scripts": {
-    "test": "mocha test"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dallashuggins/dnd2019.git"
+  "eslintConfig": {
+    "extends": "react-app"
   },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "keywords": [
     "wedding"
   ],
-  "author": "Dallas Huggins",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/dallashuggins/dnd2019/issues"
-  },
-  "homepage": "https://github.com/dallashuggins/dnd2019#readme"
+  }
 }
