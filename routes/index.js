@@ -16,6 +16,9 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function (err, db) {
     assert.equal(null, err);
     console.log("Successfully connected to MongoDB.");
     const Registrants = db.db(creds.database).collection(creds.collection);
+    router.get(`/`, async function (req, res) {
+        console.log(req)
+    });
     router.post(`/add`, async function (req, res) {
         let body = req.body;
         let name = body.name;
