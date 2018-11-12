@@ -35,7 +35,7 @@ class App extends Component {
       },
       json: true
     };
-    if (regCode === 'JBDHDS') {
+    if (regCode === this.props.creds.regCode) {
       return rp (options);
     } else {
       alert ("Incorrect registration code. Check your invitation, or reach out to Drew or Dallas.")

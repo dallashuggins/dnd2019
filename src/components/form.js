@@ -5,10 +5,10 @@ function Form (props) {
     return (
         <div className="form">
             <p>Name:</p>
-            <input type="text" name="name" className="nameField" onChange={props.onInputChange} />
+            <input type="text" name="name" className="formField" onChange={props.onInputChange} />
             <br />
             <p>Registration Code:</p>
-            <input type="text" name="regCode" className="regCodeField" onChange={props.onInputChange} />
+            <input type="text" name="regCode" className="formField" onChange={props.onInputChange} />
             <br />
             <button className="button" onClick={()=> {
                 props.addRegistrant(props.name, props.regCode);

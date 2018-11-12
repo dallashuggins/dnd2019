@@ -13,6 +13,7 @@
 
 # misc
 credentials.js
+/src/credentials.js
 .DS_Store
 .env.local
 .env.development.local
