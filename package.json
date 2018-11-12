@@ -16,12 +16,14 @@
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
     "react-scripts": "2.1.1",
+    "request-promise": "^4.2.2",
     "underscore": "^1.9.1"
   },
   "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "node server.js",
-    "client": "PORT=${PORT-3000} react-scripts start",
+    //"start": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "npm run client",
+    //"server": "node server.js",
+    "client": "PORT=${PORT-443} react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
