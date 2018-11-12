@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Form (props) {
     return (
         <div className="form">
-            <p>Name:</p>
+            <p>Full Name:</p>
             <input type="text" name="name" className="formField" onChange={props.onInputChange} />
             <br />
             <p>Registration Code:</p>
