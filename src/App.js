@@ -3,7 +3,6 @@ import rp from 'request-promise';
 import logo from './logo.png';
 import './App.css';
 import Form from './components/form.js';
-import HttpsRedirect from 'react-https-redirect';
 
 class App extends Component {
   constructor (props) {
@@ -45,21 +44,19 @@ class App extends Component {
 
   render() {
     return (
-      <HttpsRedirect>
-        <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <br />
-            <Form
-              name={this.state.name}
-              regCode={this.state.regCode}
-              onInputChange={this.onInputChange.bind(this)}
-              addRegistrant={this.addRegistrant.bind(this)}
-              clearState={this.clearState.bind(this)}
-            />
-          </header>
-        </div>
-      </HttpsRedirect>
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <br />
+          <Form
+            name={this.state.name}
+            regCode={this.state.regCode}
+            onInputChange={this.onInputChange.bind(this)}
+            addRegistrant={this.addRegistrant.bind(this)}
+            clearState={this.clearState.bind(this)}
+          />
+        </header>
+      </div>
     );
   }
 }

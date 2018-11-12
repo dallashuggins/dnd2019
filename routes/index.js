@@ -35,8 +35,12 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function (err, db) {
     });
     //console.log("MongoDB collection:", collection);
     //app.use('/', routes);
+    app.use('/', router);
+    app.use('/', require('redirect-https')({
+        body: '<!-- Hello Developer! Please use HTTPS instead -->'
+    }));
     app.listen(3000);
     db.close();
 });
 
-module.exports = router;
+//module.exports = router;
