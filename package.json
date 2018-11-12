@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Dallas and Drew's Autumn Wedding Celebration website",
   "author": "Dallas Huggins",
+  "homepage": "https://dnd2019.com",
   "license": "ISC",
   "private": true,
   "dependencies": {
