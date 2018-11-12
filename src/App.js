@@ -28,14 +28,15 @@ class App extends Component {
   addRegistrant = (name, regCode) => {
     let options = {
       method: 'POST',
-      url: 'https://dnd2019.com/add',
+      uri: 'https://dnd2019.com/add',
       body: {
         name: name,
         regCode: regCode
-      }
+      },
+      json: true
     };
     if (regCode === 'JBDHDS') {
-      rp (options);
+      return rp (options);
     } else {
       alert ("Incorrect registration code. Check your invitation, or reach out to Drew or Dallas.")
     }
