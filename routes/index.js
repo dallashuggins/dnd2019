@@ -37,7 +37,11 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function (err, db) {
     //app.use('/', routes);
     app.use('/', router);
     app.use('/', require('redirect-https')({
-        body: '<!-- Hello Developer! Please use HTTPS instead -->'
+        port: 5000,
+        body: '',
+        trustProxy: true,
+        browsers: 301,
+        apis: 'meta'
     }));
     app.listen(3000);
     db.close();
