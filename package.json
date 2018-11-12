@@ -20,7 +20,7 @@
     "underscore": "^1.9.1"
   },
   "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "server": "node server.js",
     "client": "PORT=${PORT-3000} react-scripts start",
     "build": "react-scripts build",
