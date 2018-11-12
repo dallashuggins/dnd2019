@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const app = express();
-app.set("port", 3000);
+app.set("port", 4517);
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 // Connection:
@@ -32,7 +32,7 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function (err, db) {
     });
     //console.log("MongoDB collection:", collection);
     //app.use('/', routes);
-    app.listen(3000);
+    app.listen(4517);
     db.close();
 });
 
