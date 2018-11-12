@@ -22,7 +22,7 @@
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "node server.js",
-    "client": "PORT=${PORT-4517} react-scripts start",
+    "client": "PORT=${PORT-3000} react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
