@@ -39,7 +39,7 @@ class App extends Component {
     };
     console.log("Add Reg options:", options);
     if (regCode === creds.regCode) {
-      axios.post(`/add`, options)
+      axios.post(`/api/add`, options)
       .then(response => {
         console.log("Registration successful:", response.data)
         this.setState({
