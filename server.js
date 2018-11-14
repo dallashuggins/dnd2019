@@ -39,12 +39,17 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, db) {
     router.post("/add", function (req, res) {
         let body = req.body;
         console.log("Body", body);
+        let object = {
+            name: body.name,
+            regCode: body.regCode,
+            status: body.status
+        }
         try {
-            registrants.addItem(body.name, body.regCode, body.status, function(err, registrant) {
+            registrants.addItem(object, function(err, registrant) {
                 assert.equal(null, err);
                 console.log("Added", registrant);
-                res.status(200).send({});
-            })
+                res.status(200).send(registrant[0]);
+            });
         } catch (e) {
             console.log("Error:", e);
             res.status(400).send(e.message);
@@ -55,7 +60,7 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, db) {
     //db.close();
     var server = app.listen(3001, function() {
         var port = server.address().port;
-        console.log('Mongomart server listening on port %s.', port);
+        console.log('Server listening on port %s.', port);
     });
 });
 

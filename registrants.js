@@ -9,19 +9,22 @@ function RegistrantDB(database) {
 
     this.db.collection("people").findOne({});
 
-    this.addItem = (name, regCode, status, callback) => {
+    this.addItem = (object, callback) => {
         try {
-            var object = {
-                name: name,
-                regCode: regCode,
-                status: status,
+            var options = {
+                name: object.name,
+                regCode: object.regCode,
+                status: object.status,
                 createdAt: Date.now()
             };
-            this.db.collection("people").insertOne(object);
-            return callback(null, object);
+            this.db.collection("people").insertOne(options, function(err, result) {
+                assert.equal(err, null);
+                console.log("Inserted a document:", result.ops);
+                callback(null, result.ops);
+            });
         } catch (e) {
             console.log("Error:", e);
-            return callback(e, {});
+            callback(e, {});
         }
     }
 };

@@ -16,12 +16,13 @@ function ContentTabs (props) {
         <Tab eventKey={1} title="Register" className="background" style={backgroundImage}>
             <div className="tabContent">
                 <Form
+                    page={props.page}
                     name={props.name}
                     regCode={props.regCode}
                     status={props.status}
                     onInputChange={props.onInputChange.bind(this)}
                     addRegistrant={props.addRegistrant.bind(this)}
-                    clearState={props.clearState.bind(this)}
+                    updateState={props.updateState.bind(this)}
                 />
             </div>
         </Tab>
@@ -40,12 +41,13 @@ function ContentTabs (props) {
 }
   
 ContentTabs.propTypes = {
+    page: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     regCode: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,
     onInputChange: PropTypes.func.isRequired,
     addRegistrant:PropTypes.func.isRequired,
-    clearState: PropTypes.func.isRequired
+    updateState: PropTypes.func.isRequired
 };
   
 export default ContentTabs;

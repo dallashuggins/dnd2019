@@ -5,6 +5,7 @@ import logo from './logo.png';
 import './App.css';
 import ContentTabs from './components/tab.js';
 import Nav from './components/nav.js';
+import creds from './credentials';
 
 class App extends Component {
   constructor (props) {
@@ -13,13 +14,14 @@ class App extends Component {
       name: '',
       regCode: '',
       status: '',
-      registered: false
+      registered: false,
+      page: 0
     }
   }
   // General clear state function
-  clearState = (stateObject) => {
+  updateState = (stateObject) => {
     console.log("Clear state:", stateObject);
-    //this.setState(stateObject);
+    this.setState(stateObject);
   }
 
   // Set state of input text fields:
@@ -36,12 +38,13 @@ class App extends Component {
       status: status
     };
     console.log("Add Reg options:", options);
-    if (regCode === this.props.creds.regCode) {
+    if (regCode === creds.regCode) {
       axios.post(`/add`, options)
       .then(response => {
-        console.log("Registration successful:", response)
+        console.log("Registration successful:", response.data)
         this.setState({
-          registered: true
+          registered: true,
+          page: 1
         });
         return response.data;
       }).catch((e) => {
@@ -64,12 +67,13 @@ class App extends Component {
         <div className="App-body">
           <div className="App-inner">
             <ContentTabs
+              page={this.state.page}
               name={this.state.name}
               regCode={this.state.regCode}
               status={this.state.status}
               onInputChange={this.onInputChange.bind(this)}
               addRegistrant={this.addRegistrant.bind(this)}
-              clearState={this.clearState.bind(this)}
+              updateState={this.updateState.bind(this)}
             />
           </div>
         </div>
