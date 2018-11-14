@@ -13,7 +13,7 @@ function ContentTabs (props) {
     };
     return (
         <Tabs defaultActiveKey={1} animation={false} id="noanim-tab-example">
-        <Tab eventKey={1} title="Register" className="background">
+        <Tab eventKey={1} title="Register" className="background" style={backgroundImage}>
             <div className="tabContent">
                 <Form
                     page={props.page}
