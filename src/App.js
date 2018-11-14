@@ -6,7 +6,7 @@ import './App.css';
 import ContentTabs from './components/tab.js';
 import Nav from './components/nav.js';
 import creds from './credentials';
-import background from '../color.jpg';
+import background from './color.jpg';
 
 class App extends Component {
   constructor (props) {
