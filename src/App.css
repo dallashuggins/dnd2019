@@ -22,10 +22,16 @@ div.tab-content {
 }
 
 .tabContent {
-  background-color: rgba(0, 0, 0, 0.6);
   margin: auto;
   float: none;
   width: 60%;
+  overflow: auto;
+}
+
+div.form {
+  background-color: rgba(0, 0, 0, 0.6);
+  margin-top: 10%;
+  padding: 40px;
 }
 
 .App {
