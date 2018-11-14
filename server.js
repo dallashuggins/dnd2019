@@ -65,4 +65,4 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, db) {
     });
 });
 
-app.use('/', router);
+app.use('/api', router);
