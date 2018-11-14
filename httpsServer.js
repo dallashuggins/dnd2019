@@ -44,7 +44,7 @@ const httpsServer = https.createServer(sslCredentials, app);
 MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
     assert.equal(null, err);
     db = database;
-    httpsServer.listen(3000, () => {
+    httpsServer.listen(3003, () => {
         console.log('HTTPS Server running on port 3000');
     });
     const registrants = new RegistrantDB(db);
