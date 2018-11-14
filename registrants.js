@@ -10,29 +10,19 @@ function RegistrantDB(database) {
     this.db.collection("people").findOne({});
 
     this.addItem = (name, regCode, status, callback) => {
-        "use strict";
-        this.db.collection("people").insert({
-            name: name,
-            regCode: regCode,
-            status: status,
-            createdAt: Date.now()
-        })
-        , function(err, doc) {
-            assert.equal(null, err);
-            console.log(doc)
-            callback(doc);
-            /*db.collection("people").findOne({ 'x' : 1 }, function(err, doc) {
-                assert.equal(null, err);
-                console.log(doc);
-                db.close();
-            });*/
-            /*function(err, result) {
-                assert.equal(null, err);
-                // To get the actual document updated we need to access the
-                // value field of the result.
-                callback(result.value);
-            });*/
-        };
+        try {
+            var object = {
+                name: name,
+                regCode: regCode,
+                status: status,
+                createdAt: Date.now()
+            };
+            this.db.collection("people").insertOne(object);
+            return callback(null, object);
+        } catch (e) {
+            console.log("Error:", e);
+            return callback(e, {});
+        }
     }
 };
 
