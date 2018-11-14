@@ -22,8 +22,9 @@ const RegistrantDB = require('./registrants').RegistrantDB;
 const app = express();
 //app.set('port', 3001);
 app.set('view engine', 'html');
-app.set('views', __dirname + '/views');
+//app.set('views', __dirname + '/views');
 app.use('/static', express.static(__dirname + '/static'));
+console.log("Dir name", __dirname);
 //app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json(),cors(),helmet())
 const router = express.Router();
