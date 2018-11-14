@@ -105,6 +105,7 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
         }
     });
     app.use('/api', router);
+    db.close();
 });
 
 /*MongoClient.connect(uri, {useNewUrlParser: true}, function(err, db) {
