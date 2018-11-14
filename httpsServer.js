@@ -48,7 +48,7 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
         console.log('HTTPS Server running on port 443');
     });
     const registrants = new RegistrantDB(db);
-    app.get('*', function(req, res) {
+    router.get('*', function(req, res) {
         res.sendfile('./build/index.html');
     });
     router.post("/add", function (req, res) {
