@@ -9,6 +9,32 @@ function RegistrantDB(database) {
 
     this.db.collection("people").findOne({});
 
+    this.get = (callback) => {
+        try {
+            this.db.collection("people").find({}, function(err, result) {
+                assert.equal(err, null);
+                console.log("Got documents:", result);
+                callback(null, result.ops);
+            });
+        } catch (e) {
+            console.log("Error:", e);
+            callback(e, {});
+        }
+    }
+
+    this.getItem = (object, callback) => {
+        try {
+            this.db.collection("people").findOne(object, function(err, result) {
+                assert.equal(err, null);
+                console.log("Document:", result);
+                callback(null, result);
+            });
+        } catch (e) {
+            console.log("Error:", e);
+            callback(e, {});
+        }
+    }
+
     this.addItem = (object, callback) => {
         try {
             var options = {

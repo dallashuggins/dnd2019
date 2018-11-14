@@ -24,8 +24,68 @@ app.use('/static', express.static(__dirname + '/static'));
 //app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json(),cors(),helmet())
 const router = express.Router();
+var db;
 
-MongoClient.connect(uri, {useNewUrlParser: true}, function(err, db) {
+MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
+  if(err) throw err;
+  db = database;
+  // Start the application after the database connection is ready
+  app.listen(3001);
+  console.log("Listening on port 3001");
+  const registrants = new RegistrantDB(db);
+    router.get("/", function(req, res) {
+        try {
+            registrants.getItem(function(err, registrant) {
+                assert.equal(null, err);
+                console.log("Retrieved all", registrant);
+                res.status(200).send(registrant);
+            });
+        } catch (e) {
+            console.log("Error:", e);
+            res.status(400).send(e.message);
+        }
+    });
+    
+    router.get("/:id", function(req, res) {
+        let params = req.params;
+        let object = {
+            _id: params.id
+        }
+        try {
+            registrants.getItem(object, function(err, registrant) {
+                assert.equal(null, err);
+                console.log("Retrieved", registrant);
+                res.status(200).send(registrant[0]);
+            });
+        } catch (e) {
+            console.log("Error:", e);
+            res.status(400).send(e.message);
+        }
+    });
+    
+    router.post("/add", function (req, res) {
+        let body = req.body;
+        console.log("Body", body);
+        let object = {
+            name: body.name,
+            regCode: body.regCode,
+            status: body.status
+        }
+        try {
+            registrants.addItem(object, function(err, registrant) {
+                assert.equal(null, err);
+                console.log("Added", registrant);
+                res.status(200).send(registrant);
+            });
+        } catch (e) {
+            console.log("Error:", e);
+            res.status(400).send(e.message);
+        }
+    });
+    app.use('/api', router);
+});
+
+/*MongoClient.connect(uri, {useNewUrlParser: true}, function(err, db) {
     "use strict";
 
     assert.equal(null, err);
@@ -63,6 +123,4 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, db) {
         var port = server.address().port;
         console.log('Server listening on port %s.', port);
     });
-});
-
-app.use('/api', router);
+});*/
