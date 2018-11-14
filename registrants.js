@@ -1,5 +1,3 @@
-const _ = require('underscore');
-const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 
 function RegistrantDB(database) {
