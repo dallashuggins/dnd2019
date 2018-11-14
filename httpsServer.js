@@ -23,7 +23,7 @@ const app = express();
 //app.set('port', 3001);
 app.set('view engine', 'html');
 //app.set('views', __dirname + '/views');
-app.use('/static', express.static(__dirname + '/build/static'));
+app.use(express.static(path.join(__dirname, 'build')));
 console.log("Dir name", __dirname);
 //app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json(),cors(),helmet())
@@ -50,9 +50,8 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
     });
     app.use('/api', router);
     const registrants = new RegistrantDB(db);
-    router.get('*', function(req, res) {
-        //res.sendFile(path.join(__dirname+'/build/index.html'));
-        res.send("hello world")
+    app.get('/', function (req, res) {
+        res.sendFile(path.join(__dirname, 'build', 'index.html'));
     });
     router.post("/add", function (req, res) {
         let body = req.body;
