@@ -21,7 +21,6 @@ const RegistrantDB = require('./registrants').RegistrantDB;
 const app = express();
 app.set('view engine', 'html');
 app.use(express.static(path.join(__dirname, 'build')));
-console.log("Dir name", __dirname);
 app.use(bodyParser.json(),cors(),helmet())
 const router = express.Router();
 var db;
