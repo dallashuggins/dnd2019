@@ -36,7 +36,7 @@ const sslCredentials = {
 	ca: ca
 };
 const httpsServer = https.createServer(sslCredentials, app);
-const httpServer = express.createServer(app);
+const httpServer = express.createServer();
 
 
 // Open MongoDB connection:
