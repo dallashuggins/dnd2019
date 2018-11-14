@@ -8,7 +8,8 @@ const MongoClient = require('mongodb').MongoClient;
 var creds = require('./credentials.js');
 const un = encodeURIComponent(creds.mongodb_un);
 const pw = encodeURIComponent(creds.mongodb_pw);
-let uri = `mongodb+srv://${un}:${pw}@wedding-5qb9t.mongodb.net`;
+const c = encodeURIComponent(creds.mongodb_cluster);
+let uri = `mongodb+srv://${un}:${pw}@${c}.mongodb.net`;
 // Files:
 //var routes = require('./routes/index.js');
 const RegistrantDB = require('./registrants').RegistrantDB;
