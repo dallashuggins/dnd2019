@@ -27,10 +27,10 @@
   },
   "scripts": {
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "production": "concurrently --kill-others-on-fail \"npm run server\" \"npm run build\"",
+    "production": "react-scripts build",
     "server": "node server.js",
     "client": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "concurrently --kill-others-on-fail \"npm run server\" \"npm run production\"",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
