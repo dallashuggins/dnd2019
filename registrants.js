@@ -15,6 +15,7 @@ function RegistrantDB(database) {
                 assert.equal(err, null);
                 console.log("Got documents:", result);
                 callback(null, result.ops);
+                this.db.close();
             });
         } catch (e) {
             console.log("Error:", e);
