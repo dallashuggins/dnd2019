@@ -4,7 +4,7 @@
   "description": "Dallas and Drew's Autumn Wedding Celebration website",
   "author": "Dallas Huggins",
   "homepage": "https://dnd2019.com",
-  "proxy": "https://dnd2019.com",
+  "proxy": "http://localhost:3001",
   "license": "ISC",
   "private": true,
   "dependencies": {
@@ -27,7 +27,7 @@
   "scripts": {
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "server": "node server.js",
-    "client": "PORT=${PORT-3000} react-scripts start",
+    "client": "PORT=${PORT-3001} react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
