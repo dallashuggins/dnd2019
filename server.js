@@ -47,7 +47,7 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
     db = database;
     // Start the application after the database connection is ready
     //app.listen(3000);
-    httpServer.listen(3000, () => {
+    httpServer.listen(3001, () => {
         console.log('HTTP Server running on port 3000');
     });
     httpsServer.listen(443, () => {
