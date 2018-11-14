@@ -16,7 +16,7 @@ const RegistrantDB = require('./registrants').RegistrantDB;
 
 // Set up express
 const app = express();
-app.set('port', 3001);
+//app.set('port', 3001);
 app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
 app.use('/static', express.static(__dirname + '/static'));
@@ -58,10 +58,10 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, db) {
      // mounts the specified middleware function or functions at the specified path
     //app.listen(3001); // binds and listens for connections on specified host and port
     //db.close();
-    var server = app.listen(3001, function() {
+    /*var server = app.listen(3001, function() {
         var port = server.address().port;
         console.log('Server listening on port %s.', port);
-    });
+    });*/
 });
 
 app.use('/', router);
