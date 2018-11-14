@@ -50,12 +50,7 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
     const registrants = new RegistrantDB(db);
 
     router.get('/*', function(req, res) {
-        //res.send('hello world');
-        res.sendFile(path.join(__dirname, 'build/index.html'), function(err) {
-          if (err) {
-            res.status(500).send(err)
-          }
-        })
+        res.send('hello world');
     })
     router.post("/add", function (req, res) {
         let body = req.body;
