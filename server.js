@@ -3,6 +3,7 @@ const express = require('express');
 const assert = require('assert');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const helmet = require('helmet');
 const MongoClient = require('mongodb').MongoClient;
 // Connection:
 var creds = require('./credentials.js');
@@ -16,12 +17,12 @@ const RegistrantDB = require('./registrants').RegistrantDB;
 
 // Set up express
 const app = express();
-app.set('port', 3001);
+app.set('port', 3000);
 app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
 app.use('/static', express.static(__dirname + '/static'));
 //app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json(),cors())
+app.use(bodyParser.json(),cors(),helmet())
 const router = express.Router();
 
 MongoClient.connect(uri, {useNewUrlParser: true}, function(err, db) {
@@ -56,9 +57,9 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, db) {
         }
     });
      // mounts the specified middleware function or functions at the specified path
-    //app.listen(3001); // binds and listens for connections on specified host and port
+    //app.listen(3000); // binds and listens for connections on specified host and port
     //db.close();
-    var server = app.listen(3001, function() {
+    var server = app.listen(0, function() {
         var port = server.address().port;
         console.log('Server listening on port %s.', port);
     });
