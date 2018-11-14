@@ -31,13 +31,15 @@ div.tab-content {
 }
 
 div.form {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 5px solid black;
   margin-top: 10%;
   padding: 40px;
 }
 
 .App {
   text-align: center;
+  background-size: 100%;
 }
 
 .App-inner {
@@ -48,17 +50,20 @@ div.form {
 }
 
 .App-body {
-  background-color: #000;
   color: white;
   font-size: calc(10px + 2vmin);
+  /*background-color: rgba(0, 0, 0, 0.47843137254901963);*/
 }
 
 .App-logo {
   max-width: 200px;
 }
 
+ul.nav.nav-tabs {
+  background: rgba(0, 0, 0, 0.7803921568627451);
+}
+
 .App-header {
-  background-color: #000;
   color: white;
   font-size: calc(10px + 2vmin);
   min-height: 12vh;
@@ -82,10 +87,6 @@ input.formField {
   color: black;
 }
 
-#noanim-tab-example {
-  background-color: black;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -106,8 +107,18 @@ button.button {
   margin: 20px;
   border-radius: 5px;
   font-weight: 500;
-  font-size: 15px;
-  color: black;
+  font-size: 20px;
+  background-color: rgba(145, 32, 49, 0.8);
+  color: white;
+  border: black solid 1px;
+  width: 35%;
+  margin-top: 40px;
+}
+
+button.button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: rgb(145, 32, 49) solid 1px;
+  color: rgb(145, 32, 49);
 }
 
 a, a:hover {
