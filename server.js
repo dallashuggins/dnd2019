@@ -1,5 +1,8 @@
 // Frameworks and libraries:
 const express = require('express');
+const http = require('http');
+const https = require('https');
+const fs = require('fs');
 const assert = require('assert');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -26,11 +29,30 @@ app.use(bodyParser.json(),cors(),helmet())
 const router = express.Router();
 var db;
 
+// SSL:
+const privateKey = fs.readFileSync('/usr/local/etc/letsencrypt/live/dnd2019.com/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/usr/local/etc/letsencrypt/live/dnd2019.com/cert.pem', 'utf8');
+const ca = fs.readFileSync('/usr/local/etc/letsencrypt/live/dnd2019.com/chain.pem', 'utf8');
+const sslCredentials = {
+	key: privateKey,
+	cert: certificate,
+	ca: ca
+};
+
+const httpServer = http.createServer(app);
+const httpsServer = https.createServer(sslCredentials, app);
+
 MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
     assert.equal(null, err);
     db = database;
     // Start the application after the database connection is ready
-    app.listen(3000);
+    //app.listen(3000);
+    httpServer.listen(80, () => {
+        console.log('HTTP Server running on port 80');
+    });
+    httpsServer.listen(443, () => {
+        console.log('HTTPS Server running on port 443');
+    });
     console.log("Listening on port 3000");
     const registrants = new RegistrantDB(db);
     router.get("/", function(req, res) {
