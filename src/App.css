@@ -25,6 +25,7 @@ div.tab-content {
   margin: auto;
   float: none;
   width: 60%;
+  height:100%;
   overflow: auto;
 }
 
