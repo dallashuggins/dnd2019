@@ -1,6 +1,5 @@
 // Frameworks and libraries:
 const express = require('express');
-const http = require('http');
 const https = require('https');
 const fs = require('fs');
 const assert = require('assert');
@@ -48,36 +47,10 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
         console.log('HTTPS Server running on port 3000');
     });
     const registrants = new RegistrantDB(db);
-    /*router.get("/", function(req, res) {
-        try {
-            registrants.getItem(function(err, registrant) {
-                assert.equal(null, err);
-                console.log("Retrieved all", registrant);
-                res.status(200).send(registrant);
-            });
-        } catch (e) {
-            console.log("Error:", e);
-            res.status(400).send(e.message);
-        }
-    });*/
 
-    router.get("/:id", function(req, res) {
-        let params = req.params;
-        let object = {
-            _id: params.id
-        }
-        try {
-            registrants.getItem(object, function(err, registrant) {
-                assert.equal(null, err);
-                console.log("Retrieved", registrant);
-                res.status(200).send(registrant[0]);
-            });
-        } catch (e) {
-            console.log("Error:", e);
-            res.status(400).send(e.message);
-        }
+    router.get('/', function(req, res) {
+        res.render();
     });
-
     router.post("/add", function (req, res) {
         let body = req.body;
         console.log("Body", body);
