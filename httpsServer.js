@@ -45,11 +45,11 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
     assert.equal(null, err);
     db = database;
     httpsServer.listen(443, () => {
-        console.log('HTTPS Server running on port 3000');
+        console.log('HTTPS Server running on port 443');
     });
     const registrants = new RegistrantDB(db);
 
-    router.get('/*', function(req, res) {
+    router.get('*', function(req, res) {
         res.send('hello world');
     })
     router.post("/add", function (req, res) {
