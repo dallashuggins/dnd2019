@@ -30,29 +30,23 @@ const router = express.Router();
 var db;
 
 // SSL:
-/*const privateKey = fs.readFileSync('/usr/local/etc/letsencrypt/live/dnd2019.com/privkey.pem', 'utf8');
+const privateKey = fs.readFileSync('/usr/local/etc/letsencrypt/live/dnd2019.com/privkey.pem', 'utf8');
 const certificate = fs.readFileSync('/usr/local/etc/letsencrypt/live/dnd2019.com/cert.pem', 'utf8');
 const ca = fs.readFileSync('/usr/local/etc/letsencrypt/live/dnd2019.com/chain.pem', 'utf8');
 const sslCredentials = {
 	key: privateKey,
 	cert: certificate,
 	ca: ca
-};*/
+};
 
-const httpServer = http.createServer(app);
-//const httpsServer = https.createServer(sslCredentials, app);
+const httpsServer = https.createServer(sslCredentials, app);
 
 MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
     assert.equal(null, err);
     db = database;
-    // Start the application after the database connection is ready
-    //app.listen(3001);
-    httpServer.listen(3002, () => {
-        console.log('HTTP Server running on port 3002');
-    });
-    /*httpsServer.listen(3000, () => {
+    httpsServer.listen(3000, () => {
         console.log('HTTPS Server running on port 3000');
-    });*/
+    });
     const registrants = new RegistrantDB(db);
     /*router.get("/", function(req, res) {
         try {
