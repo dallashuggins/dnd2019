@@ -27,6 +27,7 @@
   },
   "scripts": {
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "production": "concurrently --kill-others-on-fail \"npm run server\" \"npm run build\"",
     "server": "node server.js",
     "client": "react-scripts start",
     "build": "react-scripts build",
