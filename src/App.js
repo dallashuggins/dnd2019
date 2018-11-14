@@ -6,6 +6,7 @@ import './App.css';
 import ContentTabs from './components/tab.js';
 import Nav from './components/nav.js';
 import creds from './credentials';
+import background from '../color.jpg';
 
 class App extends Component {
   constructor (props) {
@@ -57,8 +58,11 @@ class App extends Component {
   }
 
   render() {
+    const backgroundImage = {
+        backgroundImage: `url(${background})`
+    };
     return (
-      <div className="App">
+      <div className="App" style={backgroundImage}>
         {/*<header className="App-header">*/}
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossOrigin="anonymous" />
           {/*<img src={logo} className="App-logo" alt="logo" />
