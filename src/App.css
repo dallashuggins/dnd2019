@@ -2,17 +2,26 @@
   div.tab-content {
       width: 100%
   }
+  .tabContent {
+    width: 100%;
+  }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 1000px) {
   div.tab-content {
       width: 80%;
   }
+  .tabContent {
+    width: 100%;
+  }
 }
 
 @media only screen and (min-width: 1000px) {
   div.tab-content {
       width: 65%;
+  }
+  .tabContent {
+    width: 60%;
   }
 }
 
@@ -24,7 +33,6 @@ div.tab-content {
 .tabContent {
   margin: auto;
   float: none;
-  width: 60%;
   height:100%;
   min-height: 100%;
   overflow: auto;
@@ -66,7 +74,7 @@ ul.nav.nav-tabs {
 .App-header {
   color: white;
   font-size: calc(10px + 2vmin);
-  min-height: 12vh;
+  min-height: 8vh;
   display: flex;
   flex-direction: column;
   align-items: center;
