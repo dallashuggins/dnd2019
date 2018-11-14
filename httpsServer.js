@@ -1,7 +1,7 @@
 // Frameworks and libraries:
 const express = require('express');
 const https = require('https');
-//const http = require('http');
+const http = require('http');
 const path = require('path');
 const fs = require('fs');
 const assert = require('assert');
@@ -36,7 +36,6 @@ const sslCredentials = {
 	ca: ca
 };
 const httpsServer = https.createServer(sslCredentials, app);
-const httpServer = express.createServer();
 
 
 // Open MongoDB connection:
@@ -48,9 +47,10 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
         console.log('HTTPS Server running on port 443');
     });
     // Redirect http to https: 
-    httpServer.get('*', function(req, res) {  
-        res.redirect('https://' + req.url);
-    })
+    http.createServer(function (req, res) {
+        res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
+        res.end();
+    }).listen(80);
     app.use('/api', router);
     const registrants = new RegistrantDB(db);
     app.get('/', function (req, res) {
