@@ -27,12 +27,12 @@ const router = express.Router();
 var db;
 
 MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
-  if(err) throw err;
-  db = database;
-  // Start the application after the database connection is ready
-  app.listen(443);
-  console.log("Listening on port 443");
-  const registrants = new RegistrantDB(db);
+    assert.equal(null, err);
+    db = database;
+    // Start the application after the database connection is ready
+    app.listen(443);
+    console.log("Listening on port 443");
+    const registrants = new RegistrantDB(db);
     router.get("/", function(req, res) {
         try {
             registrants.getItem(function(err, registrant) {
@@ -45,7 +45,7 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
             res.status(400).send(e.message);
         }
     });
-    
+
     router.get("/:id", function(req, res) {
         let params = req.params;
         let object = {
@@ -62,7 +62,7 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
             res.status(400).send(e.message);
         }
     });
-    
+
     router.post("/add", function (req, res) {
         let body = req.body;
         console.log("Body", body);
