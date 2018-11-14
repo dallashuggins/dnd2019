@@ -1,6 +1,7 @@
 // Frameworks and libraries:
 const express = require('express');
 const https = require('https');
+const path = require('path');
 const fs = require('fs');
 const assert = require('assert');
 const bodyParser = require('body-parser');
@@ -48,9 +49,13 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
     });
     const registrants = new RegistrantDB(db);
 
-    router.get('/', function(req, res) {
-        res.render();
-    });
+    app.get('/*', function(req, res) {
+        res.sendFile(path.join(__dirname, 'build/index.html'), function(err) {
+          if (err) {
+            res.status(500).send(err)
+          }
+        })
+    })
     router.post("/add", function (req, res) {
         let body = req.body;
         console.log("Body", body);
