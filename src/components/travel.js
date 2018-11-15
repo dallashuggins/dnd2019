@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Travel (props) {
     return (
         <div className="callout">
-            Travel info
+            <h1>Travel info</h1>
         </div>
     );
   }

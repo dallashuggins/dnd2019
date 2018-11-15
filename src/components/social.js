@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Social (props) {
     return (
         <div className="callout">
-            Social media
+            <h1>Social media</h1>
         </div>
     );
   }

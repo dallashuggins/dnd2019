@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Detail (props) {
     return (
         <div className="callout">
-            Wedding details
+            <h1>Wedding details</h1>
         </div>
     );
   }
