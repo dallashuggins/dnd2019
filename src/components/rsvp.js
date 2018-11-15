@@ -19,7 +19,7 @@ function Rsvp (props) {
             required 
             onChange={props.onInputChange} />
             <br />
-            <button className="button" onClick={()=> {
+            <button className="buttonForm" onClick={()=> {
                 props.addRegistrant(props.name, props.regCode, props.status);
             }}>RSVP</button>
         </div>

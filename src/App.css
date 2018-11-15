@@ -113,6 +113,8 @@ ul.nav.nav-tabs {
   color: white !important;
 }
 /****************** Navigation (end) *******************/
+
+/****************** RSVP form (start) *******************/
 input.formField {
   color: black;
 }
@@ -123,7 +125,7 @@ input.formField {
   font-size: 15px;
 }
 
-button.button {
+button.buttonForm {
   padding: 10px 20px;
   margin: 20px;
   border-radius: 5px;
@@ -136,8 +138,9 @@ button.button {
   margin-top: 40px;
 }
 
-button.button:hover {
+button.buttonForm:hover {
   background-color: rgba(255, 255, 255, 0.9);
   border: rgb(145, 32, 49) solid 2px;
   color: rgb(145, 32, 49);
 }
+/****************** RSVP form (end) *******************/
