@@ -159,4 +159,9 @@ button.buttonForm:hover {
   border: rgba(241, 114, 39, 0.71) solid 1px;
   color: rgba(241, 114, 39, 0.71);
 }
+
+/*  */
+button.butterAnother {
+  font-size: 15px;
+}
 /****************** RSVP form (end) *******************/

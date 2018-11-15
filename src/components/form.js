@@ -18,7 +18,7 @@ function Form (props) {
                 <div>
                     <p>Thank you for registering, {props.name}</p>
                     <br />
-                    <button className="buttonForm" onClick={()=> {
+                    <button className="buttonForm butterAnother" onClick={()=> {
                         props.updateState({page: 0, name: '', status: ''});
                     }}>Register another person</button>
                 </div>
