@@ -54,6 +54,15 @@ html, body, .App, div#root {
 a, a:hover {
   color: rgba(0, 0, 0, 0.85);
 }
+
+div, span, p, a, li, h3, h4, h5 {
+  font-family: Ovo;
+}
+
+h1, h2 {
+  font-family: Rye;
+}
+
 /********************** General (end) **********************/
 
 /********************* Callout (start) *********************/

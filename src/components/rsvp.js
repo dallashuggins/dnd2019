@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Rsvp (props) {
     return (
         <div>
-            <p>Register for DnD 2019</p>
+            <h1>Register for DnD 2019</h1>
             <br />
             <input type="text" 
             name="name" 
