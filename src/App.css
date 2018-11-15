@@ -160,7 +160,7 @@ button.buttonForm:hover {
   color: rgba(241, 114, 39, 0.71);
 }
 
-/*  */
+/* Button with addl. text */
 button.butterAnother {
   font-size: 15px;
 }

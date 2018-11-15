@@ -7,6 +7,7 @@ import {
 import Form from './form.js';
 import Detail from './detail.js';
 import Travel from './travel.js';
+import Social from './social.js';
 
 function ContentTabs (props) {
     return (
@@ -24,11 +25,14 @@ function ContentTabs (props) {
                 />
             </div>
         </Tab>
-        <Tab eventKey={2} title="Wedding Details" className="background">
-            <Detail/>
+        <Tab eventKey={2} title="Details" className="background">
+            <Detail />
         </Tab>
         <Tab eventKey={3} title="Travel" className="background">
-            <Travel/>
+            <Travel />
+        </Tab>
+        <Tab eventKey={3} title="Social" className="background">
+            <Social />
         </Tab>
         </Tabs>
     );
