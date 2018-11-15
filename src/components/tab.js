@@ -7,12 +7,8 @@ import {
 import Form from './form.js';
 import Detail from './detail.js';
 import Travel from './travel.js';
-import background from '../color.jpg';
 
 function ContentTabs (props) {
-    const backgroundImage = {
-        backgroundImage: `url(${background})`
-    };
     return (
         <Tabs defaultActiveKey={1} animation={false} id="noanim-tab-example">
         <Tab eventKey={1} title="Register" className="background">
@@ -28,10 +24,10 @@ function ContentTabs (props) {
                 />
             </div>
         </Tab>
-        <Tab eventKey={2} title="Wedding Details" className="background" style={backgroundImage}>
+        <Tab eventKey={2} title="Wedding Details" className="background">
             <Detail/>
         </Tab>
-        <Tab eventKey={3} title="Travel" className="background" style={backgroundImage}>
+        <Tab eventKey={3} title="Travel" className="background">
             <Travel/>
         </Tab>
         </Tabs>
