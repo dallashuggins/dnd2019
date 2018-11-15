@@ -149,7 +149,7 @@ button.buttonForm {
   font-size: 20px;
   background-color: rgba(241, 114, 39, 0.6);
   color: black;
-  border: black solid 3px;
+  border: black solid 1px;
   margin-top: 40px;
 }
 
