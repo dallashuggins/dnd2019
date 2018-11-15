@@ -18,7 +18,12 @@ class App extends Component {
       page: 0
     }
   }
-  // General clear state function
+
+  componentDidMount = function() {
+    document.title = "Dallas & Drew Autumn Wedding Celebration 2019";
+  }
+
+  // General update state function
   updateState = (stateObject) => {
     console.log("Clear state:", stateObject);
     this.setState(stateObject);
