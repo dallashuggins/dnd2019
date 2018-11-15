@@ -6,6 +6,12 @@
   .tabContent {
     width: 100%;
   }
+  button.buttonForm {
+    width: 50%;
+  }
+  .App {
+    background-size: cover;
+  }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 1000px) {
@@ -15,6 +21,12 @@
   .tabContent {
     width: 100%;
   }
+  button.buttonForm {
+    width: 40%;
+  }
+  .App {
+    background-size: 100%;
+  }
 }
 
 @media only screen and (min-width: 1000px) {
@@ -23,6 +35,12 @@
   }
   .tabContent {
     width: 60%;
+  }
+  button.buttonForm {
+    width: 35%;
+  }
+  .App {
+    background-size: 100%;
   }
 }
 /******************** Media queries (end) ********************/
@@ -44,6 +62,7 @@ div.tab-content {
   float: none;
   margin: 5% auto auto auto;
   background-color: rgba(0, 0, 0, 0.8);
+  border: rgb(183, 104, 0) solid 5px;
 }
 
 /* Next nested callout div */
@@ -57,7 +76,6 @@ div.tabContent {
 
 /* Callout content */
 div.callout {
-  border: 5px solid black;
   padding: 40px;
   min-height: 18em;
 }
@@ -66,13 +84,13 @@ div.callout {
 /******************* Main App (start) ********************/
 .App {
   text-align: center;
-  background-size: 100%;
+  background-color: black;
+  overflow: hidden;
 }
 
 .App-inner {
   margin: auto;
   float: none;
-  background-size: 100%;
   width: 100%;
 }
 
@@ -132,16 +150,13 @@ button.buttonForm {
   background-color: rgba(241, 114, 39, 0.6);
   color: black;
   border: black solid 3px;
-  width: 35%;
   margin-top: 40px;
 }
 
 /* Button on form hover style */
 button.buttonForm:hover {
-  background-color: rgba(0, 0, 0, 0.11);
-  border: rgba(241, 114, 39, 0.71) solid 3px;
+  background-color: rgba(243, 189, 189, 0.11);
+  border: rgba(241, 114, 39, 0.71) solid 1px;
   color: rgba(241, 114, 39, 0.71);
-  /*border: rgb(145, 32, 49) solid 2px;
-  color: rgb(145, 32, 49);*/
 }
 /****************** RSVP form (end) *******************/
