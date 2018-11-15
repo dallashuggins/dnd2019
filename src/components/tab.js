@@ -5,6 +5,8 @@ import {
     Tab
 } from 'react-bootstrap';
 import Form from './form.js';
+import Detail from './detail.js';
+import Travel from './travel.js';
 import background from '../color.jpg';
 
 function ContentTabs (props) {
@@ -27,14 +29,10 @@ function ContentTabs (props) {
             </div>
         </Tab>
         <Tab eventKey={2} title="Wedding Details" className="background" style={backgroundImage}>
-            <div className="tabContent">
-                Wedding Details info
-            </div>
+            <Detail/>
         </Tab>
         <Tab eventKey={3} title="Travel" className="background" style={backgroundImage}>
-            <div className="tabContent">
-                Travel info
-            </div>
+            <Travel/>
         </Tab>
         </Tabs>
     );

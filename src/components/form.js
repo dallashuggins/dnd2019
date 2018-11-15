@@ -4,7 +4,7 @@ import Rsvp from './rsvp.js';
 
 function Form (props) {
     return (
-        <div className="form">
+        <div className="callout">
             {props.page === 0 ? (
                 <Rsvp
                     name={props.name}

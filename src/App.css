@@ -25,6 +25,11 @@
   }
 }
 
+html, body, .App, div#root {
+  height:100%; 
+  min-height: 100%;
+}
+
 div.tab-content {
   margin: auto;
   float: none;
@@ -38,7 +43,7 @@ div.tab-content {
   overflow: auto;
 }
 
-div.form {
+div.callout {
   background-color: rgba(0, 0, 0, 0.8);
   border: 5px solid black;
   margin-top: 10%;
@@ -86,7 +91,6 @@ ul.nav.nav-tabs {
 }
 
 .background {
-  min-height: 750px;
   height: 100%;
   background-size: 100%;
 }
