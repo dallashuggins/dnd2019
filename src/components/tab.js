@@ -31,7 +31,7 @@ function ContentTabs (props) {
         <Tab eventKey={3} title="Travel" className="background">
             <Travel />
         </Tab>
-        <Tab eventKey={3} title="Social" className="background">
+        <Tab eventKey={4} title="Social" className="background">
             <Social />
         </Tab>
         </Tabs>
