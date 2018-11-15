@@ -34,7 +34,7 @@ html, body, .App, div#root {
 }
 
 a, a:hover {
-  color: rgba(145, 32, 49, 0.8) !important;
+  color: rgba(0, 0, 0, 0.85);
 }
 /********************** General (end) **********************/
 
@@ -81,10 +81,6 @@ div.callout {
   font-size: calc(10px + 2vmin);
 }
 
-.App-logo {
-  max-width: 200px;
-}
-
 .App-header {
   color: white;
   font-size: calc(10px + 2vmin);
@@ -95,52 +91,57 @@ div.callout {
   justify-content: center;
 }
 
-.App-link {
-  color: #61dafb;
-}
 /******************* Main App (end) *********************/
 
 /****************** Navigation (start) *******************/
+/* Navigation bar */
 ul.nav.nav-tabs {
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(241, 114, 39, 0.8);
   font-size: 15px;
   font-weight: 700;
   font-family: 'Helvetica';
 }
 
+/* Active nav tabs */
 .nav-tabs>li.active>a {
-  background-color: rgba(145, 32, 49, 0.8) !important;
-  color: white !important;
+  background-color: rgba(241, 114, 39, 0.7);
+  color: rgba(0, 0, 0, 0.85) !important;
 }
 /****************** Navigation (end) *******************/
 
 /****************** RSVP form (start) *******************/
+/* Text in input form fields (when you type)  */
 input.formField {
   color: black;
 }
 
+/* Input form fields */
 .formField {
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 15px;
 }
 
+/* Button on form */
 button.buttonForm {
   padding: 10px 20px;
   margin: 20px;
   border-radius: 5px;
   font-weight: 500;
   font-size: 20px;
-  background-color: rgba(125, 18, 18, 0.85);
-  color: white;
-  border: black solid 2px;
+  background-color: rgba(241, 114, 39, 0.6);
+  color: black;
+  border: black solid 3px;
   width: 35%;
   margin-top: 40px;
 }
 
+/* Button on form hover style */
 button.buttonForm:hover {
-  background-color: rgba(255, 255, 255, 0.9);
-  border: rgb(145, 32, 49) solid 2px;
-  color: rgb(145, 32, 49);
+  background-color: rgba(0, 0, 0, 0.11);
+  border: rgba(241, 114, 39, 0.71) solid 3px;
+  color: rgba(241, 114, 39, 0.71);
+  /*border: rgb(145, 32, 49) solid 2px;
+  color: rgb(145, 32, 49);*/
 }
 /****************** RSVP form (end) *******************/
