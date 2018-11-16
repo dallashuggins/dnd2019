@@ -4,7 +4,6 @@ import axios from 'axios';
 import logo from './logo.png';
 import './App.css';
 import ContentTabs from './components/tab.js';
-import creds from './credentials';
 import background from './color.jpg';
 
 class App extends Component {
@@ -45,7 +44,7 @@ class App extends Component {
       comments: comments
     };
     console.log("Add Reg options:", options);
-    if (regCode === creds.regCode) {
+    if (regCode === this.state.config.regCode) {
       axios.post(`/api/add`, options)
       .then(response => {
         console.log("Registration successful:", response.data)
@@ -59,7 +58,7 @@ class App extends Component {
         alert('Something went wrong. Please refresh and try again. If the issue persists, contact Dallas or Drew.');
       });
     } else {
-      alert ("Incorrect registration code. Check your invitation, or reach out to Drew or Dallas.")
+      alert("Incorrect registration code. Check your invitation, or reach out to Drew or Dallas.")
     }
   }
 
