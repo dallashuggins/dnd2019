@@ -12,6 +12,7 @@
 /build
 
 # misc
+package-lock.json
 config.json
 /src/config.json
 .DS_Store
