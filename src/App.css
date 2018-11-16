@@ -90,6 +90,7 @@ ul.nav.nav-tabs {
 
 .nav-tabs>li>a {
   border-radius: 0 !important;
+  font-weight: bold;
 }
 
 /* Active nav tabs */
@@ -110,10 +111,6 @@ input.formField::placeholder, textarea.formField::placeholder  {
   outline: none;
 }
 
-select:focus {
-  background-color: #fff;
-}
-
 /* Form field style */
 .formField {
   padding: 10px 20px;
@@ -123,14 +120,9 @@ select:focus {
   width: 20em;
 }
 
+/* Dropdown */
 select.formField {
   height: 3em;
-}
-
-label.formField {
-  text-align: center;
-  font-size: 15px;
-  color: white;
 }
 
 /* Button on form */

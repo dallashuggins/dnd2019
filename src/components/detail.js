@@ -5,7 +5,10 @@ function Detail (props) {
     return (
         <div className="callout">
             <h1>Wedding details</h1>
-            <p>October 12th, 2019</p>
+            <br />
+            <p>Time: 5pm</p>
+            <p>Date: October 12th, 2019</p>
+
         </div>
     );
   }
