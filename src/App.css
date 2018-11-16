@@ -1,50 +1,3 @@
-/********************* Media queries (start) *********************/
-@media only screen and (max-width: 600px) {
-  div.tab-content {
-      width: 100%
-  }
-  .tabContent {
-    width: 100%;
-  }
-  button.buttonForm {
-    width: 50%;
-  }
-  .App {
-    background-size: cover;
-  }
-}
-
-@media only screen and (min-width: 600px) and (max-width: 1000px) {
-  div.tab-content {
-      width: 80%;
-  }
-  .tabContent {
-    width: 100%;
-  }
-  button.buttonForm {
-    width: 40%;
-  }
-  .App {
-    background-size: 100%;
-  }
-}
-
-@media only screen and (min-width: 1000px) {
-  div.tab-content {
-    width: 70%;
-  }
-  .tabContent {
-    width: 80%;
-  }
-  button.buttonForm {
-    width: 35%;
-  }
-  .App {
-    background-size: 100%;
-  }
-}
-/******************** Media queries (end) ********************/
-
 /********************** General (start) **********************/
 html, body, .App, div#root {
   min-height: 100%;
@@ -72,7 +25,6 @@ h1, h2 {
 /* Main div of callout*/
 div.tab-content {
   float: none;
-  margin: 8% auto 5% auto;
   background-color: rgba(0, 0, 0, 0.8);
   border: rgb(183, 104, 0) solid 5px;
 }
@@ -202,3 +154,93 @@ button.butterAnother {
   font-size: 15px;
 }
 /****************** RSVP form (end) *******************/
+
+/********************* Media queries (start) *********************/
+@media only screen and (max-width: 475px) {
+  div.tab-content {
+      margin: 20% auto 10% auto;
+  }
+}
+
+@media only screen and (min-width: 475px) and (max-width: 550px) {
+  div.tab-content {
+      margin: 17% auto 10% auto;
+  }
+}
+
+@media only screen and (min-width: 550px) and (max-width: 600px) {
+  div.tab-content {
+      margin: 15% auto 10% auto;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 700px) {
+  div.tab-content {
+      margin: 14% auto 10% auto;
+  }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 800px) {
+  div.tab-content {
+      margin: 11% auto 10% auto;
+  }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 900px) {
+  div.tab-content {
+      margin: 10% auto 10% auto;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  div.tab-content {
+      margin: 8% auto 10% auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  div.tab-content {
+      width: 100%;
+  }
+  .tabContent {
+    width: 100%;
+  }
+  button.buttonForm {
+    width: 50%;
+  }
+  .App {
+    background-size: cover;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
+  div.tab-content {
+      width: 80%;
+  }
+  .tabContent {
+    width: 100%;
+  }
+  button.buttonForm {
+    width: 40%;
+  }
+  .App {
+    background-size: 100%;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  div.tab-content {
+    width: 70%;
+    margin: 8% auto 5% auto;
+  }
+  .tabContent {
+    width: 80%;
+  }
+  button.buttonForm {
+    width: 35%;
+  }
+  .App {
+    background-size: 100%;
+  }
+}
+/******************** Media queries (end) ********************/
