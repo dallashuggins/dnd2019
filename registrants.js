@@ -40,6 +40,7 @@ function RegistrantDB(database) {
                 name: object.name,
                 regCode: object.regCode,
                 status: object.status,
+                comments: object.comments,
                 createdAt: Date.now()
             };
             this.db.collection("people").insertOne(options, function(err, result) {
