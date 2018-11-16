@@ -30,11 +30,11 @@
   },
   "scripts": {
     "start": "concurrently --kill-others-on-fail \"npm run httpServer\" \"npm run client\"",
-    "production": "react-scripts build",
-    "httpsServer": "node httpsServer.js",
     "httpServer": "node httpServer.js",
     "client": "react-scripts start",
-    "build": "concurrently --kill-others-on-fail \"npm run httpsServer\" \"npm run production\"",
+    "production": "concurrently --kill-others-on-fail \"npm run httpsServer\" \"npm run build\"",
+    "httpsServer": "node httpsServer.js",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
