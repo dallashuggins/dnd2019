@@ -72,7 +72,7 @@ h1, h2 {
 /* Main div of callout*/
 div.tab-content {
   float: none;
-  margin: 5% auto 5% auto;
+  margin: 8% auto 5% auto;
   background-color: rgba(0, 0, 0, 0.8);
   border: rgb(183, 104, 0) solid 5px;
 }
@@ -130,6 +130,10 @@ ul.nav.nav-tabs {
   font-size: 15px;
   font-weight: 700;
   font-family: 'Helvetica';
+  position: fixed;
+  width: 100%;
+  top: 0;
+  overflow: hidden;
 }
 
 /* Active nav tabs */
