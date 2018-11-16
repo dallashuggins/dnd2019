@@ -33,7 +33,7 @@
     "httpServer": "node httpServer.js",
     "client": "react-scripts start",
     "production": "concurrently --kill-others-on-fail \"npm run httpsServer\" \"npm run build\"",
-    "httpsServer": "node httpsServer.js",
+    "server": "node httpsServer.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
