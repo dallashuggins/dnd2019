@@ -6,7 +6,7 @@ function Detail (props) {
         <div className="callout">
             <h1>Wedding details</h1>
             <br />
-            <p>Time: 5pm</p>
+            <p>Time: Noon</p>
             <p>Date: October 12th, 2019</p>
 
         </div>
