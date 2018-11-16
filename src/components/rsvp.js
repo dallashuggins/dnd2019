@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Rsvp (props) {
     return (
         <div>
-            <h1>Register for DnD 2019</h1>
+            <h1>RSVP for DnD 2019</h1>
             <br />
             <select required className="formField" name="status" defaultValue="first" onChange={props.onInputChange}>
                 <option value="first" disabled>Can you attend our wedding?</option>
