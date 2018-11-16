@@ -44,7 +44,7 @@ class App extends Component {
       comments: comments
     };
     console.log("Add Reg options:", options);
-    if (regCode === this.state.config.regCode) {
+    if (regCode === this.props.regCode) {
       axios.post(`/api/add`, options)
       .then(response => {
         console.log("Registration successful:", response.data)

@@ -10,7 +10,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const MongoClient = require('mongodb').MongoClient;
 // Connection:
-var creds = require('./credentials.js');
+var creds = require('./config.json');
 const un = encodeURIComponent(creds.mongodb_un);
 const pw = encodeURIComponent(creds.mongodb_pw);
 const c = encodeURIComponent(creds.mongodb_cluster);
