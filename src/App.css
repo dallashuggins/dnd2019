@@ -88,6 +88,10 @@ ul.nav.nav-tabs {
   overflow: hidden;
 }
 
+.nav-tabs>li>a {
+  border-radius: 0 !important;
+}
+
 /* Active nav tabs */
 .nav-tabs>li.active>a {
   background-color: rgba(241, 114, 39, 0.7);
@@ -136,16 +140,16 @@ button.buttonForm {
   border-radius: 5px;
   font-weight: 500;
   font-size: 20px;
-  background-color: rgba(241, 114, 39, 0.6);
+  background-color: rgba(241, 114, 39, 0.8);
   color: black;
-  border: black solid 1px;
+  border: black solid 2px;
   margin-top: 40px;
 }
 
 /* Button on form hover style */
 button.buttonForm:hover {
   background-color: rgba(243, 189, 189, 0.11);
-  border: rgba(241, 114, 39, 0.71) solid 1px;
+  border: rgba(241, 114, 39, 0.71) solid 2px;
   color: rgba(241, 114, 39, 0.71);
 }
 
