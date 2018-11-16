@@ -10,16 +10,17 @@ function Form (props) {
                     name={props.name}
                     regCode={props.regCode}
                     status={props.status}
+                    comments={props.comments}
                     onInputChange={props.onInputChange}
                     addRegistrant={props.addRegistrant}
                     updateState={props.updateState}
                 />
             ) : props.page === 1 ? (
                 <div>
-                    <p>Thank you for registering, {props.name}</p>
+                    <p>Thank you for registering, {props.name}!</p>
                     <br />
                     <button className="buttonForm butterAnother" onClick={()=> {
-                        props.updateState({page: 0, name: '', status: ''});
+                        props.updateState({page: 0, name: '', status: '', comments: ''});
                     }}>Register another person</button>
                 </div>
             ) : ''}
@@ -32,6 +33,7 @@ function Form (props) {
     name: PropTypes.string.isRequired,
     regCode: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,
+    comments: PropTypes.string.isRequired,
     onInputChange: PropTypes.func.isRequired,
     addRegistrant:PropTypes.func.isRequired,
     updateState: PropTypes.func.isRequired

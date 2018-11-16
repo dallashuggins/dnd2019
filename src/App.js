@@ -14,6 +14,7 @@ class App extends Component {
       name: '',
       regCode: '',
       status: '',
+      comments: '',
       registered: false,
       page: 0
     }
@@ -25,22 +26,23 @@ class App extends Component {
 
   // General update state function
   updateState = (stateObject) => {
-    console.log("Clear state:", stateObject);
     this.setState(stateObject);
+    console.log("Update state:", stateObject);
   }
 
   // Set state of input text fields:
   onInputChange = e => {
     e.preventDefault();
     this.setState({ [e.target.name]: e.target.value });
-    console.log(`${e.target.name} state:`, this.state[e.target.name]);
+    console.log(`${e.target.name} state:`, e.target.value);
   }
 
-  addRegistrant = (name, regCode, status) => {
+  addRegistrant = (name, regCode, status, comments) => {
     let options = {
       name: name,
       regCode: regCode,
-      status: status
+      status: status,
+      comments: comments
     };
     console.log("Add Reg options:", options);
     if (regCode === creds.regCode) {
@@ -74,6 +76,7 @@ class App extends Component {
               name={this.state.name}
               regCode={this.state.regCode}
               status={this.state.status}
+              comments={this.state.comments}
               onInputChange={this.onInputChange.bind(this)}
               addRegistrant={this.addRegistrant.bind(this)}
               updateState={this.updateState.bind(this)}

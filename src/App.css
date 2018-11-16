@@ -31,10 +31,10 @@
 
 @media only screen and (min-width: 1000px) {
   div.tab-content {
-      width: 70%;
+    width: 70%;
   }
   .tabContent {
-    width: 60%;
+    width: 80%;
   }
   button.buttonForm {
     width: 35%;
@@ -47,15 +47,18 @@
 
 /********************** General (start) **********************/
 html, body, .App, div#root {
-  height:100%; 
   min-height: 100%;
+}
+
+html, body, div#root {
+  height: 100%
 }
 
 a, a:hover {
   color: rgba(0, 0, 0, 0.85);
 }
 
-div, span, p, a, li, h3, h4, h5 {
+div, span, p, a, li, h3, h4, h5, label, input, select, textarea {
   font-family: Ovo;
 }
 
@@ -69,7 +72,7 @@ h1, h2 {
 /* Main div of callout*/
 div.tab-content {
   float: none;
-  margin: 5% auto auto auto;
+  margin: 5% auto 5% auto;
   background-color: rgba(0, 0, 0, 0.8);
   border: rgb(183, 104, 0) solid 5px;
 }
@@ -137,16 +140,37 @@ ul.nav.nav-tabs {
 /****************** Navigation (end) *******************/
 
 /****************** RSVP form (start) *******************/
-/* Text in input form fields (when you type)  */
-input.formField {
+/* Form field placeholder */
+input.formField::placeholder, textarea.formField::placeholder  {
   color: black;
 }
 
-/* Input form fields */
+/* Remove blue outline */
+.formField:focus {
+  outline: none;
+}
+
+select:focus {
+  background-color: #fff;
+}
+
+/* Form field style */
 .formField {
   padding: 10px 20px;
+  color: black;
   border-radius: 5px;
   font-size: 15px;
+  width: 20em;
+}
+
+select.formField {
+  height: 3em;
+}
+
+label.formField {
+  text-align: center;
+  font-size: 15px;
+  color: white;
 }
 
 /* Button on form */

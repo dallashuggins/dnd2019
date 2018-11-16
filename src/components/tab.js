@@ -19,6 +19,7 @@ function ContentTabs (props) {
                     name={props.name}
                     regCode={props.regCode}
                     status={props.status}
+                    comments={props.comments}
                     onInputChange={props.onInputChange.bind(this)}
                     addRegistrant={props.addRegistrant.bind(this)}
                     updateState={props.updateState.bind(this)}
@@ -43,6 +44,7 @@ ContentTabs.propTypes = {
     name: PropTypes.string.isRequired,
     regCode: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,
+    comments: PropTypes.string.isRequired,
     onInputChange: PropTypes.func.isRequired,
     addRegistrant:PropTypes.func.isRequired,
     updateState: PropTypes.func.isRequired
