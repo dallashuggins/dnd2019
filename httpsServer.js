@@ -24,6 +24,7 @@ const app = express();
 app.set('view engine', 'html');
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(bodyParser.json(),cors(),helmet())
+app.use('/api', routes);
 const router = express.Router();
 var db;
 
@@ -52,14 +53,13 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
         res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
         res.end();
     }).listen(80);
-    app.use('/api', router);
-    app.use('/api', routes);
     // React:
     app.get('/', function (req, res) {
         res.sendFile(path.join(__dirname, 'build', 'index.html'));
     });
     // Database routes:
     const registrants = new RegistrantDB(db);
+    app.use('/api', router);
     router.post("/add", function (req, res) {
         let body = req.body;
         let object = {
