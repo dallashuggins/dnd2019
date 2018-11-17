@@ -11,7 +11,7 @@ router.get('/:client_id:/client_secret', async function (req, res) {
     };
     console.log("Weather object:", object);
     try {
-        await new weather.getForecast(object, function(err, response) {
+        new weather.getForecast(object, function(err, response) {
           assert.equal(null, err);
           console.log("Added", response);
           res.status(200).send(response);

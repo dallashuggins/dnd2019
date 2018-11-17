@@ -1,6 +1,7 @@
 // Frameworks and libraries:
 const express = require('express');
 const http = require('http');
+const path = require('path');
 const assert = require('assert');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -19,12 +20,28 @@ const RegistrantDB = require('./middleware/database/index.js');
 // Set up express
 const app = express();
 app.set('view engine', 'html');
-app.set('views', __dirname + '/views');
-app.use('/static', express.static(__dirname + '/static'));
-app.use(bodyParser.json(),cors(),helmet());
+app.use(express.static(path.join(__dirname, 'build')));
+app.use(bodyParser.json(),cors(),helmet())
+app.use('/api', routes);
 const router = express.Router();
 var db;
 
+/*router.get('/:client_id:/client_secret', async function (req, res) {
+    let object = {
+      aeris_access_key: req.params.client_id,
+      aeris_secret_key: req.params.client_secret
+    };
+    console.log("Weather object:", object);
+    try {
+        new weather.getForecast(object, function(err, response) {
+          assert.equal(null, err);
+          console.log("Added", response);
+          res.status(200).send(response);
+        });
+    } catch (e) {
+        res.status(400).send(e.message)
+    }
+});*/
 const httpServer = http.createServer(app);
 
 MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
