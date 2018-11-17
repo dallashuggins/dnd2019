@@ -59,7 +59,7 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
     });
     // Database routes:
     const registrants = new RegistrantDB(db);
-    //app.use('/api', router);
+    app.use('/api', router);
     router.post("/add", function (req, res) {
         let body = req.body;
         let object = {

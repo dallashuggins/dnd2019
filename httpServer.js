@@ -27,14 +27,14 @@ const router = express.Router();
 var db;
 
 const httpServer = http.createServer(app);
+// Start the application after the database connection is ready
+httpServer.listen(3001, () => {
+    console.log('HTTP Server running on port 3001');
+});
 
 MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
     assert.equal(null, err);
     db = database;
-    // Start the application after the database connection is ready
-    httpServer.listen(3001, () => {
-        console.log('HTTP Server running on port 3001');
-    });
     app.use('/api', router);
     const registrants = new RegistrantDB(db);
     router.post("/add", function (req, res) {
