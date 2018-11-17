@@ -70,7 +70,7 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
         try {
             registrants.addItem(object, function(err, registrant) {
                 assert.equal(null, err);
-                console.log("Added", registrant);
+                console.log("Added https reg:", registrant);
                 res.status(200).send(registrant);
             });
         } catch (e) {

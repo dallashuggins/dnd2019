@@ -1,7 +1,7 @@
-const assert = require('assert');
 const rp = require('request-promise');
 
 const weatherFunctions = () => {
+    "use strict";
     this.getForecast = (auth, callback) => {
         try {
             let object = {
@@ -13,7 +13,7 @@ const weatherFunctions = () => {
                     p: 'nottingham,nh'
                 }
             };
-            let response = rp(object).response;
+            let response = rp(object);
             callback(null, response);
         } catch (e) {
             callback(e, {});
