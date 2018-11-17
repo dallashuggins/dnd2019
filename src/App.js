@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 //import rp from 'request-promise';
 import axios from 'axios';
+import rp from 'request-promise';
 import logo from './logo.png';
 import './App.css';
 import ContentTabs from './components/tab.js';
@@ -66,13 +67,14 @@ class App extends Component {
   // Get weather:
   getWeather = () => {
     let options = {
-      params: {
+      url: `/api/weather`,
+      method: 'GET',
+      qs: {
         client_id: this.props.config.aeris_access_key,
         client_secret: this.props.config.aeris_secret_key
       }
     };
-    //console.log("Get weather config:", options)
-    return axios.get(`/api/weather`, options)
+    return rp(options)
     .then(response => {
       console.log("Get Weather response:", response);
       return response.data;
