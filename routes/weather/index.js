@@ -5,11 +5,11 @@ const weather = require('../../middleware/weather/index.js');
 const assert = require('assert');
 
 router.get('/:client_id:/client_secret', async function (req, res) {
-    let params = req.params;
     let object = {
-      aeris_access_key: params.client_id,
-      aeris_secret_key: params.client_secret
+      aeris_access_key: req.params.client_id,
+      aeris_secret_key: req.params.client_secret
     };
+    console.log("Weather object:", object);
     try {
         await weather.getForecast(object, function(err, response) {
           assert.equal(null, err);
