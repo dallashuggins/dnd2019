@@ -44,7 +44,7 @@ class App extends Component {
       comments: comments
     };
     console.log("Add Reg options:", options);
-    if (regCode === this.props.regCode) {
+    if (regCode === this.props.config.regCode) {
       axios.post(`/api/add`, options)
       .then(response => {
         console.log("Registration successful:", response.data)
@@ -60,6 +60,14 @@ class App extends Component {
     } else {
       alert("Incorrect registration code. Check your invitation, or reach out to Drew or Dallas.")
     }
+  }
+
+  getWeather = () => {
+    let options = {
+      client_id: this.props.config.aeris_access_key,
+      client_secret: this.props.config.aeris_secret_key
+    };
+    axios.post(`/api/add`, options)
   }
 
   render() {

@@ -16,7 +16,8 @@ const pw = encodeURIComponent(creds.mongodb_pw);
 const c = encodeURIComponent(creds.mongodb_cluster);
 let uri = `mongodb+srv://${un}:${pw}@${c}.mongodb.net`;
 // Files:
-const RegistrantDB = require('./registrants').RegistrantDB;
+const routes = require('./routes/index.js');
+const RegistrantDB = require('./middleware/database/index.js');
 
 // Set up express
 const app = express();
@@ -52,13 +53,15 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
         res.end();
     }).listen(80);
     app.use('/api', router);
-    const registrants = new RegistrantDB(db);
+    app.use('/api', routes);
+    // React:
     app.get('/', function (req, res) {
         res.sendFile(path.join(__dirname, 'build', 'index.html'));
     });
+    // Database routes:
+    const registrants = new RegistrantDB(db);
     router.post("/add", function (req, res) {
         let body = req.body;
-        console.log("Body", body);
         let object = {
             name: body.name,
             regCode: body.regCode,
