@@ -10,8 +10,7 @@ router.get('/', async function (req, res) {
       aeris_secret_key: req.query.client_secret
     };
     try {
-        let newWeather = new weather();
-        return newWeather.getForecast(object, function(err, response) {
+        return weather.getForecast(object, function(err, response) {
           assert.equal(null, err);
           console.log("Added weather", response);
           res.status(200).send(response);
