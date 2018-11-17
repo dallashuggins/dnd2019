@@ -26,22 +26,6 @@ app.use('/api', routes);
 const router = express.Router();
 var db;
 
-/*router.get('/:client_id:/client_secret', async function (req, res) {
-    let object = {
-      aeris_access_key: req.params.client_id,
-      aeris_secret_key: req.params.client_secret
-    };
-    console.log("Weather object:", object);
-    try {
-        new weather.getForecast(object, function(err, response) {
-          assert.equal(null, err);
-          console.log("Added", response);
-          res.status(200).send(response);
-        });
-    } catch (e) {
-        res.status(400).send(e.message)
-    }
-});*/
 const httpServer = http.createServer(app);
 
 MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
@@ -52,7 +36,6 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
         console.log('HTTP Server running on port 3001');
     });
     app.use('/api', router);
-    app.use('/api', routes);
     const registrants = new RegistrantDB(db);
     router.post("/add", function (req, res) {
         let body = req.body;
