@@ -68,6 +68,10 @@ class App extends Component {
       client_secret: this.props.config.aeris_secret_key
     };
     axios.post(`/api/add`, options)
+    .then(response => {
+      console.log("Get Weather response:", response);
+      return response;
+    });
   }
 
   render() {
@@ -88,6 +92,7 @@ class App extends Component {
               addRegistrant={this.addRegistrant.bind(this)}
               updateState={this.updateState.bind(this)}
             />
+            <button onChange={this.props.getWeather}>Test</button>
           </div>
         </div>
       </div>
