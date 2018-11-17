@@ -65,17 +65,17 @@ class App extends Component {
 
   // Get weather:
   getWeather = () => {
-    console.log("Get weather config:", this.props.config)
     let options = {
       params: {
         client_id: this.props.config.aeris_access_key,
         client_secret: this.props.config.aeris_secret_key
       }
     };
+    //console.log("Get weather config:", options)
     return axios.get(`/api/weather`, options)
     .then(response => {
       console.log("Get Weather response:", response);
-      return response;
+      return response.data;
     }).catch((e) => {
       console.log("Get weather error", e);
     })

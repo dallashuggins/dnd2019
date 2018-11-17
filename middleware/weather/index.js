@@ -1,6 +1,6 @@
 const rp = require('request-promise');
 
-const getForecast = (auth, callback) => {
+const getForecast = async (auth, callback) => {
     try {
         let object = {
             method: 'GET',
@@ -9,14 +9,15 @@ const getForecast = (auth, callback) => {
                 client_id: auth.aeris_access_key,
                 client_secret: auth.aeris_secret_key,
                 p: 'nottingham,nh'
-            }
+            },
+            json: true
         };
-        console.log("weatherFunctions object", object);
-        let response = rp(object);
+        //console.log("weatherFunctions object", object);
+        let response = await rp(object);
         console.log("weatherFunctions response:", response);
-        return callback(null, response);
+        return await callback(null, response);
     } catch (e) {
-        return callback(e, {});
+        return callback(e.message.error, {});
     }
 }
 
