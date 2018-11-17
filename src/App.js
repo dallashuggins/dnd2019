@@ -65,7 +65,7 @@ class App extends Component {
 
   // Get weather:
   getWeather = () => {
-    console.log("config:", this.props.config)
+    console.log("Get weather config:", this.props.config)
     let options = {
       params: {
         client_id: this.props.config.aeris_access_key,
@@ -77,7 +77,7 @@ class App extends Component {
       console.log("Get Weather response:", response);
       return response;
     }).catch((e) => {
-      console.log(e);
+      console.log("Get weather error", e);
     })
   }
 

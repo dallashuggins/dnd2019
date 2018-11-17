@@ -11,11 +11,12 @@ const getForecast = (auth, callback) => {
                 p: 'nottingham,nh'
             }
         };
+        console.log("weatherFunctions object", object);
         let response = rp(object);
         console.log("weatherFunctions response:", response);
-        callback(null, response);
+        return callback(null, response);
     } catch (e) {
-        callback(e, {});
+        return callback(e, {});
     }
 }
 
