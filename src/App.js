@@ -76,8 +76,7 @@ class App extends Component {
     };
     return rp(options)
     .then(response => {
-      console.log("Get Weather response:", response);
-      return response.data;
+      return response.data.periods;
     }).catch((e) => {
       console.log("Get weather error", e);
     })
