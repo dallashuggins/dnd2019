@@ -92,34 +92,37 @@ class App extends Component {
       url: `/api/weather`,
       method: 'GET',
       qs: {
+        type: 'observation',
         client_id: this.props.config.aeris_access_key,
         client_secret: this.props.config.aeris_secret_key,
-        from: date,
-        type: 'observation'
-      }
+        from: date
+      },
+      json: true
     };
-    console.log("getWeatherObserv options", options);
     return rp(options)
     .then(response => {
-      console.log("getWeatherObserv response", response.data.periods);
+      console.log("getWeatherObserv response data", response.data);
+      console.log("getWeatherObserv response data periods", response.data.periods);
       let periods = [];
       let temperatures = [];
       let weather = [];
       let weatherShort = [];
       response.data.periods.forEach((period)=>{
+        console.log("Period:", period)
         let object = {};
-        object.tempF = period.tempF;
-        object.weather = period.weather;
-        object.weatherShort = period.weatherShort;
+        object.tempF = period.ob.tempF;
+        object.weather = period.ob.weather;
+        object.weatherShort = period.ob.weatherShort;
         periods.push(object);
-        temperatures.push(period.tempF);
-        weather.push(period.weather);
-        weatherShort.push(period.weatherShort);
+        temperatures.push(period.ob.tempF);
+        weather.push(period.ob.weather);
+        weatherShort.push(period.ob.weatherShort);
       });
       let weatherData = {};
       weatherData.temperatures = _.uniq(temperatures);
       weatherData.weather = _.uniq(weather);
       weatherData.weatherShort = _.uniq(weatherShort);
+      console.log("Weather data:", weatherData);
       return weatherData;
     }).catch((e) => {
       console.log("Get weather error", e);

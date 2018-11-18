@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function Detail (props) {
     let dates = [
-        '2017/10/05',
+        '2017/10/05'/*,
         '2017/10/06',
         '2017/10/07',
         '2017/10/08',
@@ -17,7 +17,7 @@ function Detail (props) {
         '2017/10/16',
         '2017/10/17',
         '2017/10/18',
-        '2017/10/19'
+        '2017/10/19'*/
     ];
     return (
         <div className="callout">
@@ -26,13 +26,11 @@ function Detail (props) {
             <p>Time: 12pm</p>
             <p>Date: October 12th, 2019</p>
             {
-                dates.forEach((date) => {
-                    let data = props.getWeatherObserv(date);
+                dates.map((val, i) => {
+                    let weatherObserv = props.getWeatherObserv(val);
                     return (
-                        <div>
-                            <p>Temperatures: {data.temperatures}</p>
-                            <p>Weather: {data.weather}</p>
-                            <p>Weather short: {data.weatherShort}</p>
+                        <div key={i}>
+                            <p key={i}>Temperatures: {weatherObserv.temperature}</p>
                         </div>
                     );
                 })
