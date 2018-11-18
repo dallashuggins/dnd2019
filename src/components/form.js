@@ -14,7 +14,6 @@ function Form (props) {
                     guests={props.guests}
                     onInputChange={props.onInputChange}
                     addRegistrant={props.addRegistrant}
-                    getWeatherObserv={props.getWeatherObserv}
                     addGuest={props.addGuest}
                     handleGuests={props.handleGuests}
                     removeGuest={props.removeGuest}
@@ -43,7 +42,6 @@ function Form (props) {
     onInputChange: PropTypes.func.isRequired,
     addRegistrant:PropTypes.func.isRequired,
     updateState: PropTypes.func.isRequired,
-    getWeatherObserv: PropTypes.func.isRequired,
     addGuest: PropTypes.func.isRequired,
     handleGuests: PropTypes.func.isRequired,
     removeGuest: PropTypes.func.isRequired

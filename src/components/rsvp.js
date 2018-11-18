@@ -60,7 +60,6 @@ function Rsvp (props) {
     guests: PropTypes.array.isRequired,
     onInputChange: PropTypes.func.isRequired,
     addRegistrant:PropTypes.func.isRequired,
-    getWeatherObserv: PropTypes.func.isRequired,
     addGuest: PropTypes.func.isRequired,
     handleGuests: PropTypes.func.isRequired,
     removeGuest: PropTypes.func.isRequired,

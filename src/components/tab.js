@@ -24,7 +24,6 @@ function ContentTabs (props) {
                     onInputChange={props.onInputChange}
                     addRegistrant={props.addRegistrant}
                     updateState={props.updateState}
-                    getWeatherObserv={props.getWeatherObserv}
                     addGuest={props.addGuest}
                     handleGuests={props.handleGuests}
                     removeGuest={props.removeGuest}
@@ -32,7 +31,9 @@ function ContentTabs (props) {
             </div>
         </Tab>
         <Tab eventKey={2} title="Details" className="background">
-            <Detail />
+            <Detail 
+                getWeatherObserv={props.getWeatherObserv}
+            />
         </Tab>
         <Tab eventKey={3} title="Travel" className="background">
             <Travel />
@@ -54,10 +55,10 @@ ContentTabs.propTypes = {
     onInputChange: PropTypes.func.isRequired,
     addRegistrant:PropTypes.func.isRequired,
     updateState: PropTypes.func.isRequired,
-    getWeatherObserv: PropTypes.func.isRequired,
     addGuest: PropTypes.func.isRequired,
     handleGuests: PropTypes.func.isRequired,
-    removeGuest: PropTypes.func.isRequired
+    removeGuest: PropTypes.func.isRequired,
+    getWeatherObserv: PropTypes.func.isRequired
 };
   
 export default ContentTabs;

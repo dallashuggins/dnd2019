@@ -102,7 +102,25 @@ class App extends Component {
     return rp(options)
     .then(response => {
       console.log("getWeatherObserv response", response.data.periods);
-      return response.data.periods;
+      let periods = [];
+      let temperatures = [];
+      let weather = [];
+      let weatherShort = [];
+      response.data.periods.forEach((period)=>{
+        let object = {};
+        object.tempF = period.tempF;
+        object.weather = period.weather;
+        object.weatherShort = period.weatherShort;
+        periods.push(object);
+        temperatures.push(period.tempF);
+        weather.push(period.weather);
+        weatherShort.push(period.weatherShort);
+      });
+      let weatherData = {};
+      weatherData.temperatures = _.uniq(temperatures);
+      weatherData.weather = _.uniq(weather);
+      weatherData.weatherShort = _.uniq(weatherShort);
+      return weatherData;
     }).catch((e) => {
       console.log("Get weather error", e);
     })
