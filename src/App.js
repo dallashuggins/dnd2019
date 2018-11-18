@@ -100,7 +100,7 @@ class App extends Component {
               addRegistrant={this.addRegistrant.bind(this)}
               updateState={this.updateState.bind(this)}
             />
-            <button onClick={this.getWeather.bind(this)}>Test</button>
+            <button onClick={this.getWeather.bind(this)}>Test1</button>
           </div>
         </div>
       </div>
