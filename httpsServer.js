@@ -38,21 +38,20 @@ const sslCredentials = {
 	ca: ca
 };
 const httpsServer = https.createServer(sslCredentials, app);
-
+// Start https server: 
+httpsServer.listen(443, () => {
+    console.log('HTTPS Server running on port 443');
+});
+// Redirect http to https: 
+http.createServer(function (req, res) {
+    res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
+    res.end();
+}).listen(80);
 
 // Open MongoDB connection:
 MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
     assert.equal(null, err);
     db = database;
-    // Start https server: 
-    httpsServer.listen(443, () => {
-        console.log('HTTPS Server running on port 443');
-    });
-    // Redirect http to https: 
-    http.createServer(function (req, res) {
-        res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
-        res.end();
-    }).listen(80);
     // React:
     app.get('/', function (req, res) {
         res.sendFile(path.join(__dirname, 'build', 'index.html'));
