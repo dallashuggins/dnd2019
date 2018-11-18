@@ -24,7 +24,7 @@ const app = express();
 app.set('view engine', 'html');
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(bodyParser.json(),cors(),helmet())
-//app.use('/api', routes);
+app.use('/api', routes);
 const router = express.Router();
 var db;
 
@@ -59,7 +59,7 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
     });
     // Database routes:
     const registrants = new RegistrantDB(db);
-    app.use('/api', routes, router);
+    app.use('/api', router);
     router.post("/add", function (req, res) {
         let body = req.body;
         let object = {
