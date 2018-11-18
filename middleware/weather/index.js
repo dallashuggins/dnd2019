@@ -27,7 +27,7 @@ const getForecast = (auth, callback) => {
     }
 }
 
-const getHistoricalObservations = (options, callback) => {
+const getHistoricalObservations = (fromDate, options, callback) => {
     try {
         let object = {
             method: 'GET',
@@ -36,7 +36,7 @@ const getHistoricalObservations = (options, callback) => {
                 client_id: options.aeris_access_key,
                 client_secret: options.aeris_secret_key,
                 p: 'nottingham,nh',
-                from: options.from
+                from: fromDate
             },
             json: true
         };

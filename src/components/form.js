@@ -11,17 +11,21 @@ function Form (props) {
                     regCode={props.regCode}
                     status={props.status}
                     comments={props.comments}
+                    guests={props.guests}
                     onInputChange={props.onInputChange}
                     addRegistrant={props.addRegistrant}
-                    updateState={props.updateState}
                     getWeatherObserv={props.getWeatherObserv}
+                    addGuest={props.addGuest}
+                    handleGuests={props.handleGuests}
+                    removeGuest={props.removeGuest}
                 />
             ) : props.page === 1 ? (
                 <div>
                     <p>Thank you for registering, {props.name}!</p>
                     <br />
-                    <button className="buttonForm butterAnother" onClick={()=> {
-                        props.updateState({page: 0, name: '', status: '', comments: ''});
+                    <button className="buttonForm butterAnother" 
+                    onClick={()=> {
+                        props.updateState({page: 0, name: '', status: '', comments: '', guests: []});
                     }}>Register another person</button>
                 </div>
             ) : ''}
@@ -35,10 +39,14 @@ function Form (props) {
     regCode: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,
     comments: PropTypes.string.isRequired,
+    guests: PropTypes.array.isRequired,
     onInputChange: PropTypes.func.isRequired,
     addRegistrant:PropTypes.func.isRequired,
     updateState: PropTypes.func.isRequired,
-    getWeatherObserv: PropTypes.func.isRequired
+    getWeatherObserv: PropTypes.func.isRequired,
+    addGuest: PropTypes.func.isRequired,
+    handleGuests: PropTypes.func.isRequired,
+    removeGuest: PropTypes.func.isRequired
   };
   
   export default Form;

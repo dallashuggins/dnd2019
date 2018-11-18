@@ -44,7 +44,8 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
             name: body.name,
             regCode: body.regCode,
             status: body.status,
-            comments: body.comments
+            comments: body.comments,
+            guests: body.guests
         }
         try {
             registrants.addItem(object, function(err, registrant) {

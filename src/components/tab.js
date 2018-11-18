@@ -20,10 +20,14 @@ function ContentTabs (props) {
                     regCode={props.regCode}
                     status={props.status}
                     comments={props.comments}
-                    onInputChange={props.onInputChange.bind(this)}
-                    addRegistrant={props.addRegistrant.bind(this)}
-                    updateState={props.updateState.bind(this)}
-                    getWeatherObserv={props.getWeatherObserv.bind(this)}
+                    guests={props.guests}
+                    onInputChange={props.onInputChange}
+                    addRegistrant={props.addRegistrant}
+                    updateState={props.updateState}
+                    getWeatherObserv={props.getWeatherObserv}
+                    addGuest={props.addGuest}
+                    handleGuests={props.handleGuests}
+                    removeGuest={props.removeGuest}
                 />
             </div>
         </Tab>
@@ -46,10 +50,14 @@ ContentTabs.propTypes = {
     regCode: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,
     comments: PropTypes.string.isRequired,
+    guests: PropTypes.array.isRequired,
     onInputChange: PropTypes.func.isRequired,
     addRegistrant:PropTypes.func.isRequired,
     updateState: PropTypes.func.isRequired,
-    getWeatherObserv: PropTypes.func.isRequired
+    getWeatherObserv: PropTypes.func.isRequired,
+    addGuest: PropTypes.func.isRequired,
+    handleGuests: PropTypes.func.isRequired,
+    removeGuest: PropTypes.func.isRequired
 };
   
 export default ContentTabs;

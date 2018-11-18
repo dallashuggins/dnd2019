@@ -102,7 +102,7 @@ ul.nav.nav-tabs {
 
 /****************** RSVP form (start) *******************/
 /* Form field placeholder */
-input.formField::placeholder, textarea.formField::placeholder  {
+input.formField::placeholder, textarea.formField::placeholder, input.formFieldGuests::placeholder  {
   color: black;
 }
 
@@ -126,11 +126,11 @@ select.formField {
 }
 
 /* Button on form */
-button.buttonForm {
+.buttonForm {
   padding: 10px 20px;
   margin: 20px;
   border-radius: 5px;
-  font-weight: 500;
+  font-weight: 900;
   font-size: 20px;
   background-color: rgba(241, 114, 39, 0.8);
   color: black;
@@ -139,7 +139,7 @@ button.buttonForm {
 }
 
 /* Button on form hover style */
-button.buttonForm:hover {
+.buttonForm:hover {
   background-color: rgba(243, 189, 189, 0.11);
   border: rgba(241, 114, 39, 0.71) solid 2px;
   color: rgba(241, 114, 39, 0.71);
@@ -149,6 +149,53 @@ button.buttonForm:hover {
 button.butterAnother {
   font-size: 15px;
 }
+
+/* Button to add guests */
+button.guestButton {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 15px;
+  background-color: rgba(241, 114, 39, 0.8);
+  color: black;
+  border: black solid 2px;
+}
+
+button.guestButton:hover {
+  background-color: rgba(243, 189, 189, 0.11);
+  border: rgba(241, 114, 39, 0.71) solid 2px;
+  color: rgba(241, 114, 39, 0.71);
+}
+
+/* Button (X) next to add guest input field */
+button.removeButton {
+  padding: 5px 10px;
+  margin: auto;
+  border-radius: 5px;
+  font-weight: 900;
+  font-size: 15px;
+  background-color: rgba(241, 114, 39, 0.8);
+  color: black;
+  border: black solid 2px;
+  text-align: center;
+}
+
+/* Form field style for guests */
+.formFieldGuests {
+  padding: 10px 20px;
+  margin: 0 10px;
+  color: black;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+/* Div wrapper for adding guests */
+div.guests {
+  width: 20em;
+  float: none;
+  margin: 10px auto;
+}
+
 /****************** RSVP form (end) *******************/
 
 /********************* Media queries (start) *********************/

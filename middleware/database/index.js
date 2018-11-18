@@ -10,6 +10,7 @@ function RegistrantDB(database) {
                 regCode: object.regCode,
                 status: object.status,
                 comments: object.comments,
+                guests: object.guests,
                 createdAt: Date.now()
             };
             this.db.collection("people").insertOne(options, function(err, result) {

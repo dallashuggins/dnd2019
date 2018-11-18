@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Guests from './guests.js';
 
 function Rsvp (props) {
     return (
@@ -18,7 +19,7 @@ function Rsvp (props) {
                 name="name" 
                 placeholder="Name" 
                 className="formField"
-                onChange={props.onInputChange} 
+                onChange={props.onInputChange}
             />
             <br /><br />
             <input required
@@ -30,6 +31,13 @@ function Rsvp (props) {
                 onChange={props.onInputChange}
             />
             <br /><br />
+            <Guests 
+                addGuest={props.addGuest}
+                handleGuests={props.handleGuests}
+                removeGuest={props.removeGuest}
+                guests={props.guests}
+            />
+            <br />
             <textarea 
                 className="formField"
                 name="comments"
@@ -38,10 +46,7 @@ function Rsvp (props) {
             />
             <br />
             <button className="buttonForm" onClick={()=> {
-                props.addRegistrant(props.name, props.regCode, props.status, props.comments);
-            }}>RSVP</button>
-            <button className="buttonForm" onClick={()=> {
-                props.getWeatherObserv('2017/10/12');
+                props.addRegistrant(props.name, props.regCode, props.status, props.comments, props.guests);
             }}>RSVP</button>
         </div>
     );
@@ -52,10 +57,13 @@ function Rsvp (props) {
     regCode: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,
     comments: PropTypes.string.isRequired,
+    guests: PropTypes.array.isRequired,
     onInputChange: PropTypes.func.isRequired,
     addRegistrant:PropTypes.func.isRequired,
-    updateState: PropTypes.func.isRequired,
-    getWeatherObserv: PropTypes.func.isRequired
+    getWeatherObserv: PropTypes.func.isRequired,
+    addGuest: PropTypes.func.isRequired,
+    handleGuests: PropTypes.func.isRequired,
+    removeGuest: PropTypes.func.isRequired,
   };
   
   export default Rsvp;

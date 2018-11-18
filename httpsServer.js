@@ -61,10 +61,13 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
     app.use('/api', router);
     router.post("/add", function (req, res) {
         let body = req.body;
+        console.log("Body", body);
         let object = {
             name: body.name,
             regCode: body.regCode,
-            status: body.status
+            status: body.status,
+            comments: body.comments,
+            guests: body.guests
         }
         try {
             registrants.addItem(object, function(err, registrant) {
