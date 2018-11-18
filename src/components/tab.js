@@ -23,6 +23,7 @@ function ContentTabs (props) {
                     onInputChange={props.onInputChange.bind(this)}
                     addRegistrant={props.addRegistrant.bind(this)}
                     updateState={props.updateState.bind(this)}
+                    getWeatherObserv={props.getWeatherObserv.bind(this)}
                 />
             </div>
         </Tab>
@@ -47,7 +48,8 @@ ContentTabs.propTypes = {
     comments: PropTypes.string.isRequired,
     onInputChange: PropTypes.func.isRequired,
     addRegistrant:PropTypes.func.isRequired,
-    updateState: PropTypes.func.isRequired
+    updateState: PropTypes.func.isRequired,
+    getWeatherObserv: PropTypes.func.isRequired
 };
   
 export default ContentTabs;

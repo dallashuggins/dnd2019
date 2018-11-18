@@ -14,6 +14,7 @@ function Form (props) {
                     onInputChange={props.onInputChange}
                     addRegistrant={props.addRegistrant}
                     updateState={props.updateState}
+                    getWeatherObserv={props.getWeatherObserv}
                 />
             ) : props.page === 1 ? (
                 <div>
@@ -36,7 +37,8 @@ function Form (props) {
     comments: PropTypes.string.isRequired,
     onInputChange: PropTypes.func.isRequired,
     addRegistrant:PropTypes.func.isRequired,
-    updateState: PropTypes.func.isRequired
+    updateState: PropTypes.func.isRequired,
+    getWeatherObserv: PropTypes.func.isRequired
   };
   
   export default Form;

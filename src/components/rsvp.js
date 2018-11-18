@@ -40,6 +40,9 @@ function Rsvp (props) {
             <button className="buttonForm" onClick={()=> {
                 props.addRegistrant(props.name, props.regCode, props.status, props.comments);
             }}>RSVP</button>
+            <button className="buttonForm" onClick={()=> {
+                props.getWeatherObserv('2017/10/12');
+            }}>RSVP</button>
         </div>
     );
   }
@@ -51,7 +54,8 @@ function Rsvp (props) {
     comments: PropTypes.string.isRequired,
     onInputChange: PropTypes.func.isRequired,
     addRegistrant:PropTypes.func.isRequired,
-    updateState: PropTypes.func.isRequired
+    updateState: PropTypes.func.isRequired,
+    getWeatherObserv: PropTypes.func.isRequired
   };
   
   export default Rsvp;

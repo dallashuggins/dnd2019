@@ -65,9 +65,9 @@ class App extends Component {
   }
 
   // Get weather:
-  getWeather = () => {
+  getWeatherForecast = () => {
     let options = {
-      url: `/api/weather`,
+      url: `/api/weather/forecast`,
       method: 'GET',
       qs: {
         client_id: this.props.config.aeris_access_key,
@@ -76,6 +76,26 @@ class App extends Component {
     };
     return rp(options)
     .then(response => {
+      return response.data.periods;
+    }).catch((e) => {
+      console.log("Get weather error", e);
+    })
+  }
+
+  getWeatherObserv = (date) => {
+    let options = {
+      url: `/api/weather/observations`,
+      method: 'GET',
+      qs: {
+        client_id: this.props.config.aeris_access_key,
+        client_secret: this.props.config.aeris_secret_key,
+        from: date
+      }
+    };
+    console.log("getWeatherObserv options", options);
+    return rp(options)
+    .then(response => {
+      console.log("getWeatherObserv response", response.data.periods);
       return response.data.periods;
     }).catch((e) => {
       console.log("Get weather error", e);
@@ -99,8 +119,9 @@ class App extends Component {
               onInputChange={this.onInputChange.bind(this)}
               addRegistrant={this.addRegistrant.bind(this)}
               updateState={this.updateState.bind(this)}
+              getWeatherObserv={this.getWeatherObserv.bind(this)}
             />
-            <button onClick={this.getWeather.bind(this)}>Test1</button>
+            <button onClick={this.getWeatherForecast.bind(this)}>Get Weather Forecast</button>
           </div>
         </div>
       </div>
