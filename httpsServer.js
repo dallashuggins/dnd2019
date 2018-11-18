@@ -69,6 +69,7 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
             comments: body.comments,
             guests: body.guests
         }
+        console.log("https object:", object)
         try {
             registrants.addItem(object, function(err, registrant) {
                 assert.equal(null, err);

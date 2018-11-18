@@ -108,33 +108,23 @@ class App extends Component {
     })
   }
 
+  // Add guest field:
   addGuest = (e) => {
     this.setState((prevState) => ({
       guests: [...prevState.guests, {name: '', id: ''}],
     }));
   }
 
+  // Add guest to guests array: 
   handleGuests= (e) => {
     e.preventDefault();
     let guests = [...this.state.guests];
     console.log("Guests:", guests);
     guests.splice(e.target.dataset.id, 1, {name: e.target.value, id: e.target.id});
-    //guests[e.target.dataset.id] = {name: e.target.value, id: e.target.id};
     this.setState({guests: guests});
-    /*if (["name"].includes(e.target.className) ) { // if the event class matches the dynamic input
-      let guests = [...this.state.guests] // copy of guests state array with spread operator
-      // use e.target’s dataset to match the input to its corresponding object
-      // use the e.target’s classname to grab the guest object’s name
-      guests[e.target.dataset.id][e.target.className] = e.target.value;
-      // use setState to save the state change and trigger a re-render of our form
-      this.setState({ guests: guests }, () => console.log("Guests:", this.state.guests))
-    } else {
-      // e.target.value grabs input value
-      // using [] to dynamically match our state using each input’s name attribute
-      this.setState({[e.target.name]: e.target.value})
-    }*/
   }
 
+  // Remove guest from guest array:
   removeGuest = (id) => {
     console.log("Remove id:", id);
     let guests = [...this.state.guests];
