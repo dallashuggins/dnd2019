@@ -33,6 +33,7 @@ function ContentTabs (props) {
         <Tab eventKey={2} title="Details" className="background">
             <Detail 
                 getWeatherObserv={props.getWeatherObserv}
+                dates={props.dates}
             />
         </Tab>
         <Tab eventKey={3} title="Travel" className="background">
@@ -58,7 +59,8 @@ ContentTabs.propTypes = {
     addGuest: PropTypes.func.isRequired,
     handleGuests: PropTypes.func.isRequired,
     removeGuest: PropTypes.func.isRequired,
-    getWeatherObserv: PropTypes.func.isRequired
+    getWeatherObserv: PropTypes.func.isRequired,
+    dates: PropTypes.array.isRequired
 };
   
 export default ContentTabs;

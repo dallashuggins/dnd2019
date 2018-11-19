@@ -1,46 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import _ from 'underscore';
 
 function Detail (props) {
-    let dates = [
-        '2017/10/05'/*,
-        '2017/10/06',
-        '2017/10/07',
-        '2017/10/08',
-        '2017/10/09',
-        '2017/10/10',
-        '2017/10/11',
-        '2017/10/12',
-        '2017/10/13',
-        '2017/10/14',
-        '2017/10/15',
-        '2017/10/16',
-        '2017/10/17',
-        '2017/10/18',
-        '2017/10/19'*/
-    ];
     return (
         <div className="callout">
             <h1>Wedding details</h1>
             <br />
             <p>Time: 12pm</p>
             <p>Date: October 12th, 2019</p>
+            <div>Temps:
             {
-                dates.map((val, i) => {
-                    let weatherObserv = props.getWeatherObserv(val);
-                    return (
-                        <div key={i}>
-                            <p key={i}>Temperatures: {weatherObserv.temperature}</p>
-                        </div>
-                    );
+                props.dates.map((val, i) => {
+                    return props.getWeatherObserv(val).then(weather => {
+                        return weather.temperatures.map((temp, index) => {
+                            return (
+                                <p key={index}>{temp}</p>
+                            )
+                        });
+                    });
                 })
             }
+            </div>
         </div>
     );
   }
-  
+
   Detail.propTypes = {
-    getWeatherObserv: PropTypes.func.isRequired
+    getWeatherObserv: PropTypes.func.isRequired,
+    dates: PropTypes.array.isRequired
   };
   
   export default Detail;

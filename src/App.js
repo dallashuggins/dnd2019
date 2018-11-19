@@ -18,7 +18,24 @@ class App extends Component {
       comments: '',
       registered: false,
       page: 0,
-      guests: []
+      guests: [],
+      dates: [
+        '2017/10/05'/*,
+        '2017/10/06',
+        '2017/10/07',
+        '2017/10/08',
+        '2017/10/09',
+        '2017/10/10',
+        '2017/10/11',
+        '2017/10/12',
+        '2017/10/13',
+        '2017/10/14',
+        '2017/10/15',
+        '2017/10/16',
+        '2017/10/17',
+        '2017/10/18',
+        '2017/10/19'*/
+    ]
     }
   }
 
@@ -89,7 +106,7 @@ class App extends Component {
   // Get historical weather observations:
   getWeatherObserv = (date) => {
     let options = {
-      url: `/api/weather`,
+      uri: window.location + "/api/weather",
       method: 'GET',
       qs: {
         type: 'observation',
@@ -101,14 +118,12 @@ class App extends Component {
     };
     return rp(options)
     .then(response => {
-      console.log("getWeatherObserv response data", response.data);
-      console.log("getWeatherObserv response data periods", response.data.periods);
+      //console.log("getWeatherObserv response data periods", response.periods);
       let periods = [];
       let temperatures = [];
       let weather = [];
       let weatherShort = [];
-      response.data.periods.forEach((period)=>{
-        console.log("Period:", period)
+      response.periods.forEach((period)=>{
         let object = {};
         object.tempF = period.ob.tempF;
         object.weather = period.ob.weather;
@@ -122,7 +137,7 @@ class App extends Component {
       weatherData.temperatures = _.uniq(temperatures);
       weatherData.weather = _.uniq(weather);
       weatherData.weatherShort = _.uniq(weatherShort);
-      console.log("Weather data:", weatherData);
+      //console.log("Weather data:", weatherData);
       return weatherData;
     }).catch((e) => {
       console.log("Get weather error", e);
@@ -178,6 +193,7 @@ class App extends Component {
               addGuest={this.addGuest.bind(this)}
               handleGuests={this.handleGuests.bind(this)}
               removeGuest={this.removeGuest.bind(this)}
+              dates={this.state.dates}
             />
           </div>
         </div>
