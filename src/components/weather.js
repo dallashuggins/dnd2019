@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import _ from 'underscore';
 
 function Weather (props) {
-    let {temperatures} = props;
-    console.log(temperatures)
+    //let {temperatures} = props;
+    //console.log(temperatures)
     return (
         <div>
             {
