@@ -19,23 +19,7 @@ class App extends Component {
       registered: false,
       page: 0,
       guests: [],
-      dates: [
-        '2017/10/05'/*,
-        '2017/10/06',
-        '2017/10/07',
-        '2017/10/08',
-        '2017/10/09',
-        '2017/10/10',
-        '2017/10/11',
-        '2017/10/12',
-        '2017/10/13',
-        '2017/10/14',
-        '2017/10/15',
-        '2017/10/16',
-        '2017/10/17',
-        '2017/10/18',
-        '2017/10/19'*/
-    ]
+      //temperatures: this.props.temperatures
     }
   }
 
@@ -144,6 +128,37 @@ class App extends Component {
     })
   }
 
+  // Get historical weather observation temperatures:
+  getWeatherObservTemps = () => {
+    let dates = this.state.dates;
+    let array = [];
+    dates.map((date, i) => {
+      let options = {
+        uri: window.location + "/api/weather",
+        method: 'GET',
+        qs: {
+          type: 'observation',
+          client_id: this.props.config.aeris_access_key,
+          client_secret: this.props.config.aeris_secret_key,
+          from: date
+        },
+        json: true
+      };
+      return rp(options)
+      .then(response => {
+        response.periods.map((period) => {
+          let newTemp = period.ob.tempF.toString();
+          if (_.contains(array, newTemp) === false) {
+            array.push(newTemp);
+          }
+        })
+      })
+    });
+    console.log("Array", array);
+    return array;
+  }
+
+
   // Add guest field:
   addGuest = (e) => {
     this.setState((prevState) => ({
@@ -189,11 +204,10 @@ class App extends Component {
               onInputChange={this.onInputChange.bind(this)}
               addRegistrant={this.addRegistrant.bind(this)}
               updateState={this.updateState.bind(this)}
-              getWeatherObserv={this.getWeatherObserv.bind(this)}
               addGuest={this.addGuest.bind(this)}
               handleGuests={this.handleGuests.bind(this)}
               removeGuest={this.removeGuest.bind(this)}
-              dates={this.state.dates}
+              //temperatures={this.state.temperatures}
             />
           </div>
         </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Weather from './weather.js';
 import _ from 'underscore';
 
 function Detail (props) {
@@ -10,25 +11,16 @@ function Detail (props) {
             <p>Time: 12pm</p>
             <p>Date: October 12th, 2019</p>
             <div>Temps:
-            {
-                props.dates.map((val, i) => {
-                    return props.getWeatherObserv(val).then(weather => {
-                        return weather.temperatures.map((temp, index) => {
-                            return (
-                                <p key={index}>{temp}</p>
-                            )
-                        });
-                    });
-                })
-            }
+                <Weather
+                    temperatures={props.temperatures}
+                />
             </div>
         </div>
     );
   }
 
   Detail.propTypes = {
-    getWeatherObserv: PropTypes.func.isRequired,
-    dates: PropTypes.array.isRequired
+    temperatures: PropTypes.array.isRequired
   };
   
   export default Detail;

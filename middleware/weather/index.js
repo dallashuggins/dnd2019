@@ -13,7 +13,7 @@ const getForecast = (auth, callback) => {
             json: true
         };
         return rp(object).then(response => {
-            console.log("Get forecast function response:", response);
+            //console.log("Get forecast function response:", response);
             if (response.response) {
                 return callback(null, response.response);
             } else if (response.error) {
@@ -40,9 +40,9 @@ const getHistoricalObservations = (fromDate, options, callback) => {
             },
             json: true
         };
-        console.log("Get Historical Observations object", object);
+        //console.log("Get Historical Observations object", object);
         return rp(object).then(response => {
-            console.log("Get Historical Observations response:", response);
+            //console.log("Get Historical Observations response:", response);
             if (response.response) {
                 return callback(null, response.response);
             } else if (response.error) {

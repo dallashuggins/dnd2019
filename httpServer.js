@@ -15,7 +15,8 @@ const c = encodeURIComponent(creds.mongodb_cluster);
 let uri = `mongodb+srv://${un}:${pw}@${c}.mongodb.net`;
 // Files:
 const routes = require('./routes/index.js');
-const RegistrantDB = require('./middleware/database/index.js');
+const RegistrantDB = require('./middleware/database/index.js').RegistrantDB;
+const WeatherDB = require('./middleware/database/index.js').WeatherDB;
 
 // Set up express
 const app = express();

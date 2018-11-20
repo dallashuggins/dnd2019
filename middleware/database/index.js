@@ -25,4 +25,22 @@ function RegistrantDB(database) {
     }
 };
 
-module.exports = RegistrantDB;
+function WeatherDB(database) {
+    "use strict";
+    this.db = database.db("weather");
+    this.getTemps = (callback) => {
+        try {
+            this.db.collection("temperatures").findMany({}, function(err, result) {
+                assert.equal(err, null);
+                console.log("Retrieved weather documents:", result.ops);
+                callback(null, result.ops);
+            });
+        } catch (e) {
+            console.log("Error:", e);
+            callback(e, {});
+        }
+    }
+};
+
+module.exports.RegistrantDB = RegistrantDB;
+module.exports.WeatherDB = WeatherDB;

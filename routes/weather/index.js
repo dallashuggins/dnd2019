@@ -10,17 +10,17 @@ router.get('/', async function (req, res) {
       aeris_secret_key: req.query.client_secret
     };
     try {
-        console.log("Type:", req.query.type);
+        //console.log("Type:", req.query.type);
         if (req.query.type === 'forecast') {
             weather.getForecast(object, function(err, response) {
                 assert.equal(null, err);
-                console.log("Weather forecast response:", response);
+                //console.log("Weather forecast response:", response);
                 res.status(200).send(response);
               });
         } else if (req.query.type === 'observation' && req.query.from) {
             weather.getHistoricalObservations(req.query.from, object, function(err, response) {
                 assert.equal(null, err);
-                console.log("Weather observation response:", response);
+                //console.log("Weather observation response:", response);
                 res.status(200).send(response);
             });
         } else {
