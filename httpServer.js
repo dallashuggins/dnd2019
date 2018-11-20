@@ -59,4 +59,17 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
             res.status(400).send(e.message);
         }
     });
+    const weather = new WeatherDB(db);
+    router.get("/temperatures", function (req, res) {
+        try {
+            weather.getTemps(function(err, temps) {
+                assert.equal(null, err);
+                console.log("Retrieved http temps:", temps);
+                res.status(200).send(temps);
+            });
+        } catch (e) {
+            console.log("Error:", e);
+            res.status(400).send(e.message);
+        }
+    });
 });
