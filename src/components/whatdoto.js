@@ -3,6 +3,7 @@ import {
     Collapse
 } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import FallCarousel from './carousel';
 
 function Plans (props) {
     return (
@@ -16,13 +17,13 @@ function Plans (props) {
                     We are between one and one and a half hours away from Boston, 
                     around an hour from Portland (Maine), a couple hours from the 
                     White Mountains, around 3 hours from Burlington, Vermont, 
-                    and about 5 hours from both Toronto and NYC. Below I have put some 
-                    ideas of things to do, though I am also more than willing to help 
-                    anyone out during their planning.
+                    and about 5 hours from both Toronto and NYC. Below I have added some 
+                    Fall photos as ideas of what to do locally, though I (Dallas) would 
+                    absolutely love to help plan anyone who wants tips on the best places.
                     </p>
                 </div>
             </div>
-            <button className="planAccordion accordionCity" onClick={()=>{
+            {/*<button className="planAccordion accordionCity" onClick={()=>{
                 props.changeBool('accordionCity')
             }}>Fun in the City</button>
             <Collapse in={props.accordionCity}>
@@ -66,7 +67,9 @@ function Plans (props) {
                         <li>Emery Farms</li>
                     </ul>
                 </div>
-            </Collapse>
+            </Collapse>*/}
+            <FallCarousel 
+            />
         </div>
     );
   }

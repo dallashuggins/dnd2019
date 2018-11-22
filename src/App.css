@@ -394,6 +394,39 @@ ul.city li, ul.fall li, ul.halloween li {
   font-size: 18px;
 }
 
+/* Main div surrounding carousel */
+div.carousel {
+  margin-top: 20px;
+}
+
+/* Carousel wrapper for title and subtitle */
+div.carousel .carousel-caption {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  bottom: auto;
+  left: 0;
+  right: 0;
+  padding: 5px;
+  margin: 0;
+  width: 100%;
+}
+
+/* Title text in carousel */
+.carousel-caption h3 {
+  color: white;
+  font-size: 18px;
+  margin: 0;
+}
+
+/* Subtitle text in carousel */
+.carousel-caption p {
+  color: white;
+  font-style: italic;
+  font-size: 15px;
+  margin: 0;
+}
+
 /****************** What-To-Do tab (end) *******************/
 
 /********************* Media queries (start) *********************/

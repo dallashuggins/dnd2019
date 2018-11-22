@@ -65,9 +65,6 @@ function ContentTabs (props) {
                 changeBool={props.changeBool}
             />
         </Tab>
-        {/*<Tab eventKey={5} title="Social">
-            <Social />
-        </Tab>*/}
         </Tabs>
     );
 }
