@@ -51,6 +51,9 @@ function Travel (props) {
                     between the Boston airport and Portsmouth, which is a half hour 
                     from Nottingham, as well as from downtown NYC (Port Authority)
                     to Portsmouth.</p>
+                    <p className="bus" style={{fontWeight: 'bold'}}>
+                    Train:</p>
+                    <p className="bus">Amtrak</p>
                 </div>
             </Collapse>
             <button className="travelAccordion accordionCar" onClick={()=>{

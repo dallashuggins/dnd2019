@@ -57,7 +57,7 @@ function ContentTabs (props) {
                 counter={props.counter}
             />
         </Tab>
-        <Tab eventKey={4} title="What to do">
+        <Tab eventKey={4} title="Plans">
             <Plans 
                 accordionCity={props.accordionCity}
                 accordionFall={props.accordionFall}

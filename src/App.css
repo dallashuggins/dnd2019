@@ -268,7 +268,6 @@ button.accordion:focus {
 div.detailText {
   text-align: left;
   display: block;
-  width: 60%;
   background-color: #ffffffcc;
   padding: 20px;
   color: black;
@@ -470,6 +469,9 @@ ul.city li, ul.fall li, ul.halloween li {
   .App {
     background-size: cover;
   }
+  div.detailText {
+    width: 100%
+  }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 1000px) {
@@ -491,6 +493,9 @@ ul.city li, ul.fall li, ul.halloween li {
   }
   p.hover {
     position: absolute;
+  }
+  div.detailText {
+    width: 75%
   }
 }
 
@@ -514,6 +519,9 @@ ul.city li, ul.fall li, ul.halloween li {
   }
   p.hover {
     position: absolute;
+  }
+  div.detailText {
+    width: 60%
   }
 }
 /******************** Media queries (end) ********************/
