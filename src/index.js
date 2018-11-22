@@ -5,7 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import config from './config.json'
 import rp from 'request-promise';
-import _ from 'underscore';
+//import _ from 'underscore';
 
 // Get historical weather observation temperatures:
 const getTemps = () => {

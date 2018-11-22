@@ -13,9 +13,9 @@ function Travel (props) {
             <p>CandJ</p>
             <iframe
                 title="googleMaps"
-                frameborder="0" 
+                frameBorder="0" 
                 style={{border:0, margin: '0', padding: '0', float: 'none', width: '100%', minHeight: '300px'}}
-                src={url} allowfullscreen>
+                src={url} allowFullScreen>
             </iframe>
         </div>
     );

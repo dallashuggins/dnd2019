@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
+/*import {
     Collapse
-} from 'react-bootstrap';
-import _ from 'underscore';
-import moment from 'moment';
+} from 'react-bootstrap';*/
+//import _ from 'underscore';
+//import moment from 'moment';
 
 function Weather (props) {
-    const max = _.max(props.temperatures, function(temp) {return temp.maxTemp});
-    const min = _.min(props.temperatures, function(temp) {return temp.minTemp});
+    //const max = _.max(props.temperatures, function(temp) {return temp.maxTemp});
+    //const min = _.min(props.temperatures, function(temp) {return temp.minTemp});
     return (
         <div>
             {/*<div className="weatherCallout">

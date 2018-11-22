@@ -8,7 +8,7 @@ import Form from './form.js';
 import Detail from './detail.js';
 import Travel from './travel.js';
 import Plans from './whatdoto.js';
-import Social from './social.js';
+//import Social from './social.js';
 
 function ContentTabs (props) {
     return (
@@ -36,6 +36,12 @@ function ContentTabs (props) {
                 temperatures={props.temperatures}
                 accordion={props.accordion}
                 changeBool={props.changeBool}
+                google_api={props.google_api}
+                months={props.months}
+                days={props.days}
+                hours={props.hours}
+                mins={props.mins}
+                secs={props.secs}
             />
         </Tab>
         <Tab eventKey={3} title="Travel">
@@ -69,7 +75,12 @@ ContentTabs.propTypes = {
     removeGuest: PropTypes.func.isRequired,
     temperatures: PropTypes.array.isRequired,
     accordion: PropTypes.bool.isRequired,
-    google_api: PropTypes.string.isRequired
+    google_api: PropTypes.string.isRequired,
+    months: PropTypes.number.isRequired,
+    days: PropTypes.number.isRequired,
+    hours: PropTypes.number.isRequired,
+    mins: PropTypes.number.isRequired,
+    secs: PropTypes.number.isRequired
 };
   
 export default ContentTabs;

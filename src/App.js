@@ -6,6 +6,7 @@ import _ from 'underscore';
 import './App.css';
 import ContentTabs from './components/tab.js';
 import background from './color.jpg';
+import countdown from 'countdown';
 
 class App extends Component {
   constructor (props) {
@@ -19,12 +20,47 @@ class App extends Component {
       page: 0,
       guests: [],
       temperatures: this.props.temperatures,
-      accordion: false
+      accordion: false,
+      months: 0,
+      days: 0,
+      hours: 0,
+      mins: 0,
+      secs: 0
     }
+  }
+
+  counter = () => {
+    //const fullCount = countdown( new Date(2019, 10, 12) ).toString();
+    //const daysCount = countdown(new Date(2019, 10, 12), null, countdown.DAYS).toString();
+    const count = countdown(new Date(2019, 10, 12)).toString();
+    const array = count.split('and').join(',').split(',');
+    let object = {};
+      for (let i=0; i < array.length; i++) {
+        console.log("Array:", array[i].trim().replace(/\D/g,''))
+          if (array[i].indexOf('months') > -1) {
+            object.months = Number(array[i].trim().replace(/\D/g,''));
+          }
+          if (array[i].indexOf('days') > -1) {
+            object.days = Number(array[i].trim().replace(/\D/g,''));
+          }
+          if (array[i].indexOf('hours') > -1) {
+            object.hours = Number(array[i].trim().replace(/\D/g,''));
+          }
+          if (array[i].indexOf('minutes') > -1) {
+            object.mins = Number(array[i].trim().replace(/\D/g,''));
+          }
+          if (array[i].indexOf('seconds') > -1) {
+            object.secs = Number(array[i].trim().replace(/\D/g,''));
+          }
+      }
+      return object;
   }
 
   componentDidMount = function() {
     document.title = "Dallas & Drew Autumn Wedding Celebration 2019";
+    let newObject = this.counter();
+    console.log("componentWillMount newObject", newObject)
+    this.setState(newObject)
   }
 
   // General update state function
@@ -178,15 +214,21 @@ class App extends Component {
               comments={this.state.comments}
               guests={this.state.guests}
               onInputChange={this.onInputChange.bind(this)}
-              addRegistrant={this.addRegistrant.bind(this)}
-              updateState={this.updateState.bind(this)}
-              changeBool={this.changeBool.bind(this)}
-              addGuest={this.addGuest.bind(this)}
-              handleGuests={this.handleGuests.bind(this)}
-              removeGuest={this.removeGuest.bind(this)}
-              temperatures={this.state.temperatures}
-              accordion={this.state.accordion}
-              google_api={this.props.config.google_api}
+              addRegistrant={this.addRegistrant.bind(this)} 
+              updateState={this.updateState.bind(this)} // general func to pass an object and update state
+              changeBool={this.changeBool.bind(this)} // general func to change boolean to opp. of val
+              addGuest={this.addGuest.bind(this)} // adds guest fields
+              handleGuests={this.handleGuests.bind(this)} // adds the guest to the db
+              removeGuest={this.removeGuest.bind(this)} // removes guest when X is clicked
+              temperatures={this.state.temperatures} // array of temperatures
+              accordion={this.state.accordion} // controls accordion on Details page
+              google_api={this.props.config.google_api} // Google creds
+              // Counter: 
+              months={this.state.months}
+              days={this.state.days}
+              hours={this.state.hours}
+              mins={this.state.mins}
+              secs={this.state.secs}
             />
           </div>
         </div>

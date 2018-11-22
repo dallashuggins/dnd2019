@@ -203,16 +203,6 @@ div.attendDrop select option {
 /****************** RSVP form (end) *******************/
 
 /****************** Details tab (start) *******************/
- 
-/* Date coutner */
-.counter {
-  width: 60%;
-  margin: 10px auto 20px auto;
-  float: none;
-  background-color: rgba(241, 114, 39, 0.71);
-  border: black solid 3px;
-  padding: 15px;
-}
 
 /* Details page weather section */
 div.weatherCallout {
@@ -272,6 +262,47 @@ button.accordion {
 /* Remove outline around button when clicked */
 button.accordion:focus {
   outline: none;
+}
+
+/* Outside div that has text details */
+div.detailText {
+  text-align: left;
+  display: block;
+  width: 60%;
+  margin: auto;
+  font-size: 15px;
+}
+
+/* Div with each individual line of text */
+div.detailTextIndiv {
+  width: 50%;
+}
+
+p.key {
+  font-weight: bold;
+}
+
+p.value {
+  float: left;
+}
+
+/* Date coutner */
+.counter {
+  width: 60%;
+  margin: 10px auto 20px auto;
+  float: none;
+  background-color: rgba(241, 114, 39, 0.71);
+  border: black solid 3px;
+  padding: 15px;
+  height: 100%;
+  min-height: 85px;
+}
+
+/* Individual counter elements */
+div.months, div.days, div.hours, div.mins, div.secs {
+  font-size: 15px;
+  float: left;
+  width: 20%;
 }
 
 /****************** Details tab (end) *******************/
