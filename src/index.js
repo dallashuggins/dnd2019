@@ -27,7 +27,7 @@ const getTemps = () => {
 
 const index = async () => {
   let tempResp = await getTemps();
-  //console.log("Weather response:", tempResp);
+  console.log("Weather response:", tempResp);
   ReactDOM.render(
       <App config={config} temperatures={tempResp}/>,
       document.getElementById('root')
