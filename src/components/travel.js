@@ -9,7 +9,7 @@ function Travel (props) {
     return (
         <div className="callout">
             <h1>Travel</h1>
-            <br />
+            <hr />
             <div className="detailText">
                 <div className="detailTextIndiv">
                     <p className="val">

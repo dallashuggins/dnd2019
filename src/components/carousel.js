@@ -76,8 +76,8 @@ function FallCarousel (props) {
                 <Carousel.Item>
                     <img width={900} height={300} alt="Acadia" src={acadia} />
                     <Carousel.Caption>
-                    <h3>Beehive Trail</h3>
-                    <p>Acadia National Park - Bar Harbor, ME</p>
+                    <h3>Beehive Trail, Acadia National Park</h3>
+                    <p>Bar Harbor, ME (I hear it's even more beautiful during Fall)</p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>

@@ -9,7 +9,7 @@ function Plans (props) {
     return (
         <div className="callout">
             <h1>What To Do</h1>
-            <br />
+            <hr/>
             <div className="detailText">
                 <div className="detailTextIndiv">
                     <p className="val">

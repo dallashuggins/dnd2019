@@ -10,7 +10,7 @@ function Detail (props) {
     return (
         <div className="callout">
             <h1>Details</h1>
-            <br />
+            <hr />
             <div className="detailText">
                 <div className="detailTextIndiv">
                     <p className="key">Time (subject to change):</p><p className="val">12pm</p>
