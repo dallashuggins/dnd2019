@@ -64,6 +64,18 @@ function Travel (props) {
                     Enterprise will even drive to you to pick you up!</p>
                 </div>
             </Collapse>
+            <button className="travelAccordion accordionStay" onClick={()=>{
+                props.changeBool('accordionStay')
+            }}>Stay</button>
+            <Collapse in={props.accordionStay}>
+                <div className="stay">
+                    <p className="stay" style={{fontWeight: 'bold'}}>Airbnb:</p>
+                    <p className="stay">There are many Airbnb homes, which is personally 
+                    our favorite way to travel during Fall.</p>
+                    <p className="stay" style={{fontWeight: 'bold'}}>Hotels:</p>
+                    <p className="stay">There are hotels nearby but not as many as Airbnb.</p>
+                </div>
+            </Collapse>
             <br/><br/>
             <iframe
                 title="googleMaps"
@@ -80,7 +92,8 @@ function Travel (props) {
     changeBool: PropTypes.func.isRequired,
     accordionAir: PropTypes.bool.isRequired,
     accordionBus: PropTypes.bool.isRequired,
-    accordionCar: PropTypes.bool.isRequired
+    accordionCar: PropTypes.bool.isRequired,
+    accordionStay: PropTypes.bool.isRequired
   };
   
   export default Travel;

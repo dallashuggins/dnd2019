@@ -53,6 +53,7 @@ function ContentTabs (props) {
                 accordionAir={props.accordionAir}
                 accordionBus={props.accordionBus}
                 accordionCar={props.accordionCar}
+                accordionStay={props.accordionStay}
                 counter={props.counter}
             />
         </Tab>
@@ -97,6 +98,7 @@ ContentTabs.propTypes = {
     accordionAir: PropTypes.bool.isRequired,
     accordionBus: PropTypes.bool.isRequired,
     accordionCar: PropTypes.bool.isRequired,
+    accordionStay: PropTypes.bool.isRequired,
     accordionCity: PropTypes.bool.isRequired,
     accordionFall: PropTypes.bool.isRequired,
     accordionHalloween: PropTypes.bool.isRequired,

@@ -346,14 +346,14 @@ button.travelAccordion {
 }
 
 /* Surrounding divs holding text within accordions */
-div.air, div.bus, div.car {
+div.air, div.bus, div.car, div.stay {
   border: white 1px solid;
   background-color: rgba(0, 0, 0, 0.43);
   padding: 20px;
 }
 
 /* Text within accordions on travel page */
-p.air, p.bus, p.car {
+p.air, p.bus, p.car, p.stay {
   text-align: left;
   color: white;
   font-size: 18px;
