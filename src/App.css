@@ -376,20 +376,20 @@ button.planAccordion {
 }
 
 /* Surrounding divs holding text within accordions */
-div.city {
+div.city, div.fall, div.halloween {
   border: white 1px solid;
   background-color: rgba(0, 0, 0, 0.43);
   padding: 20px;
 }
 
 /* Ttitles within accordions on what-to-do page */
-h2.city {
+h2.city, h2.fall, h2.halloween {
   text-align: left;
   font-size: 15px;
 }
 
 /* Content within accordions on what-to-do page */
-ul.city li {
+ul.city li, ul.fall li, ul.halloween li {
   text-align: left;
   color: white;
   font-size: 18px;

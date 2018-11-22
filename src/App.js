@@ -29,7 +29,9 @@ class App extends Component {
       accordionAir: false,
       accordionBus: false,
       accordionCar: false,
-      accordionCity: false
+      accordionCity: false,
+      accordionFall: false,
+      accordionHalloween: false
     }
   }
 
@@ -255,6 +257,8 @@ class App extends Component {
               accordionCar={this.state.accordionCar}
               // Accordions for plan/what-to-do page
               accordionCity={this.state.accordionCity}
+              accordionFall={this.state.accordionFall}
+              accordionHalloween={this.state.accordionHalloween}
             />
           </div>
         </div>

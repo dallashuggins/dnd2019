@@ -11,12 +11,20 @@ function Plans (props) {
             <br />
             <div className="detailText">
                 <div className="detailTextIndiv">
-                    <p className="val"></p>
+                    <p className="val">
+                    Nottingham is located in the Seacoast area of New Hampshire.
+                    We are between one and one and a half hours away from Boston, 
+                    around an hour from Portland (Maine), a couple hours from the 
+                    White Mountains, around 3 hours from Burlington, Vermont, 
+                    and about 5 hours from both Toronto and NYC. Below I have put some 
+                    ideas of things to do, though I am also more than willing to help 
+                    anyone out during their planning.
+                    </p>
                 </div>
             </div>
             <button className="planAccordion accordionCity" onClick={()=>{
                 props.changeBool('accordionCity')
-            }}>City</button>
+            }}>Fun in the City</button>
             <Collapse in={props.accordionCity}>
                 <div className="city">
                     <h2 className="city">Boston</h2>
@@ -29,12 +37,44 @@ function Plans (props) {
                     </ul>
                 </div>
             </Collapse>
+            <button className="planAccordion accordionFall" onClick={()=>{
+                props.changeBool('accordionFall')
+            }}>Autumn time exploring</button>
+            <Collapse in={props.accordionFall}>
+                <div className="fall">
+                    <h2 className="fall">Hiking</h2>
+                    <ul className="fall">
+                        <li>Anywhere in the White Mountains</li>
+                    </ul>
+                    <h2 className="fall">Scenic drives</h2>
+                    <ul className="fall">
+                        <li>Kancamagus Highway</li>
+                    </ul>
+                </div>
+            </Collapse>
+            <button className="planAccordion accordionHalloween" onClick={()=>{
+                props.changeBool('accordionHalloween')
+            }}>HalloweEeEeEeeEeEEen</button>
+            <Collapse in={props.accordionHalloween}>
+                <div className="halloween">
+                    <h2 className="halloween">Haunted Houses</h2>
+                    <ul className="halloween">
+                        <li>Haunted Overland</li>
+                    </ul>
+                    <h2 className="halloween">Corn mazes</h2>
+                    <ul className="halloween">
+                        <li>Emery Farms</li>
+                    </ul>
+                </div>
+            </Collapse>
         </div>
     );
   }
   
   Plans.propTypes = {
     accordionCity: PropTypes.bool.isRequired,
+    accordionFall: PropTypes.bool.isRequired,
+    accordionHalloween: PropTypes.bool.isRequired,
     changeBool: PropTypes.func.isRequired
   };
   

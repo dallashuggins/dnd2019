@@ -59,6 +59,8 @@ function ContentTabs (props) {
         <Tab eventKey={4} title="What to do">
             <Plans 
                 accordionCity={props.accordionCity}
+                accordionFall={props.accordionFall}
+                accordionHalloween={props.accordionHalloween}
                 changeBool={props.changeBool}
             />
         </Tab>
@@ -95,7 +97,9 @@ ContentTabs.propTypes = {
     accordionAir: PropTypes.bool.isRequired,
     accordionBus: PropTypes.bool.isRequired,
     accordionCar: PropTypes.bool.isRequired,
-    accordionCity: PropTypes.bool.isRequired
+    accordionCity: PropTypes.bool.isRequired,
+    accordionFall: PropTypes.bool.isRequired,
+    accordionHalloween: PropTypes.bool.isRequired,
 };
   
 export default ContentTabs;
