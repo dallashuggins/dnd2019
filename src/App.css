@@ -282,10 +282,6 @@ p.key {
   font-weight: bold;
 }
 
-p.value {
-  float: left;
-}
-
 /* Date coutner */
 .counter {
   width: 60%;

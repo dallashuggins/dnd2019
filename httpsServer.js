@@ -83,7 +83,7 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
         }
     });
     const weather = new WeatherDB(db);
-    router.get("/temperatures", function (req, res) {
+    router.get("temperatures", function (req, res) {
         try {
             weather.getTemps(function(err, temps) {
                 assert.equal(null, err);
