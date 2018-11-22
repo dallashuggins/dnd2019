@@ -68,6 +68,7 @@ function Plans (props) {
                     </ul>
                 </div>
             </Collapse>*/}
+            <hr />
             <FallCarousel 
             />
         </div>

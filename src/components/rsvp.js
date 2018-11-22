@@ -4,7 +4,7 @@ import Guests from './guests.js';
 
 function Rsvp (props) {
     return (
-        <div>
+        <div className="formRsvp">
             <div className="attendDrop">
                 <select required className="formField" name="status" defaultValue="first" onChange={props.onInputChange}>
                     <option value="first" disabled>Can you attend our wedding?</option>

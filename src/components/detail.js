@@ -27,7 +27,7 @@ function Detail (props) {
                     </p>
                 </div>
             </div>
-            <br/>
+            <hr/>
             <div className="counter" onMouseEnter={props.counter} onSelect={props.counter} onClick={props.counter}>
                 <h3 className="counter">Countdown</h3>
                 <div className="months">

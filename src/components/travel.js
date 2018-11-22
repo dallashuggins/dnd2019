@@ -22,6 +22,7 @@ function Travel (props) {
                     </p>
                 </div>
             </div>
+            <hr/>
             <button className="travelAccordion accordionAir" onClick={()=>{
                 props.changeBool('accordionAir')
             }}>Airlines</button>
@@ -76,10 +77,12 @@ function Travel (props) {
             <Collapse in={props.accordionStay}>
                 <div className="stay">
                     <p className="stay" style={{fontWeight: 'bold'}}>Airbnb:</p>
-                    <p className="stay">There are many Airbnb homes, which is personally 
-                    our favorite way to travel during Fall.</p>
+                    <p className="stay">There are many Airbnbs around this area and other areas.
+                    There are many .</p>
                     <p className="stay" style={{fontWeight: 'bold'}}>Hotels:</p>
-                    <p className="stay">There are hotels nearby but not as many as Airbnb.</p>
+                    <p className="stay">There are hotels in surrounding cities, including 
+                    Durham, Exeter, Dover, Portsmouth, etc.
+                    </p>
                 </div>
             </Collapse>
             <br/><br/>
