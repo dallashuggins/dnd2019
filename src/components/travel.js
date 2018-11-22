@@ -53,7 +53,10 @@ function Travel (props) {
                     to Portsmouth.</p>
                     <p className="bus" style={{fontWeight: 'bold'}}>
                     Train:</p>
-                    <p className="bus">Amtrak</p>
+                    <p className="bus">Amtrak has a station right nearby us, in Durham, NH. 
+                    However, there aren't any trains which travel directly from the airport. 
+                    If you are comfortable transferring, you could travel from many locations
+                    right to Durham, which is about 10 minutes away from us.</p>
                 </div>
             </Collapse>
             <button className="travelAccordion accordionCar" onClick={()=>{

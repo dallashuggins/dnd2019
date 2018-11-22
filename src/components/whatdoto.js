@@ -54,7 +54,7 @@ function Plans (props) {
             </Collapse>
             <button className="planAccordion accordionHalloween" onClick={()=>{
                 props.changeBool('accordionHalloween')
-            }}>HalloweEeEeEeeEeEEen</button>
+            }}>HalloweEeEeEeeEeEeEen</button>
             <Collapse in={props.accordionHalloween}>
                 <div className="halloween">
                     <h2 className="halloween">Haunted Houses</h2>
