@@ -1,8 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Weather from './weather.js';
+import _ from 'underscore';
 
 function Detail (props) {
+    const max = _.max(props.temperatures, function(temp) {return temp.maxTemp});
+    const min = _.min(props.temperatures, function(temp) {return temp.minTemp});
+    console.log(max, min)
     return (
         <div className="callout">
             <h1>Details</h1>
@@ -11,9 +15,16 @@ function Detail (props) {
                 <div className="detailTextIndiv">
                     <p className="key">Time:</p><p className="val">12pm</p>
                 </div>
-                <br/>
                 <div className="detailTextIndiv">
                     <p className="key">Date:</p><p className="val">October 12th, 2019</p>
+                </div>
+                <div className="detailTextIndiv">
+                    <p className="key">Weather:</p><p className="val">
+                    The weather around this time of year is extremely variable. 
+                    In 2017, there was a minimum temperature of {min.minTemp} F 
+                    and a maximum temperature of {max.maxTemp} F during the week of
+                    October 7th to October 17th. Typically be in the 40s or 50s.
+                    </p>
                 </div>
             </div>
             <br/>

@@ -279,7 +279,7 @@ div.detailText {
 
 /* Div with each individual line of text */
 div.detailTextIndiv {
-  width: 50%;
+  width: 100%;
 }
 
 p.key {
