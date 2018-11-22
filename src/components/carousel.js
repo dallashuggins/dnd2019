@@ -11,6 +11,7 @@ import newmarket1 from '../media/newmarket1.jpg';
 import burlington from '../media/burlington.jpg';
 import salem from '../media/salem.jpg';
 import doefarm from '../media/doefarm.jpg';
+import acadia from '../media/acadia.jpg';
 
 function FallCarousel (props) {
     return (
@@ -70,6 +71,13 @@ function FallCarousel (props) {
                     <Carousel.Caption>
                     <h3>Doe Farm</h3>
                     <p>Durham, NH</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img width={900} height={300} alt="Acadia" src={acadia} />
+                    <Carousel.Caption>
+                    <h3>Beehive Trail</h3>
+                    <p>Acadia National Park - Bar Harbor, ME</p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
