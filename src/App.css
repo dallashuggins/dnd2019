@@ -300,10 +300,12 @@ div.counter {
 }
 
 /* Text above date counter */
-h2.counter {
+h3.counter {
   font-size: 20px;
+  font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 15px;
+  color: black;
   margin-top: 5px;
 }
 
@@ -324,6 +326,7 @@ p.hover {
   text-align: center;
   bottom: 0;
   width: 100%;
+  color: black;
 }
 
 /****************** Details tab (end) *******************/

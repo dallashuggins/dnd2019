@@ -29,7 +29,7 @@ function Detail (props) {
             </div>
             <br/>
             <div className="counter" onMouseEnter={props.counter} onSelect={props.counter} onClick={props.counter}>
-                <h2 className="counter">Countdown</h2>
+                <h3 className="counter">Countdown</h3>
                 <div className="months">
                     {props.months}
                     <p className="text">Months</p>

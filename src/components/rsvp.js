@@ -15,7 +15,7 @@ function Rsvp (props) {
                     <option value="no">No</option>
                 </select>
             </div>
-            <br /><br />
+            <br />
             <input required
                 type="text" 
                 name="name" 
