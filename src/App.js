@@ -28,7 +28,8 @@ class App extends Component {
       secs: 0,
       accordionAir: false,
       accordionBus: false,
-      accordionCar: false
+      accordionCar: false,
+      accordionCity: false
     }
   }
 
@@ -41,18 +42,33 @@ class App extends Component {
       for (let i=0; i < array.length; i++) {
         console.log("Array:", array[i].trim().replace(/\D/g,''))
           if (array[i].indexOf('months') > -1) {
+            this.setState({
+              months: Number(array[i].trim().replace(/\D/g,''))
+            })
             object.months = Number(array[i].trim().replace(/\D/g,''));
           }
           if (array[i].indexOf('days') > -1) {
+            this.setState({
+              days: Number(array[i].trim().replace(/\D/g,''))
+            })
             object.days = Number(array[i].trim().replace(/\D/g,''));
           }
           if (array[i].indexOf('hours') > -1) {
+            this.setState({
+              hours: Number(array[i].trim().replace(/\D/g,''))
+            })
             object.hours = Number(array[i].trim().replace(/\D/g,''));
           }
           if (array[i].indexOf('minutes') > -1) {
+            this.setState({
+              mins: Number(array[i].trim().replace(/\D/g,''))
+            })
             object.mins = Number(array[i].trim().replace(/\D/g,''));
           }
           if (array[i].indexOf('seconds') > -1) {
+            this.setState({
+              secs: Number(array[i].trim().replace(/\D/g,''))
+            })
             object.secs = Number(array[i].trim().replace(/\D/g,''));
           }
       }
@@ -63,7 +79,7 @@ class App extends Component {
     document.title = "Dallas & Drew Autumn Wedding Celebration 2019";
     let newObject = this.counter();
     console.log("componentWillMount newObject", newObject)
-    this.setState(newObject)
+    //this.setState(newObject)
   }
 
   // General update state function
@@ -232,10 +248,13 @@ class App extends Component {
               hours={this.state.hours}
               mins={this.state.mins}
               secs={this.state.secs}
+              counter={this.counter.bind(this)}
               // Accordions for travel page:
               accordionAir={this.state.accordionAir}
               accordionBus={this.state.accordionBus}
               accordionCar={this.state.accordionCar}
+              // Accordions for plan/what-to-do page
+              accordionCity={this.state.accordionCity}
             />
           </div>
         </div>

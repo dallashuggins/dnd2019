@@ -42,19 +42,25 @@ function ContentTabs (props) {
                 hours={props.hours}
                 mins={props.mins}
                 secs={props.secs}
+                counter={props.counter}
             />
         </Tab>
         <Tab eventKey={3} title="Travel">
             <Travel 
                 google_api={props.google_api}
                 changeBool={props.changeBool}
+                updateState={props.updateState}
                 accordionAir={props.accordionAir}
                 accordionBus={props.accordionBus}
                 accordionCar={props.accordionCar}
+                counter={props.counter}
             />
         </Tab>
         <Tab eventKey={4} title="What to do">
-            <Plans />
+            <Plans 
+                accordionCity={props.accordionCity}
+                changeBool={props.changeBool}
+            />
         </Tab>
         {/*<Tab eventKey={5} title="Social">
             <Social />
@@ -85,9 +91,11 @@ ContentTabs.propTypes = {
     hours: PropTypes.number.isRequired,
     mins: PropTypes.number.isRequired,
     secs: PropTypes.number.isRequired,
+    counter: PropTypes.func.isRequired,
     accordionAir: PropTypes.bool.isRequired,
     accordionBus: PropTypes.bool.isRequired,
-    accordionCar: PropTypes.bool.isRequired
+    accordionCar: PropTypes.bool.isRequired,
+    accordionCity: PropTypes.bool.isRequired
 };
   
 export default ContentTabs;

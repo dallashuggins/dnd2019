@@ -9,6 +9,12 @@ function Travel (props) {
     return (
         <div className="callout">
             <h1>Travel</h1>
+            <br />
+            <div className="detailText">
+                <div className="detailTextIndiv">
+                    <p className="val">Test</p>
+                </div>
+            </div>
             <button className="travelAccordion accordionAir" onClick={()=>{
                 props.changeBool('accordionAir')
             }}>Air</button>

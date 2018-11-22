@@ -16,7 +16,9 @@ function Detail (props) {
                     <p className="key">Date:</p><p className="val">October 12th, 2019</p>
                 </div>
             </div>
-            <div className="counter">
+            <br/>
+            <div className="counter" onMouseEnter={props.counter} onSelect={props.counter} onClick={props.counter}>
+                <h2 className="counter">Countdown</h2>
                 <div className="months">
                     {props.months}
                     <p className="text">Months</p>
@@ -37,6 +39,7 @@ function Detail (props) {
                     {props.secs}
                     <p className="text">Seconds</p>
                 </div>
+                <p className="hover">* Hover mouse or click to update time</p>
             </div>
             <div>
                 <Weather
@@ -55,11 +58,13 @@ function Detail (props) {
     accordion: PropTypes.bool.isRequired,
     changeBool: PropTypes.func.isRequired,
     google_api: PropTypes.string.isRequired,
+    updateState: PropTypes.func.isRequired,
     months: PropTypes.number.isRequired,
     days: PropTypes.number.isRequired,
     hours: PropTypes.number.isRequired,
     mins: PropTypes.number.isRequired,
-    secs: PropTypes.number.isRequired
+    secs: PropTypes.number.isRequired,
+    counter: PropTypes.func.isRequired
   };
   
   export default Detail;
