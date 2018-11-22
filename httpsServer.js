@@ -54,7 +54,7 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
     assert.equal(null, err);
     db = database;
     // React:
-    app.get('/', function (req, res) {
+    app.get('*', function (req, res) {
         res.sendFile(path.join(__dirname, 'build', 'index.html'));
     });
     // Database routes:
@@ -83,7 +83,7 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
         }
     });
     const weather = new WeatherDB(db);
-    router.get("temperatures", function (req, res) {
+    router.get("/temperatures", function (req, res) {
         try {
             weather.getTemps(function(err, temps) {
                 assert.equal(null, err);
