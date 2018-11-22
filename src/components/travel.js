@@ -9,6 +9,8 @@ function Travel (props) {
             <h2>Local airports:</h2>
             <p>Boston Logan</p>
             <p>Manchester</p>
+            <h2>Local buses:</h2>
+            <p>CandJ</p>
             <iframe
                 title="googleMaps"
                 frameborder="0" 
