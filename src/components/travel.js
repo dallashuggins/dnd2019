@@ -1,4 +1,7 @@
 import React from 'react';
+import {
+    Collapse
+} from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
 function Travel (props) {
@@ -6,11 +9,32 @@ function Travel (props) {
     return (
         <div className="callout">
             <h1>Travel</h1>
-            <h2>Local airports:</h2>
-            <p>Boston Logan</p>
-            <p>Manchester</p>
-            <h2>Local buses:</h2>
-            <p>CandJ</p>
+            <button className="travelAccordion accordionAir" onClick={()=>{
+                props.changeBool('accordionAir')
+            }}>Air</button>
+            <Collapse in={props.accordionAir}>
+                <div className="air">
+                    <p className="air">Airlines: Boston Logan (BOS) and Manchester-Boston Regional Airport (MHT)</p>
+                    <p className="air"></p>
+                </div>
+            </Collapse>
+            <button className="travelAccordion accordionBus" onClick={()=>{
+                props.changeBool('accordionBus')
+            }}>Public transportation</button>
+            <Collapse in={props.accordionBus}>
+                <div className="bus">
+                    <p className="bus">Public transportation: C&J</p>
+                </div>
+            </Collapse>
+            <button className="travelAccordion accordionCar" onClick={()=>{
+                props.changeBool('accordionCar')
+            }}>Driving</button>
+            <Collapse in={props.accordionCar}>
+                <div className="car">
+                    <p className="car">Rental cars: Enterprise</p>
+                </div>
+            </Collapse>
+            <br/>
             <iframe
                 title="googleMaps"
                 frameBorder="0" 
@@ -22,7 +46,11 @@ function Travel (props) {
   }
   
   Travel.propTypes = {
-    google_api: PropTypes.string.isRequired
+    google_api: PropTypes.string.isRequired,
+    changeBool: PropTypes.func.isRequired,
+    accordionAir: PropTypes.bool.isRequired,
+    accordionBus: PropTypes.bool.isRequired,
+    accordionCar: PropTypes.bool.isRequired
   };
   
   export default Travel;

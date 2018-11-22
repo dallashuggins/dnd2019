@@ -41,7 +41,7 @@ function Weather (props) {
                 </Collapse>
             </div>
             <p>* Max temp Oct 7-17th: {max.maxTemp} F</p>
-                    <p>* Min temp Oct 7-17th: {min.minTemp} F</p>*/}
+            <p>* Min temp Oct 7-17th: {min.minTemp} F</p>*/}
         </div>
     );
   }

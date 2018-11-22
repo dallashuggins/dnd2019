@@ -25,7 +25,10 @@ class App extends Component {
       days: 0,
       hours: 0,
       mins: 0,
-      secs: 0
+      secs: 0,
+      accordionAir: false,
+      accordionBus: false,
+      accordionCar: false
     }
   }
 
@@ -229,6 +232,10 @@ class App extends Component {
               hours={this.state.hours}
               mins={this.state.mins}
               secs={this.state.secs}
+              // Accordions for travel page:
+              accordionAir={this.state.accordionAir}
+              accordionBus={this.state.accordionBus}
+              accordionCar={this.state.accordionCar}
             />
           </div>
         </div>

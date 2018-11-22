@@ -303,6 +303,34 @@ div.months, div.days, div.hours, div.mins, div.secs {
 
 /****************** Details tab (end) *******************/
 
+/****************** Travel tab (start) *******************/
+
+/* Accordion buttons on the travel page */
+button.travelAccordion {
+  width: 100%;
+  background-color: rgba(241, 114, 39, 0.71);
+  border: black solid 3px;
+  margin: 10px auto;
+  text-align: left;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+div.air, div.bus, div.car {
+  border: white 1px solid;
+  background-color: rgba(0, 0, 0, 0.43);
+  padding: 20px;
+}
+
+p.air, p.bus, p.car {
+  text-align: left;
+  font-size: 18px;
+  color: white;
+}
+
+/****************** Travel tab (end) *******************/
+
 /********************* Media queries (start) *********************/
 @media only screen and (max-width: 475px) {
   div.tab-content {
