@@ -7,12 +7,14 @@ function Rsvp (props) {
         <div>
             <h1>Register for DnD 2019</h1>
             <br />
-            <select required className="formField" name="status" defaultValue="first" onChange={props.onInputChange}>
-                <option value="first" disabled>Can you attend our wedding?</option>
-                <option value="yes">Yes</option>
-                <option value="maybe">Maybe</option>
-                <option value="no">No</option>
-            </select>
+            <div className="attendDrop">
+                <select required className="formField" name="status" defaultValue="first" onChange={props.onInputChange}>
+                    <option value="first" disabled>Can you attend our wedding?</option>
+                    <option value="yes">Yes</option>
+                    <option value="maybe">Maybe</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
             <br /><br />
             <input required
                 type="text" 

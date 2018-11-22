@@ -6,6 +6,9 @@ function Travel (props) {
     return (
         <div className="callout">
             <h1>Travel</h1>
+            <h2>Local airports:</h2>
+            <p>Boston Logan</p>
+            <p>Manchester</p>
             <iframe
                 title="googleMaps"
                 frameborder="0" 

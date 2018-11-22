@@ -7,12 +7,13 @@ import {
 import Form from './form.js';
 import Detail from './detail.js';
 import Travel from './travel.js';
+import Plans from './whatdoto.js';
 import Social from './social.js';
 
 function ContentTabs (props) {
     return (
         <Tabs defaultActiveKey={1} animation={false} id="noanim-tab-example">
-        <Tab eventKey={1} title="Register" className="background">
+        <Tab eventKey={1} title="Register">
             <div className="tabContent">
                 <Form
                     page={props.page}
@@ -30,21 +31,24 @@ function ContentTabs (props) {
                 />
             </div>
         </Tab>
-        <Tab eventKey={2} title="Details" className="background">
+        <Tab eventKey={2} title="Details">
             <Detail 
                 temperatures={props.temperatures}
                 accordion={props.accordion}
                 changeBool={props.changeBool}
             />
         </Tab>
-        <Tab eventKey={3} title="Travel" className="background">
+        <Tab eventKey={3} title="Travel">
             <Travel 
                 google_api={props.google_api}
             />
         </Tab>
-        <Tab eventKey={4} title="Social" className="background">
-            <Social />
+        <Tab eventKey={4} title="What to do">
+            <Plans />
         </Tab>
+        {/*<Tab eventKey={5} title="Social">
+            <Social />
+        </Tab>*/}
         </Tabs>
     );
 }
