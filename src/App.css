@@ -198,6 +198,80 @@ div.guests {
 
 /****************** RSVP form (end) *******************/
 
+/****************** Details tab (start) *******************/
+ 
+/* Date coutner */
+.counter {
+  width: 60%;
+  margin: 10px auto 20px auto;
+  float: none;
+  background-color: rgba(241, 114, 39, 0.71);
+  border: black solid 3px;
+  padding: 15px;
+}
+
+/* Details page weather section */
+div.weatherCallout {
+  float: none;
+  margin: auto;
+  padding: 20px;
+  width: 60%;
+  background-color: rgba(241, 114, 39, 0.71);
+  border: black solid 5px;
+}
+
+/* Details page weather section table */
+div.weatherCallout table {
+  border-collapse: collapse;
+  width: 100% !important;
+  min-width: 100%;
+  float: none;
+  margin: auto;
+}
+
+/* Individual table cells */
+th, td {
+  float: none;
+  margin: auto;
+  min-width: 30%;
+  width: 36.8%;
+  padding: 3px 20px;
+}
+
+/* Details page weather section title */
+div.weatherCallout h2.title {
+  font-size: 1em;
+}
+
+/* Details page weather section table headers */
+div.weatherCallout table thead tr th {
+  font-weight: 700;
+  font-size: 15px;
+  min-width: 20%;
+  text-align: left;
+}
+
+/* Details page weather section table rows */
+div.weatherCallout table tbody tr th {
+  font-weight: 100 !important;
+  font-size: 15px;
+  min-width: 20%;
+  text-align: left;
+}
+
+/* Style of button that activates accordion */
+button.accordion {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+}
+
+/* Remove outline around button when clicked */
+button.accordion:focus {
+  outline: none;
+}
+
+/****************** Details tab (end) *******************/
+
 /********************* Media queries (start) *********************/
 @media only screen and (max-width: 475px) {
   div.tab-content {

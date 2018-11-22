@@ -32,11 +32,15 @@ function ContentTabs (props) {
         </Tab>
         <Tab eventKey={2} title="Details" className="background">
             <Detail 
-                //temperatures={props.temperatures}
+                temperatures={props.temperatures}
+                accordion={props.accordion}
+                changeBool={props.changeBool}
             />
         </Tab>
         <Tab eventKey={3} title="Travel" className="background">
-            <Travel />
+            <Travel 
+                google_api={props.google_api}
+            />
         </Tab>
         <Tab eventKey={4} title="Social" className="background">
             <Social />
@@ -55,10 +59,13 @@ ContentTabs.propTypes = {
     onInputChange: PropTypes.func.isRequired,
     addRegistrant:PropTypes.func.isRequired,
     updateState: PropTypes.func.isRequired,
+    changeBool: PropTypes.func.isRequired,
     addGuest: PropTypes.func.isRequired,
     handleGuests: PropTypes.func.isRequired,
     removeGuest: PropTypes.func.isRequired,
-    //temperatures: PropTypes.array.isRequired
+    temperatures: PropTypes.array.isRequired,
+    accordion: PropTypes.bool.isRequired,
+    google_api: PropTypes.string.isRequired
 };
   
 export default ContentTabs;

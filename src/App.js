@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-//import rp from 'request-promise';
 import axios from 'axios';
 import rp from 'request-promise';
 import _ from 'underscore';
-import logo from './logo.png';
+//import logo from './logo.png';
 import './App.css';
 import ContentTabs from './components/tab.js';
 import background from './color.jpg';
@@ -19,7 +18,8 @@ class App extends Component {
       registered: false,
       page: 0,
       guests: [],
-      //temperatures: this.props.temperatures
+      temperatures: this.props.temperatures,
+      accordion: false
     }
   }
 
@@ -31,6 +31,13 @@ class App extends Component {
   updateState = (stateObject) => {
     this.setState(stateObject);
     console.log("Update state:", stateObject);
+  }
+
+  changeBool = (name) => {
+    this.setState({
+      [name]: !this.state[name]
+    });
+    console.log("Changed boolean to:", this.state[name]);
   }
 
   // Set state of input text fields:
@@ -128,37 +135,6 @@ class App extends Component {
     })
   }
 
-  // Get historical weather observation temperatures:
-  getWeatherObservTemps = () => {
-    let dates = this.state.dates;
-    let array = [];
-    dates.map((date, i) => {
-      let options = {
-        uri: window.location + "/api/weather",
-        method: 'GET',
-        qs: {
-          type: 'observation',
-          client_id: this.props.config.aeris_access_key,
-          client_secret: this.props.config.aeris_secret_key,
-          from: date
-        },
-        json: true
-      };
-      return rp(options)
-      .then(response => {
-        response.periods.map((period) => {
-          let newTemp = period.ob.tempF.toString();
-          if (_.contains(array, newTemp) === false) {
-            array.push(newTemp);
-          }
-        })
-      })
-    });
-    console.log("Array", array);
-    return array;
-  }
-
-
   // Add guest field:
   addGuest = (e) => {
     this.setState((prevState) => ({
@@ -204,10 +180,13 @@ class App extends Component {
               onInputChange={this.onInputChange.bind(this)}
               addRegistrant={this.addRegistrant.bind(this)}
               updateState={this.updateState.bind(this)}
+              changeBool={this.changeBool.bind(this)}
               addGuest={this.addGuest.bind(this)}
               handleGuests={this.handleGuests.bind(this)}
               removeGuest={this.removeGuest.bind(this)}
-              //temperatures={this.state.temperatures}
+              temperatures={this.state.temperatures}
+              accordion={this.state.accordion}
+              google_api={this.props.config.google_api}
             />
           </div>
         </div>

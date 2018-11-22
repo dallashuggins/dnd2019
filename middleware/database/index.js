@@ -28,12 +28,14 @@ function RegistrantDB(database) {
 function WeatherDB(database) {
     "use strict";
     this.db = database.db("weather");
-    this.getTemps = (callback) => {
+    this.getTemps = async (callback) => {
         try {
-            this.db.collection("temperatures").findMany({}, function(err, result) {
+            this.db.collection("temperatures")
+            .find({})
+            .sort( { date: -1 } )
+            .toArray(function(err, documents) {
                 assert.equal(err, null);
-                console.log("Retrieved weather documents:", result.ops);
-                callback(null, result.ops);
+                return callback(null, documents)
             });
         } catch (e) {
             console.log("Error:", e);

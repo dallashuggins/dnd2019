@@ -87,7 +87,7 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
         try {
             weather.getTemps(function(err, temps) {
                 assert.equal(null, err);
-                console.log("Retrieved https temps:", temps);
+                //console.log("Retrieved https temps:", temps);
                 res.status(200).send(temps);
             });
         } catch (e) {

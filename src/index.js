@@ -8,63 +8,28 @@ import rp from 'request-promise';
 import _ from 'underscore';
 
 // Get historical weather observation temperatures:
-const getWeatherObservTemps = (dates) => {
+const getTemps = () => {
   try {
-    let array = [];
-    dates.forEach((date) => {
-      let options = {
-        uri: window.location.href + "/api/weather",
-        method: 'GET',
-        qs: {
-          type: 'observation',
-          client_id: config.aeris_access_key,
-          client_secret: config.aeris_secret_key,
-          from: date
-        },
-        json: true
-      };
-      return rp(options).then(response => {
-        console.log("response", response)
-        response.periods.forEach((period) => {
-          console.log("period", period)
-          let newTemp = period.ob.tempF.toString();
-          if (_.contains(array, newTemp) === false) {
-            array.push(newTemp);
-          }
-        })
-      })
-    });
-    console.log("Array", array);
-    return array;
+    let options = {
+      uri: window.location + "/api/temperatures",
+      method: 'GET',
+      json: true
+    };
+    return rp(options);
   } catch (e) {
     console.log(e);
-    throw new Error(e);
+    throw new Error (e);
   }
 }
 
-const dates = [
-  '2017/10/05',
-  '2017/10/06',
-  '2017/10/07',
-  '2017/10/08',
-  '2017/10/09',
-  '2017/10/10',
-  '2017/10/11',
-  '2017/10/12',
-  '2017/10/13',
-  '2017/10/14',
-  '2017/10/15',
-  '2017/10/16',
-  '2017/10/17',
-  '2017/10/18',
-  '2017/10/19'
-];
+//const max = _.max(props.temperatures, function(temp) {return temp.maxTemp});
+//const min = _.min(props.temperatures, function(temp) {return temp.minTemp});
 
 const index = async () => {
-  //let weatherResp = await getWeatherObservTemps(dates);
-  //console.log("Weather response:", weatherResp);
+  let tempResp = await getTemps();
+  //console.log("Weather response:", tempResp);
   ReactDOM.render(
-      <App config={config} /*temperatures={weatherResp}*//>,
+      <App config={config} temperatures={tempResp}/>,
       document.getElementById('root')
   );
 };
