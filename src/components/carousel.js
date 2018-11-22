@@ -53,13 +53,6 @@ function FallCarousel (props) {
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <img width={900} height={300} alt="Burlington" src={burlington} />
-                    <Carousel.Caption>
-                    <h3>Downtown Burlington</h3>
-                    <p>Burlington, VT</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
                     <img width={900} height={300} alt="Salem" src={salem} />
                     <Carousel.Caption>
                     <h3>Downtown Salem during Halloween</h3>
@@ -71,6 +64,13 @@ function FallCarousel (props) {
                     <Carousel.Caption>
                     <h3>Doe Farm</h3>
                     <p>Durham, NH</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img width={900} height={300} alt="Burlington" src={burlington} />
+                    <Carousel.Caption>
+                    <h3>Downtown Burlington</h3>
+                    <p>Burlington, VT</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
