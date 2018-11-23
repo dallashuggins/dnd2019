@@ -21,6 +21,7 @@ import cathedral_ledge from '../media/cathedral_ledge.jpg';
 import gonic from '../media/gonic.jpg';
 import sweet_trail from '../media/sweet_trail.jpg';
 import cemetery from '../media/cemetery.jpg';
+import mount_pisgah from '../media/mount_pisgah.jpg';
 
 function FallCarousel (props) {
     return (
@@ -94,6 +95,13 @@ function FallCarousel (props) {
                     <Carousel.Caption>
                     <h3>Gonic Trails</h3>
                     <p>Rochester, NH</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img width={900} height={300} alt="Mount Pisgah" src={mount_pisgah} />
+                    <Carousel.Caption>
+                    <h3>Mount Pisgah</h3>
+                    <p>Northeast Kingdom, VT</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
