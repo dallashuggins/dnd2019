@@ -156,7 +156,7 @@ class App extends Component {
   // Get historical weather observations:
   getWeatherObserv = (date) => {
     let options = {
-      uri: window.location + "/api/weather",
+      uri: window.location.href + "api/weather",
       method: 'GET',
       qs: {
         type: 'observation',
