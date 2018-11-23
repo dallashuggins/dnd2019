@@ -307,6 +307,8 @@ div.detailText {
   border: black solid 3px;
   margin: auto;
   font-size: 15px;
+  border-top-right-radius: 30px 30px;
+  border-top-left-radius: 30px 30px;
 }
 
 /* Div with each individual line of text */
