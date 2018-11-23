@@ -157,7 +157,7 @@ select.formField {
   background-color: black;
   color: rgba(241,114,39,.8);
   border: rgba(241,114,39,.8) solid 2px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 /* Button on form hover style */
