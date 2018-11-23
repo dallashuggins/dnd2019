@@ -9,10 +9,10 @@ import rp from 'request-promise';
 
 // Get historical weather observation temperatures:
 const getTemps = () => {
-  console.log("window.location", window.location);
+  console.log("window.location href", window.location.href);
   try {
     let options = {
-      uri: window.location + "api/temperatures",
+      uri: window.location.href + "api/temperatures",
       method: 'GET',
       json: true
     };
