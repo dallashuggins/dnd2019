@@ -6,7 +6,7 @@ import _ from 'underscore';
 function Detail (props) {
     const max = _.max(props.temperatures, function(temp) {return temp.maxTemp});
     const min = _.min(props.temperatures, function(temp) {return temp.minTemp});
-    console.log(max, min)
+    console.log("Max & min:", max, min)
     return (
         <div className="callout">
             <h1>Details</h1>
@@ -21,8 +21,8 @@ function Detail (props) {
                 <div className="detailTextIndiv">
                     <p className="key">Weather:</p><p className="val">
                     The weather around this time of year is extremely variable. 
-                    In 2017, there was a minimum temperature of {min.minTemp} F 
-                    and a maximum temperature of {max.maxTemp} F during the week of
+                    In 2017, there was a minimum temperature of {min.minTemp || 35} F 
+                    and a maximum temperature of {max.maxTemp || 78} F during the week of
                     October 7th to October 17th. Typically be in the 40s or 50s.
                     </p>
                 </div>
