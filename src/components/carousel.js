@@ -84,13 +84,6 @@ function FallCarousel (props) {
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <img width={900} height={300} alt="Cathedral Ledge" src={cathedral_ledge} />
-                    <Carousel.Caption>
-                    <h3>Cathedral Ledge</h3>
-                    <p>North Conway, NH</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
                     <img width={900} height={300} alt="Gonic Trails" src={gonic} />
                     <Carousel.Caption>
                     <h3>Gonic Trails</h3>
@@ -158,6 +151,13 @@ function FallCarousel (props) {
                     <Carousel.Caption>
                     <h3>Beehive Trail, Acadia National Park</h3>
                     <p>Bar Harbor, ME (I hear it's even more beautiful during Fall)</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img width={900} height={300} alt="Cathedral Ledge" src={cathedral_ledge} />
+                    <Carousel.Caption>
+                    <h3>Cathedral Ledge</h3>
+                    <p>North Conway, NH</p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
