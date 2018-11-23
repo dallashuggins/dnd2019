@@ -16,6 +16,7 @@ import haunted_overload from '../media/haunted_overload.jpg';
 import boston1 from '../media/boston1.jpg';
 import boston2 from '../media/boston2.jpg';
 import portland from '../media/portland.jpg';
+import cryptozoology from '../media/cryptozoology.jpg';
 
 function FallCarousel (props) {
     return (
@@ -95,6 +96,13 @@ function FallCarousel (props) {
                     <img width={900} height={300} alt="Portland" src={portland} />
                     <Carousel.Caption>
                     <h3>Old Port</h3>
+                    <p>Portland, ME</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img width={900} height={300} alt="" src={cryptozoology} />
+                    <Carousel.Caption>
+                    <h3>International Cryptozoology Museum</h3>
                     <p>Portland, ME</p>
                     </Carousel.Caption>
                 </Carousel.Item>
