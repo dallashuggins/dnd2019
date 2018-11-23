@@ -7,6 +7,7 @@ function RegistrantDB(database) {
         try {
             var options = {
                 name: object.name,
+                email: object.email,
                 regCode: object.regCode,
                 status: object.status,
                 comments: object.comments,
