@@ -15,6 +15,7 @@ import acadia from '../media/acadia.jpg';
 import haunted_overload from '../media/haunted_overload.jpg';
 import boston1 from '../media/boston1.jpg';
 import boston2 from '../media/boston2.jpg';
+import portland from '../media/portland.jpg';
 
 function FallCarousel (props) {
     return (
@@ -88,6 +89,13 @@ function FallCarousel (props) {
                     <Carousel.Caption>
                     <h3>Boston Public Gardens</h3>
                     <p>Boston, MA</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img width={900} height={300} alt="Portland" src={portland} />
+                    <Carousel.Caption>
+                    <h3>Old Port</h3>
+                    <p>Portland, ME</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
