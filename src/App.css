@@ -24,6 +24,23 @@ hr {
   color: orange;
 }
 
+/*footer {
+  background-color: black;
+  padding: 30px;
+}
+
+footer .footerLeft {
+  float: left;
+  width: 50%;
+  padding: 20px;
+}
+
+footer .footerRight {
+  float: right;
+  width: 50%;
+  padding: 10 20px;
+}*/
+
 /********************** General (end) **********************/
 
 /********************* Callout (start) *********************/
@@ -83,7 +100,7 @@ div.callout {
 /****************** Navigation (start) *******************/
 /* Navigation bar */
 ul.nav.nav-tabs {
-  background: rgba(241, 114, 39, 0.8);
+  background: rgba(241, 114, 39, 0.85);
   font-size: 15px;
   font-weight: 700;
   font-family: 'Helvetica';
@@ -145,9 +162,9 @@ select.formField {
 
 /* Button on form hover style */
 .buttonForm:hover {
-  background-color: rgba(243, 189, 189, 0.11);
-  border: rgba(241, 114, 39, 0.71) solid 2px;
-  color: rgba(241, 114, 39, 0.71);
+  background-color: rgba(241, 114, 39, 0.71);
+  border:rgba(243, 189, 189, 0.11) solid 2px;
+  color: black;
 }
 
 /* Button with addl. text */
@@ -159,15 +176,16 @@ button.butterAnother {
 button.guestButton {
   padding: 10px 20px;
   border-radius: 5px;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 15px;
   background-color: rgba(241, 114, 39, 0.8);
   color: black;
   border: black solid 2px;
 }
 
+/* Button to add guests hover style */
 button.guestButton:hover {
-  background-color: rgba(243, 189, 189, 0.11);
+  background-color: black;
   border: rgba(241, 114, 39, 0.71) solid 2px;
   color: rgba(241, 114, 39, 0.71);
 }
