@@ -19,6 +19,7 @@ import portland from '../media/portland.jpg';
 import cryptozoology from '../media/cryptozoology.jpg';
 import cathedral_ledge from '../media/cathedral_ledge.jpg';
 import gonic from '../media/gonic.jpg';
+import sweet_trail from '../media/sweet_trail.jpg';
 
 function FallCarousel (props) {
     return (
@@ -92,6 +93,13 @@ function FallCarousel (props) {
                     <Carousel.Caption>
                     <h3>Gonic Trails</h3>
                     <p>Rochester, NH</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img width={900} height={300} alt="Sweet Trail" src={sweet_trail} />
+                    <Carousel.Caption>
+                    <h3>Sweet Trail</h3>
+                    <p>Newmarket, NH</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
