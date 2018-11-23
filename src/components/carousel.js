@@ -12,6 +12,7 @@ import burlington from '../media/burlington.jpg';
 import salem from '../media/salem.jpg';
 import doefarm from '../media/doefarm.jpg';
 import acadia from '../media/acadia.jpg';
+import haunted_overload from '../media/haunted_overload.jpg'''
 
 function FallCarousel (props) {
     return (
@@ -63,6 +64,13 @@ function FallCarousel (props) {
                     <img width={900} height={300} alt="Doe Farm" src={doefarm} />
                     <Carousel.Caption>
                     <h3>Doe Farm</h3>
+                    <p>Durham, NH</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img width={900} height={300} alt="Haunted Overload" src={haunted_overload} />
+                    <Carousel.Caption>
+                    <h3>Haunted Overload</h3>
                     <p>Durham, NH</p>
                     </Carousel.Caption>
                 </Carousel.Item>
