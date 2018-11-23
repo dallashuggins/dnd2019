@@ -474,6 +474,9 @@ div.carousel .carousel-caption {
     float: none;
     margin: auto;
   }
+  button.buttonForm {
+    width: 78%;
+  }
 }
 
 @media only screen and (min-width: 475px) and (max-width: 550px) {
@@ -484,6 +487,9 @@ div.carousel .carousel-caption {
     width: 100%;
     float: none;
     margin: auto;
+  }
+  button.buttonForm {
+    width: 68%;
   }
 }
 
@@ -498,11 +504,17 @@ div.carousel .carousel-caption {
   p.hover {
     position: absolute;
   }
+  button.buttonForm {
+    width: 58%;
+  }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 700px) {
   div.tab-content {
       margin: 14% auto 10% auto;
+  }
+  button.buttonForm {
+    width: 65%;
   }
 }
 
@@ -510,17 +522,26 @@ div.carousel .carousel-caption {
   div.tab-content {
       margin: 11% auto 10% auto;
   }
+  button.buttonForm {
+    width: 55%;
+  }
 }
 
 @media only screen and (min-width: 800px) and (max-width: 900px) {
   div.tab-content {
       margin: 10% auto 10% auto;
   }
+  button.buttonForm {
+    width: 48%;
+  }
 }
 
 @media only screen and (min-width: 900px) {
   div.tab-content {
       margin: 8% auto 10% auto;
+  }
+  button.buttonForm {
+    width: 47%;
   }
 }
 
@@ -530,9 +551,6 @@ div.carousel .carousel-caption {
   }
   .tabContent {
     width: 100%;
-  }
-  button.buttonForm {
-    width: 50%;
   }
   .App {
     background-size: cover;
@@ -548,9 +566,6 @@ div.carousel .carousel-caption {
   }
   .tabContent {
     width: 100%;
-  }
-  button.buttonForm {
-    width: 40%;
   }
   .App {
     background-size: 100%;
@@ -574,9 +589,6 @@ div.carousel .carousel-caption {
   }
   .tabContent {
     width: 80%;
-  }
-  button.buttonForm {
-    width: 52%;
   }
   .App {
     background-size: 100%;
