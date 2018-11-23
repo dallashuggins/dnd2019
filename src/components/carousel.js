@@ -17,6 +17,7 @@ import boston1 from '../media/boston1.jpg';
 import boston2 from '../media/boston2.jpg';
 import portland from '../media/portland.jpg';
 import cryptozoology from '../media/cryptozoology.jpg';
+import cathedral_ledge from '../media/cathedral_ledge.jpg';
 
 function FallCarousel (props) {
     return (
@@ -76,6 +77,13 @@ function FallCarousel (props) {
                     <Carousel.Caption>
                     <h3>Haunted Overload</h3>
                     <p>Durham, NH</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img width={900} height={300} alt="Cathedral Ledge" src={cathedral_ledge} />
+                    <Carousel.Caption>
+                    <h3>Cathedral Ledge</h3>
+                    <p>North Conway, NH</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
