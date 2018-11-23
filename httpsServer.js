@@ -65,6 +65,7 @@ MongoClient.connect(uri, {useNewUrlParser: true}, function(err, database) {
         console.log("Body", body);
         let object = {
             name: body.name,
+            email: body.email,
             regCode: body.regCode,
             status: body.status,
             comments: body.comments,

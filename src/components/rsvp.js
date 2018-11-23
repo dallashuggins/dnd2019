@@ -24,6 +24,14 @@ function Rsvp (props) {
             <br /><br />
             <input required
                 type="text" 
+                name="email" 
+                placeholder="Email (for notifications)" 
+                className="formField"
+                onChange={props.onInputChange}
+            />
+            <br /><br />
+            <input required
+                type="text" 
                 name="regCode"
                 placeholder="Registration Code" 
                 className="formField"
@@ -46,7 +54,7 @@ function Rsvp (props) {
             />
             <br />
             <button className="buttonForm" onClick={()=> {
-                props.addRegistrant(props.name, props.regCode, props.status, props.comments, props.guests);
+                props.addRegistrant(props.name, props.regCode, props.status, props.comments, props.guests, props.email);
             }}>RSVP</button>
         </div>
     );
@@ -54,6 +62,7 @@ function Rsvp (props) {
   
   Rsvp.propTypes = {
     name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
     regCode: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,
     comments: PropTypes.string.isRequired,

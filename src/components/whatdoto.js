@@ -1,7 +1,7 @@
 import React from 'react';
-import {
+/*import {
     Collapse
-} from 'react-bootstrap';
+} from 'react-bootstrap';*/
 import PropTypes from 'prop-types';
 import FallCarousel from './carousel';
 

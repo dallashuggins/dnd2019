@@ -18,6 +18,7 @@ function ContentTabs (props) {
                 <Form
                     page={props.page}
                     name={props.name}
+                    email={props.email}
                     regCode={props.regCode}
                     status={props.status}
                     comments={props.comments}
@@ -72,6 +73,7 @@ function ContentTabs (props) {
 ContentTabs.propTypes = {
     page: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
     regCode: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,
     comments: PropTypes.string.isRequired,

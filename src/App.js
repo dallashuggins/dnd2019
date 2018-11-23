@@ -14,6 +14,7 @@ class App extends Component {
     super(props);
     this.state = {
       name: '',
+      email: '',
       regCode: '',
       status: '',
       comments: '',
@@ -107,9 +108,10 @@ class App extends Component {
   }
 
   // Add registrant:
-  addRegistrant = (name, regCode, status, comments, guests) => {
+  addRegistrant = (name, regCode, status, comments, guests, email) => {
     let options = {
       name: name,
+      email: email,
       regCode: regCode,
       status: status,
       comments: comments,
@@ -232,6 +234,7 @@ class App extends Component {
             <ContentTabs
               page={this.state.page}
               name={this.state.name}
+              email={this.state.email}
               regCode={this.state.regCode}
               status={this.state.status}
               comments={this.state.comments}

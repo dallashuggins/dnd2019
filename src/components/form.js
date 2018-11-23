@@ -10,6 +10,7 @@ function Form (props) {
             {props.page === 0 ? (
                 <Rsvp
                     name={props.name}
+                    email={props.email}
                     regCode={props.regCode}
                     status={props.status}
                     comments={props.comments}
@@ -37,6 +38,7 @@ function Form (props) {
   Form.propTypes = {
     page: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
     regCode: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,
     comments: PropTypes.string.isRequired,
