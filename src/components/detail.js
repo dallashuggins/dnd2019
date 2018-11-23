@@ -69,7 +69,6 @@ function Detail (props) {
     accordion: PropTypes.bool.isRequired,
     changeBool: PropTypes.func.isRequired,
     google_api: PropTypes.string.isRequired,
-    updateState: PropTypes.func.isRequired,
     months: PropTypes.number.isRequired,
     days: PropTypes.number.isRequired,
     hours: PropTypes.number.isRequired,

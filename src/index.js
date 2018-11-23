@@ -12,7 +12,7 @@ const getTemps = () => {
   console.log("window.location", window.location);
   try {
     let options = {
-      uri: window.location + "/api/temperatures",
+      uri: window.location + "api/temperatures",
       method: 'GET',
       json: true
     };
