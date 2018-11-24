@@ -305,7 +305,8 @@ div.detailText {
   color: black;
   background-color: hsla(0, 6%, 78%, 0.88);
   border: black solid 3px;
-  /*border: 15px solid #504f4fbd;*/
+  /*background-color: #ada9a9cf;
+  border: 15px solid hsla(0, 8%, 68%, 0.88);*/
   margin: auto;
   font-size: 15px;
   border-top-right-radius: 30px 30px;
