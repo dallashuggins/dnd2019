@@ -17,8 +17,9 @@ function Travel (props) {
                     options to our area. There are also a variety of Airbnb homes and hotels 
                     nearby. However, this is a common time for people to travel to New England. 
                     This is the best time to come out in fact, because of the beautiful Fall foliage! 
-                    Therefore, it is important to book a good amount in advance because the best places 
-                    get taken the fastest. 
+                    Therefore, it is important to book a good amount in advance because the best 
+                    places get taken the fastest. Also, we are available to help out with planning, 
+                    so please get in contact if that sounds ideal. 
                     </p>
                 </div>
             </div>
@@ -67,9 +68,10 @@ function Travel (props) {
             <Collapse in={props.accordionCar}>
                 <div className="car">
                     <p className="car" style={{fontWeight: 'bold'}}>Rental cars:</p>
-                    <p className="car">There are many car rental agencies around the Boston
-                    airport, and there is an Enterprise car rental right nearby in Durham, NH.
-                    Enterprise will even drive to you to pick you up!</p>
+                    <p className="car">There are many car rental agencies around the Boston airport, 
+                    and there is an Enterprise car rental right nearby in Durham, NH. Enterprise will 
+                    even drive to you to pick you up! 
+                    </p>
                 </div>
             </Collapse>
             <button className="travelAccordion accordionStay" onClick={()=>{
@@ -80,8 +82,14 @@ function Travel (props) {
                     <p className="stay" style={{fontWeight: 'bold'}}>Airbnb:</p>
                     <p className="stay">There are Airbnbs in Nottingham and surrounding areas.</p>
                     <p className="stay" style={{fontWeight: 'bold'}}>Hotels:</p>
-                    <p className="stay">There are hotels in surrounding cities, including 
-                    Durham, Exeter, Dover, Portsmouth, etc.
+                    <p className="stay">There are hotels in surrounding cities, including Durham, 
+                    Exeter, Dover, Portsmouth, and more. For higher-end accomodations, see the well regarded 
+                    local hotel, the <a href="https://www.threechimneysinn.com/">Three Chimneys Inn</a>. 
+                    For more standard options, there are a variety of inns and hotels around.</p>
+                    <hr />
+                    <p className="stay" style={{fontStyle: 'italic'}}>
+                    We would be happy to make arrangements for any accomodations, and are expecting to do so. 
+                    Please let us know if you'd like us to help plan your stay. 
                     </p>
                 </div>
             </Collapse>

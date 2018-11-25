@@ -23,6 +23,10 @@ hr {
   width: 60%;
 }
 
+div.collapse p a {
+  color: rgba(241, 114, 39, 0.71);
+}
+
 /*footer {
   background-color: black;
   padding: 30px;
