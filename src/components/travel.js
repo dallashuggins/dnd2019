@@ -32,12 +32,13 @@ function Travel (props) {
                     <p className="air">Manchester-Boston Regional Airport is only about 35 minutes 
                     from our home in Nottingham. It is by far the most convenient to getting to our
                     area, but we have yet to see any direct flights from the Bay Area. It is definitely 
-                    worth checking what is available regardless, assuming you aren't planning on staying in Boston. </p>
+                    worth checking what is available regardless, though you'll likely find much better deals
+                    flying into Boston.</p>
                     <p className="air" style={{fontWeight: 'bold'}}>Boston Logan Airport (BOS):</p>
                     <p className="air">While Manchester airport is closer, Boston Logan Airport is around an hour
                     and 20 minutes from Nottingham, and there are direct bus lines that travel to our area 
-                    (see the public transportation section). The airport is easy to manuever around and the bus
-                    lines are right outside the door where you get your luggage.</p>
+                    (see the public transportation section, the best option being C&J. The airport is easy to 
+                    manuever around and the bus lines are right outside the door where you get your luggage.</p>
                 </div>
             </Collapse>
             <button className="travelAccordion accordionBus" onClick={()=>{
@@ -77,8 +78,7 @@ function Travel (props) {
             <Collapse in={props.accordionStay}>
                 <div className="stay">
                     <p className="stay" style={{fontWeight: 'bold'}}>Airbnb:</p>
-                    <p className="stay">There are many Airbnbs around this area and other areas.
-                    There are many .</p>
+                    <p className="stay">There are Airbnbs in Nottingham and surrounding areas.</p>
                     <p className="stay" style={{fontWeight: 'bold'}}>Hotels:</p>
                     <p className="stay">There are hotels in surrounding cities, including 
                     Durham, Exeter, Dover, Portsmouth, etc.
