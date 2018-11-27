@@ -221,6 +221,7 @@ div.guests {
   width: 20em;
   float: none;
   margin: 10px auto;
+  max-width: 100%;
 }
 
 /* Outside wrapper of form */
