@@ -19,6 +19,12 @@ function Detail (props) {
                     <p className="key">Date:</p><p className="val">October 12th, 2019</p>
                 </div>
                 <div className="detailTextIndiv">
+                    <p className="key">Dress:</p><p className="val">
+                    Dressy casual. It will be cold at this time of year, so comfort first and foremost. 
+                    If you're feeling real daring, feel free to wear a costume!
+                    </p>
+                </div>
+                <div className="detailTextIndiv">
                     <p className="key">Weather:</p><p className="val">
                     The weather around this time of year is extremely variable. 
                     In 2017, there was a minimum temperature of {min.minTemp || 35} F 
