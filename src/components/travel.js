@@ -38,7 +38,7 @@ function Travel (props) {
                     <p className="air" style={{fontWeight: 'bold'}}>Boston Logan Airport (BOS):</p>
                     <p className="air">While Manchester airport is closer, Boston Logan Airport is around an hour
                     and 20 minutes from Nottingham, and there are direct bus lines that travel to our area 
-                    (see the public transportation section, the best option being C&J. The airport is easy to 
+                    (see the public transportation section, the best option being C&J). The airport is easy to 
                     manuever around and the bus lines are right outside the door where you get your luggage.</p>
                 </div>
             </Collapse>
