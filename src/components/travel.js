@@ -52,8 +52,8 @@ function Travel (props) {
                     <p className="bus">Bus lines that travel between Massachusetts, 
                     New York, Maine, and New Hampshire. There are direct lines 
                     between the Boston airport and Portsmouth, which is a half hour 
-                    from Nottingham, as well as from downtown NYC (Port Authority)
-                    to Portsmouth.</p>
+                    from Nottingham. There's also a direct line from downtown NYC 
+                    (Port Authority) to Portsmouth.</p>
                     <p className="bus" style={{fontWeight: 'bold'}}>
                     Train:</p>
                     <p className="bus">Amtrak has a station right nearby us, in Durham and Exeter (both NH). 
