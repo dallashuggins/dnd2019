@@ -82,10 +82,16 @@ class App extends Component {
 
   componentDidMount = function() {
     document.title = "Dallas & Drew Autumn Wedding Celebration 2019";
-    let newObject = this.counter();
-    console.log("componentWillMount newObject", newObject)
-    //this.setState(newObject)
+    this.interval = setInterval(() => this.counter(), 1000);
+    console.log("componentWillMount newObject", this.interval)
   }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+
+  //setInterval(() => this.setState({ time: Date.now()}), 1000)
 
   // General update state function
   updateState = (stateObject) => {
@@ -268,7 +274,15 @@ class App extends Component {
             />
           </div>
         </div>
-        <Footer />
+        {/*<Footer 
+          // Counter: 
+          months={this.state.months}
+          days={this.state.days}
+          hours={this.state.hours}
+          mins={this.state.mins}
+          secs={this.state.secs}
+          counter={this.counter.bind(this)}
+        />*/}
       </div>
     );
   }

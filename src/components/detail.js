@@ -56,7 +56,6 @@ function Detail (props) {
                     {props.secs}
                     <p className="text">Seconds</p>
                 </div>
-                <p className="hover">* Hover mouse or click to update time</p>
             </div>
             <div>
                 <Weather

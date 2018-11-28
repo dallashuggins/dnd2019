@@ -8,6 +8,7 @@ import Form from './form.js';
 import Detail from './detail.js';
 import Travel from './travel.js';
 import Plans from './whatdoto.js';
+import Footer from './footer.js';
 //import Social from './social.js';
 
 function ContentTabs (props) {
