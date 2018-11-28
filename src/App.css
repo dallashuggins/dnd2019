@@ -163,6 +163,11 @@ ul.nav.nav-tabs {
   overflow: hidden;
 }
 
+.nav-tabs>li {
+  font-weight: bold;
+  font-size: 16px;
+}
+
 .nav-tabs>li>a {
   border-radius: 0 !important;
   font-weight: bold;
