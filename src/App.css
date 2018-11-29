@@ -409,7 +409,7 @@ h3.counter {
 
 /* Individual counter elements */
 div.months, div.days, div.hours, div.mins, div.secs {
-  font-size: 15px;
+  font-size: 18px;
   text-transform: uppercase;
 }
 
