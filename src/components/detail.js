@@ -32,6 +32,18 @@ function Detail (props) {
                     October 7th to October 17th. Typically be in the 40s or 50s.
                     </p>
                 </div>
+                <div className="detailTextIndiv">
+                    <p className="key">Gifts:</p><p className="val">
+                    Gifts are in no way expected, especially since we know most of our guests are 
+                    traveling from out of town. If you were planning on getting something, we have setup an 
+                    <a style={{fontWeight: 'bold'}} href="https://smile.amazon.com/wedding/drew-stevens-dallas-huggins-nottingham-october-2019/registry/2D6UCFPJ9L9N7"> Amazon wedding registry</a>,
+                    and we also would be honored if you donated to a charity in our name, such as the World Wildlife Fund (WWF), 
+                    Panthera, Doctor's Without Borders (MSF), Southern Poverty Law Center, or Planned Parenthood. 
+                    Though what we really want is to have our loved ones out here to share this day 
+                    with us, and to spend time with everyone while you're here. Having you here is 
+                    the best gift we could ask for!
+                    </p>
+                </div>
             </div>
             <hr/>
             <div className="counter" onMouseEnter={props.counter} onSelect={props.counter} onClick={props.counter}>
