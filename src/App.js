@@ -6,7 +6,7 @@ import _ from 'underscore';
 import './App.css';
 import ContentTabs from './components/tab.js';
 import background from './color.jpg';
-import Footer from './components/footer.js';
+//import Footer from './components/footer.js';
 import countdown from 'countdown';
 
 class App extends Component {
