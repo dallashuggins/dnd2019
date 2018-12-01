@@ -18,9 +18,9 @@ function Plans (props) {
                     around an hour from Portland (Maine), a couple hours from the 
                     White Mountains, around 3 hours from Burlington, Vermont, 
                     and about 5 hours from both Toronto and NYC. <br/><br/>
-                    Below we added some photos of local areas to help with some ideas 
+                    We added some photos below of local areas to help with some ideas 
                     when planning your trip, though we would absolutely love to help plan 
-                    anyone's trip out here and offer more detailed advice. Just let us know! 
+                    anyone's trip out here or offer more detailed advice. Just let us know! 
                     </p>
                 </div>
             </div>
