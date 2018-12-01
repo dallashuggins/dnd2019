@@ -21,7 +21,7 @@ function Detail (props) {
                 <div className="detailTextIndiv">
                     <p className="key">Dress:</p><p className="val">
                     Dressy casual. It will be cold at this time of year, so comfort first and foremost. 
-                    If you're feeling real daring, feel free to wear a costume!
+                    If you're feeling real daring, feel free to wear a Halloween costume!
                     </p>
                 </div>
                 <div className="detailTextIndiv">
