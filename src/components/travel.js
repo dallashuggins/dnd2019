@@ -53,13 +53,18 @@ function Travel (props) {
                     New York, Maine, and New Hampshire. There are direct lines 
                     between the Boston airport and Portsmouth, which is a half hour 
                     from Nottingham. There's also a direct line from downtown NYC 
-                    (Port Authority) to Portsmouth.</p>
+                    (Port Authority) to Portsmouth. There are cheaper buses than C&J around, 
+                    but we had taken C&J many times at this point and they have reasonable 
+                    rates, are consistently reliable, and their buses are nice (bathrooms, 
+                    free water bottles and newspapers, outlets, comfy chairs, etc.).</p>
                     <p className="bus" style={{fontWeight: 'bold'}}>
                     Train:</p>
                     <p className="bus">Amtrak has a station right nearby us, in Durham and Exeter (both NH). 
                     However, there aren't any trains which travel directly from the airport. 
                     If you are comfortable transferring, you could travel from many locations
-                    right to Durham or Exeter, which are only around 10-20 minutes away from us.</p>
+                    right to Durham or Exeter, which are only around 10-20 minutes away from us. 
+                    That being said, I can't make the same comments as C&J for Amtrak in regards 
+                    to reliability, though some people have had much better experiences.</p>
                 </div>
             </Collapse>
             <button className="travelAccordion accordionCar" onClick={()=>{
