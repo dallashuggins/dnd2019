@@ -34,7 +34,7 @@ function Travel (props) {
                     from our home in Nottingham. It is by far the most convenient to getting to our
                     area, but we have yet to see any direct flights from the Bay Area. It is definitely 
                     worth checking what is available regardless, though you'll likely find much better deals
-                    flying into Boston.</p>
+                    flying into Boston. Since this is a small airport, it is easy to find your way around. </p>
                     <p className="air" style={{fontWeight: 'bold'}}>Boston Logan Airport (BOS):</p>
                     <p className="air">While Manchester airport is closer, Boston Logan Airport is around an hour
                     and 20 minutes from Nottingham, and there are direct bus lines that travel to our area 
