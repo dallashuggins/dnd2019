@@ -18,7 +18,7 @@ function Travel (props) {
                     nearby. However, this is a common time for people to travel to New England. 
                     This is the best time to come out in fact, because of the beautiful Fall foliage! 
                     Therefore, it is important to book a good amount in advance because the best 
-                    places get taken the fastest. <br />
+                    places get taken the fastest. <br /><br/>
                     We are available to help out with planning, so please get in contact!
                     </p>
                 </div>
