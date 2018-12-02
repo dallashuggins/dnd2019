@@ -10,11 +10,13 @@ function Plans (props) {
             <div className="detailText">
                 <div className="detailTextIndiv">
                     <p className="val">
-                    Nottingham is located in the Seacoast area of New Hampshire.
-                    We are between one and one and a half hours away from Boston, 
-                    around an hour from Portland (Maine), a couple hours from the 
-                    White Mountains, around 3 hours from Burlington, Vermont, 
-                    and about 5 hours from both Toronto and NYC. <br/><br/>
+                    Nottingham is located in the Seacoast area of New Hampshire. 
+                    We live ~ 30 minutes from the borders with Massachusetts and Maine. 
+                    We are also about an hour from Salem (Massachusetts), around an hour to 
+                    an hour and a half from Boston and Portland (Maine), a couple hours 
+                    from the White Mountains, around 3 hours from Burlington, Vermont, 
+                    and about 5 hours from both Toronto and NYC. 
+                    <br/><br/>
                     We added some photos below of local areas to help with some ideas 
                     when planning your trip, though we would absolutely love to help plan 
                     anyone's trip out here or offer more detailed advice. Just let us know! 
