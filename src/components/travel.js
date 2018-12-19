@@ -90,7 +90,9 @@ function Travel (props) {
                     <p className="stay">There are hotels in surrounding cities, including Durham, 
                     Exeter, Dover, Portsmouth, and more. For higher-end accomodations, see the well regarded 
                     local hotel, the <a href="https://www.threechimneysinn.com/">Three Chimneys Inn</a>. 
-                    For more standard options, there are a variety of inns and hotels around.</p>
+                    <a href="https://www.silverfountain.com/">The Silver Fountain</a> in Dover 
+                    (~ 15 min from us) is a gorgeous option as well. There are also a variety of 
+                    inns and hotels around.</p>
                     <hr />
                     <p className="stay" style={{fontStyle: 'italic'}}>
                     We would be happy to make arrangements for any accomodations, and are expecting to do so. 

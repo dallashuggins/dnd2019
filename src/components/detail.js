@@ -19,9 +19,16 @@ function Detail (props) {
                     <p className="key">Date:</p><p className="val">October 12th, 2019</p>
                 </div>
                 <div className="detailTextIndiv">
+                    <p className="key">Venue:</p><p className="val">
+                    The address is on the RSVP postcard that was sent to you. Though this is subject 
+                    to change, as the venue could change depending on the amount of people who RSVP. 
+                    </p>
+                </div>
+                <div className="detailTextIndiv">
                     <p className="key">Dress:</p><p className="val">
                     Dressy casual. It will be cold at this time of year, so comfort first and foremost. 
-                    If you're feeling festive, Halloween costumes are encouraged!
+                    We will make sure it's warm enough at the wedding, but it's still a good idea to dress 
+                    warm. And if you're feeling festive, Halloween costumes are encouraged!
                     </p>
                 </div>
                 <div className="detailTextIndiv">
@@ -29,7 +36,7 @@ function Detail (props) {
                     The weather around this time of year is extremely variable. 
                     In 2017, there was a minimum temperature of {min.minTemp || 35} F 
                     and a maximum temperature of {max.maxTemp || 78} F during the week of
-                    October 7th to October 17th. Typically be in the 40s or 50s.
+                    October 7th to October 17th. Typically be in the 40s or 50s. 
                     </p>
                 </div>
                 <div className="detailTextIndiv">
