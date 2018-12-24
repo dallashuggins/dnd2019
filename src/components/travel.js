@@ -54,16 +54,44 @@ let hotels = {
         distance: '21 minutes',
         city: 'Dover'
     },
-    test: {
-        url: '',
-        name: '',
-        estimatedDistance: '0 minutes',
-        distance: '0 minutes',
-        city: 'City'
+    garrisonHotel: {
+        url: 'https://www.thegarrisonhotel.com/at-our-hotel/rooms.html',
+        name: 'The Garrison Hotel',
+        estimatedDistance: '15 minutes',
+        distance: '15 minutes',
+        city: 'Dover'
     }
 };
 
 let airbnbs = {
+    lee1: {
+        url: 'https://www.airbnb.com/rooms/17825340?s=51',
+        name: 'Plumer Homestead',
+        estimatedDistance: '5 minutes',
+        city: 'Lee, New Hampshire',
+        guests: '10'
+    },
+    durham1: {
+        url: 'https://www.airbnb.com/rooms/19324137?s=51',
+        name: 'In town Durham NH home-walk to UNH',
+        estimatedDistance: '15 minutes',
+        city: 'Durham, New Hampshire',
+        guests: '7'
+    },
+    stratham1: {
+        url: 'https://www.airbnb.com/rooms/19923934?s=51',
+        name: 'Private Sanctuary 15 min to Ocean & Portsmouth!',
+        estimatedDistance: '20 minutes',
+        city: 'Stratham, New Hampshire',
+        guests: '10'
+    },
+    portsmouth1: {
+        url: 'https://www.airbnb.com/rooms/6091505?s=51',
+        name: 'Lovely waterfront home. Portsmouth',
+        estimatedDistance: '27 minutes',
+        city: 'Portsmouth, New Hampshire',
+        guests: '8'
+    },
     york1: {
         url: 'https://www.airbnb.com/rooms/25366193?s=51',
         name: 'Ocean view cottage w/ grill-near Long Sands Beach',
@@ -84,13 +112,6 @@ let airbnbs = {
         estimatedDistance: '28 minutes',
         city: 'Kittery, Maine',
         guests: '8'
-    },
-    test: {
-        url: '',
-        name: '',
-        estimatedDistance: '0 minutes',
-        city: 'City',
-        guests: '0'
     },
     test: {
         url: '',
@@ -181,28 +202,33 @@ function Travel (props) {
             }}>Stay</button>
             <Collapse in={props.accordionStay}>
                 <div className="stay">
-                    <p className="stay" style={{fontWeight: 'bold'}}>Airbnb:</p>
-                    <p className="stay">
-                    There are Airbnbs in Nottingham and surrounding areas. Some notable mentions are listed below. 
-                    Specific addresses are not provided on Airbnb, so the distances are just general estimates. 
-                    <ul>
-                        <li><a href={airbnbs.york1.url}>{airbnbs.york1.name}</a> in {airbnbs.york1.city} and can fit {airbnbs.york1.guests} guests ({airbnbs.york1.estimatedDistance} away).</li>
-                        <li><a href={airbnbs.eliot1.url}>{airbnbs.eliot1.name}</a> in {airbnbs.eliot1.city} and can fit {airbnbs.eliot1.guests} guests ({airbnbs.eliot1.estimatedDistance} away).</li>
-                        <li><a href={airbnbs.kittery1.url}>{airbnbs.kittery1.name}</a> in {airbnbs.kittery1.city} and can fit {airbnbs.kittery1.guests} guests ({airbnbs.kittery1.estimatedDistance} away).</li>
-                    </ul>
-                    </p>
                     <p className="stay" style={{fontWeight: 'bold'}}>Hotels:</p>
                     <p className="stay">
                     There are hotels in surrounding cities, including Durham, Exeter, Dover, Portsmouth, and more. 
                     Local hotels include:
                     <ul>
                         <li><a href={hotels.silverFountain.url}>{hotels.silverFountain.name}</a> in {hotels.silverFountain.city} ({hotels.silverFountain.estimatedDistance} away)</li>
+                        <li><a href={hotels.garrisonHotel.url}>{hotels.garrisonHotel.name}</a> in {hotels.garrisonHotel.city} ({hotels.garrisonHotel.estimatedDistance} away)</li>
                         <li><a href={hotels.wyndhamInn.url}>{hotels.wyndhamInn.name}</a> in {hotels.wyndhamInn.city} ({hotels.wyndhamInn.estimatedDistance} away)</li>
                         <li><a href={hotels.fairfieldInn.url}>{hotels.fairfieldInn.name}</a> in {hotels.fairfieldInn.city} ({hotels.fairfieldInn.estimatedDistance} away)</li>
                         <li><a href={hotels.comfortInn.url}>{hotels.comfortInn.name}</a> in {hotels.comfortInn.city} ({hotels.comfortInn.estimatedDistance} away)</li>
                         <li><a href={hotels.hamptonInn.url}>{hotels.hamptonInn.name}</a> in {hotels.hamptonInn.city} ({hotels.hamptonInn.estimatedDistance} away)</li>
                         <li><a href={hotels.homewoodSuites.url}>{hotels.homewoodSuites.name}</a> in {hotels.homewoodSuites.city} ({hotels.homewoodSuites.estimatedDistance} away)</li>
                         <li><a href={hotels.microtelInn.url}>{hotels.microtelInn.name}</a> in {hotels.microtelInn.city} ({hotels.microtelInn.estimatedDistance} away)</li>
+                    </ul>
+                    </p>
+                    <p className="stay" style={{fontWeight: 'bold'}}>Airbnb:</p>
+                    <p className="stay">
+                    There are Airbnbs in Nottingham and surrounding areas. Some notable mentions are listed below. 
+                    Specific addresses are not provided on Airbnb, so the distances are just general estimates. 
+                    <ul>
+                        <li><a href={airbnbs.lee1.url}>{airbnbs.lee1.name}</a> in {airbnbs.lee1.city} and can fit {airbnbs.lee1.guests} guests ({airbnbs.lee1.estimatedDistance} away).</li>
+                        <li><a href={airbnbs.durham1.url}>{airbnbs.durham1.name}</a> in {airbnbs.durham1.city} and can fit {airbnbs.durham1.guests} guests ({airbnbs.durham1.estimatedDistance} away).</li>
+                        <li><a href={airbnbs.stratham1.url}>{airbnbs.stratham1.name}</a> in {airbnbs.stratham1.city} and can fit {airbnbs.stratham1.guests} guests ({airbnbs.stratham1.estimatedDistance} away).</li>
+                        <li><a href={airbnbs.portsmouth1.url}>{airbnbs.portsmouth1.name}</a> in {airbnbs.portsmouth1.city} and can fit {airbnbs.portsmouth1.guests} guests ({airbnbs.portsmouth1.estimatedDistance} away).</li>
+                        <li><a href={airbnbs.york1.url}>{airbnbs.york1.name}</a> in {airbnbs.york1.city} and can fit {airbnbs.york1.guests} guests ({airbnbs.york1.estimatedDistance} away).</li>
+                        <li><a href={airbnbs.eliot1.url}>{airbnbs.eliot1.name}</a> in {airbnbs.eliot1.city} and can fit {airbnbs.eliot1.guests} guests ({airbnbs.eliot1.estimatedDistance} away).</li>
+                        <li><a href={airbnbs.kittery1.url}>{airbnbs.kittery1.name}</a> in {airbnbs.kittery1.city} and can fit {airbnbs.kittery1.guests} guests ({airbnbs.kittery1.estimatedDistance} away).</li>
                     </ul>
                     </p>
                     <hr />
