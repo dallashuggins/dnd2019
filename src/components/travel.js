@@ -4,6 +4,103 @@ import {
 } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
+let hotels = {
+    silverFountain: {
+        url: 'https://www.silverfountain.com/',
+        name: 'Silver Fountain Inn',
+        estimatedDistance: '15 minutes',
+        distance: '17 minutes',
+        city: 'Dover'
+    },
+    wyndhamInn: {
+        url: 'https://www.wyndhamhotels.com/days-inn/dover-new-hampshire/days-inn-dover-durham-downtown/overview',
+        name: 'Days Inn by Wyndham Dover',
+        estimatedDistance: '20 minutes',
+        distance: '21 minutes',
+        city: 'Dover'
+    },
+    fairfieldInn: {
+        url: 'https://www.marriott.com/hotels/travel/psmex-fairfield-inn-and-suites-portsmouth-exeter/',
+        name: 'Fairfield Inn & Suites Portsmouth Exeter',
+        estimatedDistance: '20 minutes',
+        distance: '20 minutes',
+        city: 'Exeter'
+    },
+    comfortInn: {
+        url: 'https://www.choicehotels.com/new-hampshire/dover/comfort-inn-hotels/nh014/rates?checkInDate=2019-10-11&checkOutDate=2019-10-13',
+        name: 'Comfort Inn & Suites',
+        estimatedDistance: '20 minutes',
+        distance: '20 minutes',
+        city: 'Dover'
+    },
+    hamptonInn: {
+        url: 'https://hamptoninn3.hilton.com/en/hotels/new-hampshire/hampton-inn-dover-PSMDOHX/index.html',
+        name: 'Hampton Inn Dover',
+        estimatedDistance: '20 minutes',
+        distance: '20 minutes',
+        city: 'Dover'
+    },
+    homewoodSuites: {
+        url: 'https://homewoodsuites3.hilton.com/en/hotels/new-hampshire/homewood-suites-by-hilton-dover-PSMDVHW/index.html',
+        name: 'Homewood Suites by Hilton Dover',
+        estimatedDistance: '20 minutes',
+        distance: '21 minutes',
+        city: 'Dover'
+    },
+    microtelInn: {
+        url: 'https://www.wyndhamhotels.com/microtel/dover-new-hampshire/microtel-inn-and-suites-dover-nh/overview',
+        name: 'Microtel Inn & Suites by Wyndham Dover',
+        estimatedDistance: '20 minutes',
+        distance: '21 minutes',
+        city: 'Dover'
+    },
+    test: {
+        url: '',
+        name: '',
+        estimatedDistance: '0 minutes',
+        distance: '0 minutes',
+        city: 'City'
+    }
+};
+
+let airbnbs = {
+    york1: {
+        url: 'https://www.airbnb.com/rooms/25366193?s=51',
+        name: 'Ocean view cottage w/ grill-near Long Sands Beach',
+        estimatedDistance: '32 minutes',
+        city: 'York, Maine',
+        guests: '8'
+    },
+    eliot1: {
+        url: 'https://www.airbnb.com/rooms/7226918?s=51',
+        name: 'Hidden Meadows Farm & Vineyard Overlook',
+        estimatedDistance: '28 minutes',
+        city: 'Eliot, Maine',
+        guests: '8'
+    },
+    kittery1: {
+        url: 'https://www.airbnb.com/rooms/20697116?s=51',
+        name: 'Panoramic Water View Home',
+        estimatedDistance: '28 minutes',
+        city: 'Kittery, Maine',
+        guests: '8'
+    },
+    test: {
+        url: '',
+        name: '',
+        estimatedDistance: '0 minutes',
+        city: 'City',
+        guests: '0'
+    },
+    test: {
+        url: '',
+        name: '',
+        estimatedDistance: '0 minutes',
+        city: 'City',
+        guests: '0'
+    }
+};
+
 function Travel (props) {
     const url = `https://www.google.com/maps/embed/v1/place?key=${props.google_api}&q=nottingham%2C%20nh`;
     return (
@@ -14,7 +111,7 @@ function Travel (props) {
                 <div className="detailTextIndiv">
                     <p className="val">
                     Depending on where you are traveling from, there's a variety of travel 
-                    options to our area. There are also a variety of Airbnb homes and hotels 
+                    options to our area. There are also a variety of Airbnb hotels and inns 
                     nearby. However, this is a common time for people to travel to New England. 
                     This is the best time to come out in fact, because of the beautiful Fall foliage! 
                     Therefore, it is important to book a good amount in advance because the best 
@@ -85,14 +182,29 @@ function Travel (props) {
             <Collapse in={props.accordionStay}>
                 <div className="stay">
                     <p className="stay" style={{fontWeight: 'bold'}}>Airbnb:</p>
-                    <p className="stay">There are Airbnbs in Nottingham and surrounding areas.</p>
+                    <p className="stay">
+                    There are Airbnbs in Nottingham and surrounding areas. Some notable mentions are listed below. 
+                    Specific addresses are not provided on Airbnb, so the distances are just general estimates. 
+                    <ul>
+                        <li><a href={airbnbs.york1.url}>{airbnbs.york1.name}</a> in {airbnbs.york1.city} and can fit {airbnbs.york1.guests} guests ({airbnbs.york1.estimatedDistance} away).</li>
+                        <li><a href={airbnbs.eliot1.url}>{airbnbs.eliot1.name}</a> in {airbnbs.eliot1.city} and can fit {airbnbs.eliot1.guests} guests ({airbnbs.eliot1.estimatedDistance} away).</li>
+                        <li><a href={airbnbs.kittery1.url}>{airbnbs.kittery1.name}</a> in {airbnbs.kittery1.city} and can fit {airbnbs.kittery1.guests} guests ({airbnbs.kittery1.estimatedDistance} away).</li>
+                    </ul>
+                    </p>
                     <p className="stay" style={{fontWeight: 'bold'}}>Hotels:</p>
-                    <p className="stay">There are hotels in surrounding cities, including Durham, 
-                    Exeter, Dover, Portsmouth, and more. For higher-end accomodations, see the well regarded 
-                    local hotel, the <a href="https://www.threechimneysinn.com/">Three Chimneys Inn</a>. 
-                    <a href="https://www.silverfountain.com/">The Silver Fountain</a> in Dover 
-                    (~ 15 min from us) is a gorgeous option as well. There are also a variety of 
-                    inns and hotels around.</p>
+                    <p className="stay">
+                    There are hotels in surrounding cities, including Durham, Exeter, Dover, Portsmouth, and more. 
+                    Local hotels include:
+                    <ul>
+                        <li><a href={hotels.silverFountain.url}>{hotels.silverFountain.name}</a> in {hotels.silverFountain.city} ({hotels.silverFountain.estimatedDistance} away)</li>
+                        <li><a href={hotels.wyndhamInn.url}>{hotels.wyndhamInn.name}</a> in {hotels.wyndhamInn.city} ({hotels.wyndhamInn.estimatedDistance} away)</li>
+                        <li><a href={hotels.fairfieldInn.url}>{hotels.fairfieldInn.name}</a> in {hotels.fairfieldInn.city} ({hotels.fairfieldInn.estimatedDistance} away)</li>
+                        <li><a href={hotels.comfortInn.url}>{hotels.comfortInn.name}</a> in {hotels.comfortInn.city} ({hotels.comfortInn.estimatedDistance} away)</li>
+                        <li><a href={hotels.hamptonInn.url}>{hotels.hamptonInn.name}</a> in {hotels.hamptonInn.city} ({hotels.hamptonInn.estimatedDistance} away)</li>
+                        <li><a href={hotels.homewoodSuites.url}>{hotels.homewoodSuites.name}</a> in {hotels.homewoodSuites.city} ({hotels.homewoodSuites.estimatedDistance} away)</li>
+                        <li><a href={hotels.microtelInn.url}>{hotels.microtelInn.name}</a> in {hotels.microtelInn.city} ({hotels.microtelInn.estimatedDistance} away)</li>
+                    </ul>
+                    </p>
                     <hr />
                     <p className="stay" style={{fontStyle: 'italic'}}>
                     We would be happy to make arrangements for any accomodations, and are expecting to do so. 
