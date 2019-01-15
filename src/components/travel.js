@@ -42,10 +42,13 @@ let hotels = {
     },
     homewoodSuites: {
         url: 'https://homewoodsuites3.hilton.com/en/hotels/new-hampshire/homewood-suites-by-hilton-dover-PSMDVHW/index.html',
-        name: 'Homewood Suites by Hilton Dover',
+        name: 'Homewood Suites',
         estimatedDistance: '20 minutes',
         distance: '21 minutes',
-        city: 'Dover'
+        city: 'Dover',
+        rsvpLink: 'http://homewoodsuites3.hilton.com/en/hotels/new-hampshire/homewood-suites-by-hilton-dover-PSMDVHW/index.html',
+        rsvpCode: 'HUG',
+        phone: '(603) 516-0929'
     },
     microtelInn: {
         url: 'https://www.wyndhamhotels.com/microtel/dover-new-hampshire/microtel-inn-and-suites-dover-nh/overview',
@@ -204,7 +207,21 @@ function Travel (props) {
                 <div className="stay">
                     <p className="stay" style={{fontWeight: 'bold'}}>Hotels:</p>
                     <p className="stay">
-                    There are hotels in surrounding cities, including Durham, Exeter, Dover, Portsmouth, and more. 
+                        We currently have a block of 10 rooms on hold at the <a href={hotels.homewoodSuites.url}>{hotels.homewoodSuites.name}</a>, 
+                        which is in {hotels.homewoodSuites.city} ({hotels.homewoodSuites.estimatedDistance} away).
+                        There is a discounted rate of $189/$199, as long as you book before September 1st. However, Sept 1st would 
+                        be very late to book, and they likely will be taken long before then, so please let me know if you 
+                        plan to stay here but can't book yet, so I can reserve a larger block of rooms. 
+                    </p>
+                    <p className="stay">
+                        Guests can book within this block of rooms by either calling the hotel at {hotels.homewoodSuites.phone} and 
+                        reserving under the "Huggins block", or by reserving a room <a href={hotels.homewoodSuites.rsvpLink}>online</a> with 
+                        the group code {hotels.homewoodSuites.rsvpCode}. There will be a free shuttle running between this hotel 
+                        and our home on the day of the wedding; pickup times delivering to the wedding are at 1:45pm and 2:30pm and 
+                        pickup times delivering back to the hotel are at 7pm and 9pm.
+                    </p>
+                    <p className="stay">
+                    There are also other hotels in surrounding cities, including Durham, Exeter, Dover, Portsmouth, and more. 
                     Local hotels include:
                     <ul>
                         <li><a href={hotels.silverFountain.url}>{hotels.silverFountain.name}</a> in {hotels.silverFountain.city} ({hotels.silverFountain.estimatedDistance} away)</li>
@@ -213,7 +230,6 @@ function Travel (props) {
                         <li><a href={hotels.fairfieldInn.url}>{hotels.fairfieldInn.name}</a> in {hotels.fairfieldInn.city} ({hotels.fairfieldInn.estimatedDistance} away)</li>
                         <li><a href={hotels.comfortInn.url}>{hotels.comfortInn.name}</a> in {hotels.comfortInn.city} ({hotels.comfortInn.estimatedDistance} away)</li>
                         <li><a href={hotels.hamptonInn.url}>{hotels.hamptonInn.name}</a> in {hotels.hamptonInn.city} ({hotels.hamptonInn.estimatedDistance} away)</li>
-                        <li><a href={hotels.homewoodSuites.url}>{hotels.homewoodSuites.name}</a> in {hotels.homewoodSuites.city} ({hotels.homewoodSuites.estimatedDistance} away)</li>
                         <li><a href={hotels.microtelInn.url}>{hotels.microtelInn.name}</a> in {hotels.microtelInn.city} ({hotels.microtelInn.estimatedDistance} away)</li>
                     </ul>
                     </p>
