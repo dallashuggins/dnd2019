@@ -217,7 +217,7 @@ function Travel (props) {
                         Guests can book within this block of rooms by either calling the hotel at {hotels.homewoodSuites.phone} and 
                         reserving under the "Huggins block", or by reserving a room <a href={hotels.homewoodSuites.rsvpLink}>online</a> with 
                         the group code {hotels.homewoodSuites.rsvpCode}. There will be a free shuttle running between this hotel 
-                        and our home on the day of the wedding; pickup times delivering to the wedding are at 1:45pm and 2:30pm and 
+                        and our home on the day of the wedding; pickup times delivering to the wedding are at 1:30pm and 2:30pm and 
                         pickup times delivering back to the hotel are at 7pm and 9pm.
                     </p>
                     <p className="stay">
