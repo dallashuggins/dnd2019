@@ -4,126 +4,130 @@ import {
 } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
-let hotels = {
-    silverFountain: {
+let hotels = [
+    {
         url: 'https://www.silverfountain.com/',
         name: 'Silver Fountain Inn',
         estimatedDistance: '15 minutes',
         distance: '17 minutes',
         city: 'Dover'
     },
-    wyndhamInn: {
+    {
         url: 'https://www.wyndhamhotels.com/days-inn/dover-new-hampshire/days-inn-dover-durham-downtown/overview',
         name: 'Days Inn by Wyndham Dover',
         estimatedDistance: '20 minutes',
         distance: '21 minutes',
         city: 'Dover'
     },
-    fairfieldInn: {
+    {
         url: 'https://www.marriott.com/hotels/travel/psmex-fairfield-inn-and-suites-portsmouth-exeter/',
         name: 'Fairfield Inn & Suites Portsmouth Exeter',
         estimatedDistance: '20 minutes',
         distance: '20 minutes',
         city: 'Exeter'
     },
-    comfortInn: {
+    {
         url: 'https://www.choicehotels.com/new-hampshire/dover/comfort-inn-hotels/nh014/rates?checkInDate=2019-10-11&checkOutDate=2019-10-13',
         name: 'Comfort Inn & Suites',
         estimatedDistance: '20 minutes',
         distance: '20 minutes',
         city: 'Dover'
     },
-    hamptonInn: {
+    {
         url: 'https://hamptoninn3.hilton.com/en/hotels/new-hampshire/hampton-inn-dover-PSMDOHX/index.html',
         name: 'Hampton Inn Dover',
         estimatedDistance: '20 minutes',
         distance: '20 minutes',
         city: 'Dover'
     },
-    homewoodSuites: {
-        url: 'https://homewoodsuites3.hilton.com/en/hotels/new-hampshire/homewood-suites-by-hilton-dover-PSMDVHW/index.html',
-        name: 'Homewood Suites',
-        estimatedDistance: '20 minutes',
-        distance: '21 minutes',
-        city: 'Dover',
-        rsvpLink: 'http://homewoodsuites3.hilton.com/en/hotels/new-hampshire/homewood-suites-by-hilton-dover-PSMDVHW/index.html',
-        rsvpCode: 'HUG',
-        phone: '(603) 516-0929'
-    },
-    microtelInn: {
+    {
         url: 'https://www.wyndhamhotels.com/microtel/dover-new-hampshire/microtel-inn-and-suites-dover-nh/overview',
         name: 'Microtel Inn & Suites by Wyndham Dover',
         estimatedDistance: '20 minutes',
         distance: '21 minutes',
         city: 'Dover'
     },
-    garrisonHotel: {
+    {
         url: 'https://www.thegarrisonhotel.com/at-our-hotel/rooms.html',
         name: 'The Garrison Hotel',
         estimatedDistance: '15 minutes',
         distance: '15 minutes',
         city: 'Dover'
     }
-};
+];
 
-let airbnbs = {
-    lee1: {
-        url: 'https://www.airbnb.com/rooms/17825340?s=51',
-        name: 'Plumer Homestead',
-        estimatedDistance: '5 minutes',
-        city: 'Lee, New Hampshire',
-        guests: '10'
+let airbnbs = [
+    {
+        url: 'https://www.airbnb.com/rooms/27810050?s=51',
+        name: 'Cottage on Winding Hill',
+        estimatedDistance: '13 minutes',
+        city: 'Northwood, NH',
+        guests: '6'
     },
-    durham1: {
+    {
+        url: 'https://www.airbnb.com/rooms/21527608?s=51',
+        name: 'Lakefront Living on Northwood Lake',
+        estimatedDistance: '13 minutes',
+        city: 'Northwood, NH',
+        guests: '5'
+    },
+    {
         url: 'https://www.airbnb.com/rooms/19324137?s=51',
         name: 'In town Durham NH home-walk to UNH',
         estimatedDistance: '15 minutes',
         city: 'Durham, New Hampshire',
         guests: '7'
     },
-    stratham1: {
+    {
+        url: 'https://www.airbnb.com/rooms/20883141?s=51',
+        name: 'Lovely One of a Kind Lake House',
+        estimatedDistance: '18 minutes',
+        city: 'Barrington, NH',
+        guests: '3'
+    },
+    {
         url: 'https://www.airbnb.com/rooms/19923934?s=51',
         name: 'Private Sanctuary 15 min to Ocean & Portsmouth!',
         estimatedDistance: '20 minutes',
         city: 'Stratham, New Hampshire',
         guests: '10'
     },
-    portsmouth1: {
+    {
+        url: 'https://www.airbnb.com/rooms/29130707?s=51',
+        name: 'The Loft at Winter’s End Farm',
+        estimatedDistance: '23 minutes',
+        city: 'Epsom, New Hampshire',
+        guests: '2'
+    },
+    {
         url: 'https://www.airbnb.com/rooms/6091505?s=51',
         name: 'Lovely waterfront home. Portsmouth',
         estimatedDistance: '27 minutes',
         city: 'Portsmouth, New Hampshire',
         guests: '8'
     },
-    york1: {
+    {
         url: 'https://www.airbnb.com/rooms/25366193?s=51',
         name: 'Ocean view cottage w/ grill-near Long Sands Beach',
         estimatedDistance: '32 minutes',
         city: 'York, Maine',
         guests: '8'
     },
-    eliot1: {
-        url: 'https://www.airbnb.com/rooms/7226918?s=51',
-        name: 'Hidden Meadows Farm & Vineyard Overlook',
-        estimatedDistance: '28 minutes',
-        city: 'Eliot, Maine',
-        guests: '8'
-    },
-    kittery1: {
+    {
         url: 'https://www.airbnb.com/rooms/20697116?s=51',
         name: 'Panoramic Water View Home',
         estimatedDistance: '28 minutes',
         city: 'Kittery, Maine',
         guests: '8'
     },
-    test: {
-        url: '',
-        name: '',
-        estimatedDistance: '0 minutes',
-        city: 'City',
-        guests: '0'
+    {
+        url: 'https://www.airbnb.com/rooms/29606111?s=51',
+        name: 'Rye Beach Getaway - Steps to the Ocean',
+        estimatedDistance: '36 minutes',
+        city: 'Rye, Maine',
+        guests: '4'
     }
-};
+];
 
 function Travel (props) {
     const url = `https://www.google.com/maps/embed/v1/place?key=${props.google_api}&q=nottingham%2C%20nh`;
@@ -207,16 +211,15 @@ function Travel (props) {
                 <div className="stay">
                     <p className="stay" style={{fontWeight: 'bold'}}>Hotels:</p>
                     <p className="stay">
-                        We currently have a block of 10 rooms on hold at the <a href={hotels.homewoodSuites.url}>{hotels.homewoodSuites.name}</a>, 
-                        which is in {hotels.homewoodSuites.city} ({hotels.homewoodSuites.estimatedDistance} away).
-                        There is a discounted rate of $189/$199, as long as you book before September 1st. However, Sept 1st would 
-                        be very late to book, and they likely will be taken long before then, so please let me know if you 
+                        We currently have a block of 10 rooms on hold at the <a href="https://homewoodsuites3.hilton.com/en/hotels/new-hampshire/homewood-suites-by-hilton-dover-PSMDVHW/index.html">Homewood Suites</a>, 
+                        which is in Dover (20 minutes away). There is a discounted rate of $189/$199, as long as you book before September 1st. 
+                        However, Sept 1st would be very late to book, and they likely will be taken long before then, so please let me know if you 
                         plan to stay here but can't book yet, so I can reserve a larger block of rooms. 
                     </p>
                     <p className="stay">
-                        Guests can book within this block of rooms by either calling the hotel at {hotels.homewoodSuites.phone} and 
-                        reserving under the "Huggins block", or by reserving a room <a href={hotels.homewoodSuites.rsvpLink}>online</a> with 
-                        the group code {hotels.homewoodSuites.rsvpCode}. There will be a free shuttle running between this hotel 
+                        Guests can book within this block of rooms by either calling the hotel at (603) 516-0929 and 
+                        reserving under the "Huggins block", or by <a href="http://homewoodsuites3.hilton.com/en/hotels/new-hampshire/homewood-suites-by-hilton-dover-PSMDVHW/index.html">reserving a room online</a> with 
+                        the group code HUG. There will be a free shuttle running between this hotel 
                         and our home on the day of the wedding; pickup times delivering to the wedding are at 1:30pm and 2:30pm and 
                         pickup times delivering back to the hotel are at 7pm and 9pm.
                     </p>
@@ -224,13 +227,11 @@ function Travel (props) {
                     There are also other hotels in surrounding cities, including Durham, Exeter, Dover, Portsmouth, and more. 
                     Local hotels include:
                     <ul>
-                        <li><a href={hotels.silverFountain.url}>{hotels.silverFountain.name}</a> in {hotels.silverFountain.city} ({hotels.silverFountain.estimatedDistance} away)</li>
-                        <li><a href={hotels.garrisonHotel.url}>{hotels.garrisonHotel.name}</a> in {hotels.garrisonHotel.city} ({hotels.garrisonHotel.estimatedDistance} away)</li>
-                        <li><a href={hotels.wyndhamInn.url}>{hotels.wyndhamInn.name}</a> in {hotels.wyndhamInn.city} ({hotels.wyndhamInn.estimatedDistance} away)</li>
-                        <li><a href={hotels.fairfieldInn.url}>{hotels.fairfieldInn.name}</a> in {hotels.fairfieldInn.city} ({hotels.fairfieldInn.estimatedDistance} away)</li>
-                        <li><a href={hotels.comfortInn.url}>{hotels.comfortInn.name}</a> in {hotels.comfortInn.city} ({hotels.comfortInn.estimatedDistance} away)</li>
-                        <li><a href={hotels.hamptonInn.url}>{hotels.hamptonInn.name}</a> in {hotels.hamptonInn.city} ({hotels.hamptonInn.estimatedDistance} away)</li>
-                        <li><a href={hotels.microtelInn.url}>{hotels.microtelInn.name}</a> in {hotels.microtelInn.city} ({hotels.microtelInn.estimatedDistance} away)</li>
+                        {hotels.map(hotel =>
+                            <li>
+                                <a target="_blank" rel="noopener noreferrer" href={hotel.url}>{hotel.name}</a> in {hotel.city} ({hotel.estimatedDistance} away)
+                            </li>
+                        )}
                     </ul>
                     </p>
                     <p className="stay" style={{fontWeight: 'bold'}}>Airbnb:</p>
@@ -238,13 +239,11 @@ function Travel (props) {
                     There are Airbnbs in Nottingham and surrounding areas. Some notable mentions are listed below. 
                     Specific addresses are not provided on Airbnb, so the distances are just general estimates. 
                     <ul>
-                        <li><a href={airbnbs.lee1.url}>{airbnbs.lee1.name}</a> in {airbnbs.lee1.city} and can fit {airbnbs.lee1.guests} guests ({airbnbs.lee1.estimatedDistance} away).</li>
-                        <li><a href={airbnbs.durham1.url}>{airbnbs.durham1.name}</a> in {airbnbs.durham1.city} and can fit {airbnbs.durham1.guests} guests ({airbnbs.durham1.estimatedDistance} away).</li>
-                        <li><a href={airbnbs.stratham1.url}>{airbnbs.stratham1.name}</a> in {airbnbs.stratham1.city} and can fit {airbnbs.stratham1.guests} guests ({airbnbs.stratham1.estimatedDistance} away).</li>
-                        <li><a href={airbnbs.portsmouth1.url}>{airbnbs.portsmouth1.name}</a> in {airbnbs.portsmouth1.city} and can fit {airbnbs.portsmouth1.guests} guests ({airbnbs.portsmouth1.estimatedDistance} away).</li>
-                        <li><a href={airbnbs.york1.url}>{airbnbs.york1.name}</a> in {airbnbs.york1.city} and can fit {airbnbs.york1.guests} guests ({airbnbs.york1.estimatedDistance} away).</li>
-                        <li><a href={airbnbs.eliot1.url}>{airbnbs.eliot1.name}</a> in {airbnbs.eliot1.city} and can fit {airbnbs.eliot1.guests} guests ({airbnbs.eliot1.estimatedDistance} away).</li>
-                        <li><a href={airbnbs.kittery1.url}>{airbnbs.kittery1.name}</a> in {airbnbs.kittery1.city} and can fit {airbnbs.kittery1.guests} guests ({airbnbs.kittery1.estimatedDistance} away).</li>
+                        {airbnbs.map(airbnb =>
+                            <li>
+                                <a target="_blank" rel="noopener noreferrer" href={airbnb.url}>{airbnb.name}</a> in {airbnb.city} and can fit {airbnb.guests} guests ({airbnb.estimatedDistance} away).
+                            </li>
+                        )}
                     </ul>
                     </p>
                     <hr />
