@@ -5,11 +5,14 @@ import Guests from './guests.js';
 function Rsvp (props) {
     return (
         <div className="formRsvp">
+            <div className="alert">
+                <span className="alertTitle">Note:</span>
+                <span className="alertDescription">Registration deadline is June 1st</span>
+            </div>
             <div className="attendDrop">
                 <select required className="formField" name="status" defaultValue="first" onChange={props.onInputChange}>
                     <option value="first" disabled>Can you attend our wedding?</option>
                     <option value="yes">Yes</option>
-                    <option value="maybe">Maybe</option>
                     <option value="no">No</option>
                 </select>
             </div>

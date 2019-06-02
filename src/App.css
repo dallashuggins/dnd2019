@@ -292,6 +292,18 @@ h2.formTitle {
   color: white;
 }
 
+/* Alerts */
+.alert {
+  width: 50%;
+  margin: auto;
+  padding-bottom: 30px;
+}
+.alertTitle {
+  font-weight: bold;
+  padding-right: 10px;
+  text-transform: uppercase;
+}
+
 /****************** RSVP form (end) *******************/
 
 /****************** Details tab (start) *******************/

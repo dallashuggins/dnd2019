@@ -123,7 +123,6 @@ class App extends Component {
       comments: comments,
       guests: guests
     };
-    console.log("Add Reg options:", options);
     if (regCode === this.props.config.regCode) {
       axios.post(`/api/add`, options)
       .then(response => {
@@ -176,7 +175,6 @@ class App extends Component {
     };
     return rp(options)
     .then(response => {
-      //console.log("getWeatherObserv response data periods", response.periods);
       let periods = [];
       let temperatures = [];
       let weather = [];
@@ -195,7 +193,6 @@ class App extends Component {
       weatherData.temperatures = _.uniq(temperatures);
       weatherData.weather = _.uniq(weather);
       weatherData.weatherShort = _.uniq(weatherShort);
-      //console.log("Weather data:", weatherData);
       return weatherData;
     }).catch((e) => {
       console.log("Get weather error", e);
