@@ -2,9 +2,16 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import rp from 'request-promise';
 import _ from 'underscore';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Redirect } from 'react-router';
 //import logo from './logo.png';
 import './App.css';
 import ContentTabs from './components/tab.js';
+import Header from './components/header.js';
+import Form from './components/form.js';
+import Detail from './components/detail.js';
+import Travel from './components/travel.js';
+import Plans from './components/whatdoto.js';
 import background from './color.jpg';
 //import Footer from './components/footer.js';
 import countdown from 'countdown';
@@ -89,9 +96,6 @@ class App extends Component {
   componentWillUnmount() {
     clearInterval(this.interval);
   }
-
-
-  //setInterval(() => this.setState({ time: Date.now()}), 1000)
 
   // General update state function
   updateState = (stateObject) => {
@@ -234,7 +238,66 @@ class App extends Component {
       <div className="App" style={backgroundImage}>
         <div className="App-body">
           <div className="App-inner">
-            <ContentTabs
+            <div className="tab">
+            <Header />
+            <Router>
+              <Route exact path='/' component={()=><Redirect to="/rsvp" />} />
+              <Route path='/rsvp' component={()=>
+                  <div className="tabContent">
+                      <Form
+                          page={this.state.page}
+                          name={this.state.name}
+                          email={this.state.email}
+                          regCode={this.state.regCode}
+                          status={this.state.status}
+                          comments={this.state.comments}
+                          guests={this.state.guests}
+                          onInputChange={this.onInputChange.bind(this)}
+                          addRegistrant={this.addRegistrant.bind(this)}
+                          updateState={this.updateState.bind(this)}
+                          addGuest={this.addGuest.bind(this)}
+                          handleGuests={this.handleGuests.bind(this)}
+                          removeGuest={this.removeGuest.bind(this)}
+                      />
+                  </div>
+              }/>
+              <Route path='/details' component={()=>
+                <Detail 
+                    temperatures={this.state.temperatures}
+                    accordion={this.state.accordion}
+                    changeBool={this.changeBool.bind(this)}
+                    google_api={this.props.config.google_api}
+                    months={this.state.months}
+                    days={this.state.days}
+                    hours={this.state.hours}
+                    mins={this.state.mins}
+                    secs={this.state.secs}
+                    counter={this.state.counter}
+                />
+              }/>
+              <Route path='/travel' component={()=>
+                <Travel 
+                  google_api={this.props.config.google_api}
+                  changeBool={this.changeBool.bind(this)}
+                  updateState={this.updateState.bind(this)}
+                  accordionAir={this.state.accordionAir}
+                  accordionBus={this.state.accordionBus}
+                  accordionCar={this.state.accordionCar}
+                  accordionStay={this.state.accordionStay}
+                  counter={this.state.counter}
+                />
+              }/>
+              <Route path='/plans' component={()=>
+                <Plans 
+                  accordionCity={this.state.accordionCity}
+                  accordionFall={this.state.accordionFall}
+                  accordionHalloween={this.state.accordionHalloween}
+                  changeBool={this.changeBool.bind(this)}
+                />
+              }/>
+            </Router>
+            </div>
+            {/*<ContentTabs
               page={this.state.page}
               name={this.state.name}
               email={this.state.email}
@@ -268,7 +331,7 @@ class App extends Component {
               accordionCity={this.state.accordionCity}
               accordionFall={this.state.accordionFall}
               accordionHalloween={this.state.accordionHalloween}
-            />
+            />*/}
           </div>
         </div>
         {/*<Footer 

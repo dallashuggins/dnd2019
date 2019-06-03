@@ -13,7 +13,7 @@ function Detail (props) {
             <hr />
             <div className="detailText">
                 <div className="detailTextIndiv">
-                    <p className="key">Time (subject to change):</p><p className="val">12pm</p>
+                    <p className="key">Time (subject to change):</p><p className="val">2pm</p>
                 </div>
                 <div className="detailTextIndiv">
                     <p className="key">Date:</p><p className="val">October 12th, 2019</p>

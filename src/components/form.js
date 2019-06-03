@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Rsvp from './rsvp.js';
 
 function Form (props) {
+    console.log("props", props)
     return (
         <div className="callout">
             <h1>RSVP</h1>
