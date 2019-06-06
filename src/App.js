@@ -8,6 +8,7 @@ import { Redirect } from 'react-router';
 import './App.css';
 import ContentTabs from './components/tab.js';
 import Header from './components/header.js';
+import Counter from './components/counter.js';
 import Form from './components/form.js';
 import Detail from './components/detail.js';
 import Travel from './components/travel.js';
@@ -188,12 +189,12 @@ class App extends Component {
             <Router>
               <Route exact path='/' component={()=><Redirect to="/rsvp" />} />
               <Route path='/rsvp' component={()=>
-                  <div className="tabContent">
+                  <div className="tabContent" id="rsvpPage">
                     <div className="alert">
-                      <span className="alertTitle">Note:</span>
-                      <span className="alertDescription">Registration deadline was June 1st</span>
-                      <span className="alertSubtext">If you have questions or comments, please contact Drew or Dallas.</span>
+                      <span className="alertTitle">Registration deadline was June 1st</span>
+                      <span className="alertSubtext">If you have questions, please contact Drew or Dallas. We can't wait to see you all!</span>
                     </div>
+                    <Counter />
                       {/* <Form
                           page={this.state.page}
                           name={this.state.name}

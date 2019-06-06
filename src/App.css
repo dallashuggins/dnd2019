@@ -118,7 +118,7 @@ div.tabContent {
   min-height: 100%;
   overflow: auto;
   text-align: center;
-  min-height: 25em;
+  min-height: 20em;
 }
 
 /* Callout content */
@@ -330,7 +330,6 @@ h2.formTitle {
 .alertTitle {
   font-weight: bold;
   padding-right: 10px;
-  text-transform: uppercase;
 }
 .alertSubtext {
   display: block;
@@ -442,6 +441,10 @@ div.counter {
   height: 100%;
   min-height: 125px;
   text-align: center;
+}
+
+#rsvpPage > div.counter {
+  margin-bottom: 20px;
 }
 
 /* Text above date counter */
