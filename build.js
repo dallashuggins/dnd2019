@@ -17,8 +17,6 @@ app.get('*', (req,res) =>{
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-console.log('App is listening on port ' + port);
-
 // SSL:
 const privateKey = fs.readFileSync('/usr/local/etc/letsencrypt/live/dnd2019.com/privkey.pem', 'utf8');
 const certificate = fs.readFileSync('/usr/local/etc/letsencrypt/live/dnd2019.com/cert.pem', 'utf8');
