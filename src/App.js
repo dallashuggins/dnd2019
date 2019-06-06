@@ -191,7 +191,8 @@ class App extends Component {
                   <div className="tabContent">
                     <div className="alert">
                       <span className="alertTitle">Note:</span>
-                      <span className="alertDescription">Registration deadline is June 1st</span>
+                      <span className="alertDescription">Registration deadline was June 1st</span>
+                      <span className="alertSubtext">If you have questions or comments, please contact Drew or Dallas.</span>
                     </div>
                       {/* <Form
                           page={this.state.page}

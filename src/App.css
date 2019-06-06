@@ -118,6 +118,7 @@ div.tabContent {
   min-height: 100%;
   overflow: auto;
   text-align: center;
+  min-height: 25em;
 }
 
 /* Callout content */
@@ -320,14 +321,21 @@ h2.formTitle {
 
 /* Alerts */
 .alert {
-  width: 50%;
+  width: 100%;
   margin: auto;
   padding-bottom: 30px;
+  padding-top: 60px;
+  font-size: 35px;
 }
 .alertTitle {
   font-weight: bold;
   padding-right: 10px;
   text-transform: uppercase;
+}
+.alertSubtext {
+  display: block;
+  font-size: 20px;
+  padding: 20px;
 }
 
 /****************** RSVP form (end) *******************/
