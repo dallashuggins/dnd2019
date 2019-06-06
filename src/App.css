@@ -8,7 +8,13 @@ html, body, div#root {
 }
 
 a, a:hover {
-  color: rgba(0, 0, 0, 0.85);
+  color: rgb(187, 84, 23);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+div.headerItem > a, div.headerItem > a:hover {
+  color: black;
 }
 
 div, span, p, a, li, h3, h4, h5, label, input, select, textarea {
@@ -412,7 +418,7 @@ div.detailTextIndiv {
   width: 100%;
 }
 
-p.key {
+div.detailTextIndiv > .key {
   font-weight: bold;
 }
 

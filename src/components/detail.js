@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Weather from './weather.js';
+import Counter from './counter';
 import _ from 'underscore';
 
 function Detail (props) {
     const max = _.max(props.temperatures, function(temp) {return temp.maxTemp});
     const min = _.min(props.temperatures, function(temp) {return temp.minTemp});
-    console.log("Max & min:", max, min)
     return (
         <div className="callout">
             <h1>Details</h1>
@@ -64,29 +64,7 @@ function Detail (props) {
                 </div>
             </div>
             <hr/>
-            <div className="counter" onMouseEnter={props.counter} onSelect={props.counter} onClick={props.counter}>
-                <h3 className="counter">Countdown</h3>
-                <div className="months">
-                    {props.months}
-                    <p className="text">Months</p>
-                </div>
-                <div className="days">
-                    {props.days}
-                    <p className="text">Days</p>
-                </div>
-                <div className="hours">
-                    {props.hours}
-                    <p className="text">Hours</p>
-                </div>
-                <div className="mins">
-                    {props.mins}
-                    <p className="text">Minutes</p>
-                </div>
-                <div className="secs">
-                    {props.secs}
-                    <p className="text">Seconds</p>
-                </div>
-            </div>
+            <Counter />
             <div>
                 <Weather
                     temperatures={props.temperatures}
@@ -100,7 +78,7 @@ function Detail (props) {
   }
 
   Detail.propTypes = {
-    temperatures: PropTypes.array.isRequired,
+    //temperatures: PropTypes.array.isRequired,
     accordion: PropTypes.bool.isRequired,
     changeBool: PropTypes.func.isRequired,
     google_api: PropTypes.string.isRequired,

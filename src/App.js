@@ -14,7 +14,6 @@ import Travel from './components/travel.js';
 import Plans from './components/whatdoto.js';
 import background from './color.jpg';
 //import Footer from './components/footer.js';
-import countdown from 'countdown';
 
 class App extends Component {
   constructor (props) {
@@ -30,11 +29,6 @@ class App extends Component {
       guests: [],
       temperatures: this.props.temperatures,
       accordion: false,
-      months: 0,
-      days: 0,
-      hours: 0,
-      mins: 0,
-      secs: 0,
       accordionAir: false,
       accordionBus: false,
       accordionCar: false,
@@ -45,62 +39,13 @@ class App extends Component {
     }
   }
 
-  counter = () => {
-    //const fullCount = countdown( new Date(2019, 10, 12) ).toString();
-    //const daysCount = countdown(new Date(2019, 10, 12), null, countdown.DAYS).toString();
-    const count = countdown(new Date(2019, 10, 12)).toString();
-    const array = count.split('and').join(',').split(',');
-    let object = {};
-      for (let i=0; i < array.length; i++) {
-        console.log("Array:", array[i].trim().replace(/\D/g,''))
-          if (array[i].indexOf('months') > -1) {
-            this.setState({
-              months: Number(array[i].trim().replace(/\D/g,''))
-            })
-            object.months = Number(array[i].trim().replace(/\D/g,''));
-          }
-          if (array[i].indexOf('days') > -1) {
-            this.setState({
-              days: Number(array[i].trim().replace(/\D/g,''))
-            })
-            object.days = Number(array[i].trim().replace(/\D/g,''));
-          }
-          if (array[i].indexOf('hours') > -1) {
-            this.setState({
-              hours: Number(array[i].trim().replace(/\D/g,''))
-            })
-            object.hours = Number(array[i].trim().replace(/\D/g,''));
-          }
-          if (array[i].indexOf('minutes') > -1) {
-            this.setState({
-              mins: Number(array[i].trim().replace(/\D/g,''))
-            })
-            object.mins = Number(array[i].trim().replace(/\D/g,''));
-          }
-          if (array[i].indexOf('seconds') > -1) {
-            this.setState({
-              secs: Number(array[i].trim().replace(/\D/g,''))
-            })
-            object.secs = Number(array[i].trim().replace(/\D/g,''));
-          }
-      }
-      return object;
-  }
-
   componentDidMount = function() {
     document.title = "Dallas & Drew Autumn Wedding Celebration 2019";
-    this.interval = setInterval(() => this.counter(), 1000);
-    console.log("componentWillMount newObject", this.interval)
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
   }
 
   // General update state function
   updateState = (stateObject) => {
     this.setState(stateObject);
-    console.log("Update state:", stateObject);
   }
 
   changeBool = (name) => {
@@ -267,12 +212,6 @@ class App extends Component {
                     accordion={this.state.accordion}
                     changeBool={this.changeBool.bind(this)}
                     google_api={this.props.config.google_api}
-                    months={this.state.months}
-                    days={this.state.days}
-                    hours={this.state.hours}
-                    mins={this.state.mins}
-                    secs={this.state.secs}
-                    counter={this.state.counter}
                 />
               }/>
               <Route path='/travel' component={()=>
@@ -284,7 +223,6 @@ class App extends Component {
                   accordionBus={this.state.accordionBus}
                   accordionCar={this.state.accordionCar}
                   accordionStay={this.state.accordionStay}
-                  counter={this.state.counter}
                 />
               }/>
               <Route path='/plans' component={()=>
@@ -297,52 +235,8 @@ class App extends Component {
               }/>
             </Router>
             </div>
-            {/*<ContentTabs
-              page={this.state.page}
-              name={this.state.name}
-              email={this.state.email}
-              regCode={this.state.regCode}
-              status={this.state.status}
-              comments={this.state.comments}
-              guests={this.state.guests}
-              onInputChange={this.onInputChange.bind(this)}
-              addRegistrant={this.addRegistrant.bind(this)} 
-              updateState={this.updateState.bind(this)} // general func to pass an object and update state
-              changeBool={this.changeBool.bind(this)} // general func to change boolean to opp. of val
-              addGuest={this.addGuest.bind(this)} // adds guest fields
-              handleGuests={this.handleGuests.bind(this)} // adds the guest to the db
-              removeGuest={this.removeGuest.bind(this)} // removes guest when X is clicked
-              temperatures={this.state.temperatures} // array of temperatures
-              accordion={this.state.accordion} // controls accordion on Details page
-              google_api={this.props.config.google_api} // Google creds
-              // Counter: 
-              months={this.state.months}
-              days={this.state.days}
-              hours={this.state.hours}
-              mins={this.state.mins}
-              secs={this.state.secs}
-              counter={this.counter.bind(this)}
-              // Accordions for travel page:
-              accordionAir={this.state.accordionAir}
-              accordionBus={this.state.accordionBus}
-              accordionCar={this.state.accordionCar}
-              accordionStay={this.state.accordionStay}
-              // Accordions for plan/what-to-do page
-              accordionCity={this.state.accordionCity}
-              accordionFall={this.state.accordionFall}
-              accordionHalloween={this.state.accordionHalloween}
-            />*/}
           </div>
         </div>
-        {/*<Footer 
-          // Counter: 
-          months={this.state.months}
-          days={this.state.days}
-          hours={this.state.hours}
-          mins={this.state.mins}
-          secs={this.state.secs}
-          counter={this.counter.bind(this)}
-        />*/}
       </div>
     );
   }

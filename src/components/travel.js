@@ -58,18 +58,32 @@ let hotels = [
 
 let airbnbs = [
     {
-        url: 'https://www.airbnb.com/rooms/27810050?s=51',
-        name: 'Cottage on Winding Hill',
-        estimatedDistance: '13 minutes',
-        city: 'Northwood, NH',
-        guests: '6'
+        url: 'https://www.airbnb.com/rooms/2130259',
+        name: 'In the country but near the action.',
+        estimatedDistance: '5 minutes',
+        city: 'Lee, NH',
+        guests: '2'
     },
     {
-        url: 'https://www.airbnb.com/rooms/21527608?s=51',
-        name: 'Lakefront Living on Northwood Lake',
+        url: 'https://www.airbnb.com/rooms/14518381',
+        name: 'In-house suite on a farm setting.',
+        estimatedDistance: '5 minutes',
+        city: 'Lee, NH',
+        guests: '4'
+    },
+    {
+        url: 'https://www.airbnb.com/rooms/34090026',
+        name: 'Quiet Neighborhood Home Away From Home',
+        estimatedDistance: '5 minutes',
+        city: 'Lee, NH',
+        guests: '4'
+    },
+    {
+        url: 'https://www.airbnb.com/rooms/19730802',
+        name: 'Spacious private Studio in walkable New England.',
         estimatedDistance: '13 minutes',
-        city: 'Northwood, NH',
-        guests: '5'
+        city: 'Newmarket, NH',
+        guests: '3'
     },
     {
         url: 'https://www.airbnb.com/rooms/19324137?s=51',
@@ -86,6 +100,13 @@ let airbnbs = [
         guests: '3'
     },
     {
+        url: 'https://www.airbnb.com/rooms/6019156',
+        name: 'Recently renovated Lake House',
+        estimatedDistance: '18 minutes',
+        city: 'Barrington, NH',
+        guests: '8'
+    },
+    {
         url: 'https://www.airbnb.com/rooms/19923934?s=51',
         name: 'Private Sanctuary 15 min to Ocean & Portsmouth!',
         estimatedDistance: '20 minutes',
@@ -93,11 +114,11 @@ let airbnbs = [
         guests: '10'
     },
     {
-        url: 'https://www.airbnb.com/rooms/29130707?s=51',
-        name: 'The Loft at Winter’s End Farm',
-        estimatedDistance: '23 minutes',
-        city: 'Epsom, New Hampshire',
-        guests: '2'
+        url: 'https://www.airbnb.com/rooms/18876199',
+        name: 'Beautiful Two Bedroom Open Concept Townhouse',
+        estimatedDistance: '22 minutes',
+        city: 'Exeter, NH',
+        guests: '5'
     },
     {
         url: 'https://www.airbnb.com/rooms/6091505?s=51',
@@ -121,12 +142,19 @@ let airbnbs = [
         guests: '8'
     },
     {
-        url: 'https://www.airbnb.com/rooms/29606111?s=51',
-        name: 'Rye Beach Getaway - Steps to the Ocean',
-        estimatedDistance: '36 minutes',
-        city: 'Rye, Maine',
+        url: 'https://www.airbnb.com/rooms/11730562',
+        name: 'The West Wing',
+        estimatedDistance: '30 minutes',
+        city: 'Strafford, NH',
         guests: '4'
-    }
+    },
+    {
+        url: 'https://www.airbnb.com/rooms/31269977',
+        name: 'Entire Home In Lovely Strafford, NH',
+        estimatedDistance: '30 minutes',
+        city: 'Strafford, NH',
+        guests: '5'
+    },
 ];
 
 function Travel (props) {
@@ -228,7 +256,7 @@ function Travel (props) {
                     Local hotels include:
                     <ul>
                         {hotels.map(hotel =>
-                            <li>
+                            <li key={hotel.name}>
                                 <a target="_blank" rel="noopener noreferrer" href={hotel.url}>{hotel.name}</a> in {hotel.city} ({hotel.estimatedDistance} away)
                             </li>
                         )}
@@ -240,7 +268,7 @@ function Travel (props) {
                     Specific addresses are not provided on Airbnb, so the distances are just general estimates. 
                     <ul>
                         {airbnbs.map(airbnb =>
-                            <li>
+                            <li key={airbnb.name}>
                                 <a target="_blank" rel="noopener noreferrer" href={airbnb.url}>{airbnb.name}</a> in {airbnb.city} and can fit {airbnb.guests} guests ({airbnb.estimatedDistance} away).
                             </li>
                         )}
@@ -248,8 +276,8 @@ function Travel (props) {
                     </p>
                     <hr />
                     <p className="stay" style={{fontStyle: 'italic'}}>
-                    We would be happy to make arrangements for any accomodations, and are expecting to do so. 
-                    Please let us know if you'd like us to help plan your stay. 
+                        We would be happy to make arrangements for any accomodations, and are expecting to do so. 
+                        Please let us know if you'd like us to help plan your stay. 
                     </p>
                 </div>
             </Collapse>

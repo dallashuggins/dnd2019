@@ -47,10 +47,10 @@ function Weather (props) {
   }
 
   Weather.propTypes = {
-    temperatures: PropTypes.array.isRequired,
-    accordion: PropTypes.bool.isRequired,
-    changeBool: PropTypes.func.isRequired,
-    google_api: PropTypes.string.isRequired
+    // temperatures: PropTypes.array.isRequired,
+    // accordion: PropTypes.bool.isRequired,
+    // changeBool: PropTypes.func.isRequired,
+    // google_api: PropTypes.string.isRequired
   };
   
   export default Weather;

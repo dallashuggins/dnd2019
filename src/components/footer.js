@@ -1,25 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Counter from './counter';
 
 function Footer (props) {
     return (
         <footer className="footer">
             <div className="footerLeft">
-                <div className="counterFooter" onMouseEnter={props.counter} onSelect={props.counter} onClick={props.counter}>
-                    <div className="monthsFooter">
-                        {props.months}
-                        <p className="text">Months</p>
-                    </div>
-                    <div className="daysFooter">
-                        {props.days}
-                        <p className="text">Days</p>
-                    </div>
-                    <div className="otherFooter">
-                        {props.hours}:
-                        {props.mins}:
-                        {props.secs}
-                    </div>
-                </div>
+                <Counter />
             </div>
             <div className="footerRight">
                 <p>Test</p>
