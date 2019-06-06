@@ -189,7 +189,11 @@ class App extends Component {
               <Route exact path='/' component={()=><Redirect to="/rsvp" />} />
               <Route path='/rsvp' component={()=>
                   <div className="tabContent">
-                      <Form
+                    <div className="alert">
+                      <span className="alertTitle">Note:</span>
+                      <span className="alertDescription">Registration deadline is June 1st</span>
+                    </div>
+                      {/* <Form
                           page={this.state.page}
                           name={this.state.name}
                           email={this.state.email}
@@ -203,7 +207,7 @@ class App extends Component {
                           addGuest={this.addGuest.bind(this)}
                           handleGuests={this.handleGuests.bind(this)}
                           removeGuest={this.removeGuest.bind(this)}
-                      />
+                      /> */}
                   </div>
               }/>
               <Route path='/details' component={()=>
