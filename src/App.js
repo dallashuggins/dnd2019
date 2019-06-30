@@ -36,7 +36,8 @@ class App extends Component {
       accordionStay: false,
       accordionCity: false,
       accordionFall: false,
-      accordionHalloween: false
+      accordionHalloween: false,
+      accordionAll: false
     }
   }
 
@@ -229,6 +230,7 @@ class App extends Component {
                   accordionBus={this.state.accordionBus}
                   accordionCar={this.state.accordionCar}
                   accordionStay={this.state.accordionStay}
+                  accordionAll={this.state.accordionAll}
                 />
               }/>
               <Route path='/plans' component={()=>

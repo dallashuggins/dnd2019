@@ -177,6 +177,34 @@ function Travel (props) {
                 </div>
             </div>
             <hr/>
+            <button className="travelAccordion accordionAll" onClick={()=>{
+                props.changeBool('accordionAll')
+            }}>Our suggested travel plan</button>
+            <Collapse in={props.accordionAll}>
+                <div className="all">
+                    <p className="all" style={{fontWeight: 'bold'}}>Fly into Boston Logan Airport (BOS):</p>
+                    <p className="all">Boston Logan Airport is around an hour and 20 minutes from 
+                    Nottingham. It is usually the cheapest option to fly into and there are direct flights 
+                    from SFO and other major airports.</p>
+                    <p className="all" style={{fontWeight: 'bold'}}>Take C&J from the airport:</p>
+                    <p className="all">When you walk out of the terminal near the baggage claim, follow the 
+                    orange signs outside the airport that lead you to the Scheduled Bus section. Look for the 
+                    C&J, it comes every hour and does quick stops only in Newburyport, Portsmouth, and 
+                    Dover. Take the C&J to Dover, NH. <br/><br/>
+                    It costs $24 one-way or $48 round trip. The tickets are available for purchase/printing online. 
+                    If you do not print a ticket ahead of time, you can give them your license to hold onto until you 
+                    reach Dover, where you go inside and pay for the ticket and get your license back. Also, 
+                    if you buy online and miss the time for your ticket, don't fret. The tickets are technically 
+                    non-reservation, and can be used for any date/time as long as the ticket is valid. Reserving 
+                    tickets just helps give C&J an idea of how many people will be on the bus.</p>
+                    <p className="all" style={{fontWeight: 'bold'}}>Get to your hotel from C&J:</p>
+                    <p className="all">From the Dover C&J, if you're staying at the Homewood Suites, 
+                    which we have a block of rooms for, you can literally walk to your hotel. There is 
+                    a crosswalk outside the C&J, and once you cross the street you're there. <br/><br/>
+                    If you did not book a hotel at the Homewood Suites OR if you plan to get a rental 
+                    car regardless, the Enterprise in Somersworth will pick you up at the Dover C&J bus terminal.</p>
+                </div>
+            </Collapse>
             <button className="travelAccordion accordionAir" onClick={()=>{
                 props.changeBool('accordionAir')
             }}>Airlines</button>
@@ -298,7 +326,8 @@ function Travel (props) {
     accordionAir: PropTypes.bool.isRequired,
     accordionBus: PropTypes.bool.isRequired,
     accordionCar: PropTypes.bool.isRequired,
-    accordionStay: PropTypes.bool.isRequired
+    accordionStay: PropTypes.bool.isRequired,
+    accordionAll: PropTypes.bool.isRequired
   };
   
   export default Travel;
