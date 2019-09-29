@@ -197,8 +197,9 @@ class App extends Component {
               <Route path='/rsvp' component={()=>
                   <div className="tabContent" id="rsvpPage">
                     <div className="alert">
-                      <span className="alertTitle">Registration deadline was June 1st</span>
-                      <span className="alertSubtext">If you have questions, please contact Drew or Dallas. We can't wait to see you all!</span>
+                      <span className="alertTitle">See you on Saturday, October 12th (1:30pm)!</span>
+                      <span className="alertSubtext" style={{fontStyle: 'italic', paddingTop: '40px'}}>Registration deadline was June 1st.</span>
+                      <span className="alertSubtext">We can't wait to see you all!</span>
                     </div>
                     {/* <Counter /> */}
                       {/* <Form
