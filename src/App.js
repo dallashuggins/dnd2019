@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import rp from 'request-promise';
 import _ from 'underscore';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Redirect } from 'react-router';
 //import logo from './logo.png';
 import './App.css';
-import ContentTabs from './components/tab.js';
+// import ContentTabs from './components/tab.js';
 import Header from './components/header.js';
-import Counter from './components/counter.js';
-import Form from './components/form.js';
+// import Counter from './components/counter.js';
+// import Form from './components/form.js';
 import Detail from './components/detail.js';
+import Events from './components/events.js';
 import Travel from './components/travel.js';
 import Plans from './components/whatdoto.js';
 import background from './color.jpg';
@@ -37,7 +38,11 @@ class App extends Component {
       accordionCity: false,
       accordionFall: false,
       accordionHalloween: false,
-      accordionAll: false
+      accordionAll: false,
+      accordionThurs: false,
+      accordionFri: false,
+      accordionSun: false,
+      accordionMon: false,
     }
   }
 
@@ -195,7 +200,7 @@ class App extends Component {
                       <span className="alertTitle">Registration deadline was June 1st</span>
                       <span className="alertSubtext">If you have questions, please contact Drew or Dallas. We can't wait to see you all!</span>
                     </div>
-                    <Counter />
+                    {/* <Counter /> */}
                       {/* <Form
                           page={this.state.page}
                           name={this.state.name}
@@ -216,9 +221,16 @@ class App extends Component {
               <Route path='/details' component={()=>
                 <Detail 
                     temperatures={this.state.temperatures}
-                    accordion={this.state.accordion}
                     changeBool={this.changeBool.bind(this)}
-                    google_api={this.props.config.google_api}
+                />
+              }/>
+              <Route path='/events' component={()=>
+                <Events 
+                  accordionThurs={this.state.accordionThurs}
+                  accordionFri={this.state.accordionFri}
+                  accordionSun={this.state.accordionSun}
+                  accordionMon={this.state.accordionMon}
+                  changeBool={this.changeBool.bind(this)}
                 />
               }/>
               <Route path='/travel' component={()=>

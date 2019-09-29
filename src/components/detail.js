@@ -13,7 +13,7 @@ function Detail (props) {
             <hr />
             <div className="detailText">
                 <div className="detailTextIndiv">
-                    <p className="key">Time (subject to change):</p><p className="val">1:30pm</p>
+                    <p className="key">Time (confirmed):</p><p className="val">1:30pm</p>
                 </div>
                 <div className="detailTextIndiv">
                     <p className="key">Date:</p><p className="val">October 12th, 2019</p>
@@ -22,10 +22,15 @@ function Detail (props) {
                     <p className="key">Venue:</p><p className="val">The address is on the RSVP postcard that was sent to you.</p>
                 </div>
                 <div className="detailTextIndiv">
+                    <p className="key">Parking:</p><p className="val">People will be outside to help you find the best place to park, 
+                    which will be either along Case Rd. and/or at the Marston Property. We will also have someone available to shuttle 
+                    people from the parking areas to our home, for anyone who has trouble walking.</p>
+                </div>
+                <div className="detailTextIndiv">
                     <p className="key">Dress:</p><p className="val">
                     Dressy casual. It will be cold at this time of year, so comfort first and foremost. 
-                    We will make sure it's warm enough inside the tents at the wedding, but it's still 
-                    a good idea to dress warm.
+                    We have heaters for the tents we'll be in for the wedding, but it's still a good idea 
+                    to dress warm.
                     </p>
                 </div>
                 <div className="detailTextIndiv">
@@ -64,7 +69,7 @@ function Detail (props) {
                 </div>
             </div>
             <hr/>
-            <Counter />
+            {/* <Counter /> */}
             <div>
                 <Weather
                     temperatures={props.temperatures}

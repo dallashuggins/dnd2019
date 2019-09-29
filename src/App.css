@@ -482,8 +482,8 @@ p.hover {
 
 /****************** Travel tab (start) *******************/
 
-/* Accordion buttons on the travel page */
-button.travelAccordion {
+/* Accordion buttons on the travel page and events page */
+button.travelAccordion, button.eventAccordion {
   width: 100%;
   background-color: rgba(241, 114, 39, 0.71);
   border: black solid 3px;
@@ -495,14 +495,16 @@ button.travelAccordion {
 }
 
 /* Surrounding divs holding text within accordions */
-div.air, div.bus, div.car, div.stay, div.all {
+div.air, div.bus, div.car, div.stay, div.all,
+div.thurs, div.fri, div.sun, div.mon {
   border: white 1px solid;
   background-color: rgba(0, 0, 0, 0.43);
   padding: 20px;
 }
 
-/* Text within accordions on travel page */
-p.air, p.bus, p.car, p.stay, p.all {
+/* Text within accordions on travel page and events page */
+p.air, p.bus, p.car, p.stay, p.all,
+p.thurs, p.fri, p.sun, p.mon {
   text-align: left;
   color: white;
   font-size: 18px;

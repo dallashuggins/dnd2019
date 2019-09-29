@@ -10,6 +10,9 @@ function Header () {
           <a href="/details">Details</a>
         </div>
         <div className="headerItem">
+          <a href="/events">Events</a>
+        </div>
+        <div className="headerItem">
           <a href="/travel">Travel</a>
         </div>
         <div className="headerItem">
