@@ -195,12 +195,23 @@ class App extends Component {
             <Router>
               <Route exact path='/' component={()=><Redirect to="/rsvp" />} />
               <Route path='/rsvp' component={()=>
-                  <div className="tabContent" id="rsvpPage">
-                    <div className="alert">
-                      <span className="alertTitle">See you on Saturday, October 12th (1:30pm)!</span>
-                      <span className="alertSubtext" style={{fontStyle: 'italic', paddingTop: '40px'}}>Registration deadline was June 1st.</span>
-                      <span className="alertSubtext">We can't wait to see you all!</span>
-                    </div>
+                  <div className="callout">
+                  <h1>See you October 12th!</h1>
+                  <hr />
+                  <div className="detailText">
+                      <p className="val">The date is quickly approaching!</p>
+                      <p className="val" style={{fontWeight: 'bold'}}>October 12th, 2019 at 1:30PM</p>
+                      <div className="detailTextIndiv">
+                          <p className="val">
+                            Find more information on events surrounding the 
+                            day of the wedding on the <a href="/events">Events</a> page, or get more general 
+                            details on the <a href="/details">Details</a> page. 
+                          </p>
+                          <p className="val">
+                            We can't wait to see you soon!
+                          </p>
+                      </div>
+                  </div>
                     {/* <Counter /> */}
                       {/* <Form
                           page={this.state.page}

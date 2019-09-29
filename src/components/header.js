@@ -4,7 +4,7 @@ function Header () {
     return (
       <div className="header">
         <div className="headerItem">
-          <a href="/rsvp">Register</a>
+          <a href="/rsvp">Home</a>
         </div>
         <div className="headerItem">
           <a href="/details">Details</a>
