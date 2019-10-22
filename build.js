@@ -29,5 +29,11 @@ const sslCredentials = {
 
 https.createServer(sslCredentials, app)
 .listen(443, function () {
-  console.log('Example app listening on port 443! Go to https://localhost:443/')
+  console.log('HTTPS server listening on port 443: https://localhost:443/')
 })
+
+// redirect HTTP server
+const httpApp = express();
+httpApp.all('*', (req, res) => res.redirect(300, 'https://localhost'));
+const httpServer = http.createServer(app);
+httpServer.listen(80, () => console.log(`HTTP server listening: http://localhost`));
