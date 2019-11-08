@@ -187,7 +187,7 @@ div.callout > h1 {
 }
 
 .header > .headerItem {
-  flex: 0 1;
+  /* flex: 0 1; */
   width: auto;
   height: 100%;
   padding: 0 1%;
@@ -402,7 +402,7 @@ button.accordion:focus {
 }
 
 /* Outside "tombstone" div that has text details */
-div.detailText {
+div.detailText, div.thanksText {
   text-align: left;
   display: block;
   padding: 20px;
@@ -421,11 +421,11 @@ div.detailText {
 }
 
 /* Div with each individual line of text */
-div.detailTextIndiv {
+div.detailTextIndiv, div.thanksTextIndiv {
   width: 100%;
 }
 
-div.detailTextIndiv > .key {
+div.detailTextIndiv > .key, div.thanksTextIndiv > .key {
   font-weight: bold;
 }
 
@@ -673,7 +673,7 @@ div.carousel .carousel-caption {
   .App {
     background-size: cover;
   }
-  div.detailText {
+  div.detailText, div.thanksText {
     width: 100%
   }
 }
@@ -692,7 +692,7 @@ div.carousel .carousel-caption {
     width: 20%;
     float: left;
   }
-  div.detailText {
+  div.detailText, div.thanksText {
     width: 75%
   }
 }
@@ -712,7 +712,7 @@ div.carousel .carousel-caption {
     width: 20%;
     float: left;
   }
-  div.detailText {
+  div.detailText, div.thanksText {
     width: 60%
   }
 }

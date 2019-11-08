@@ -4,7 +4,14 @@ function Header () {
     return (
       <div className="header">
         <div className="headerItem">
-          <a href="/rsvp">Home</a>
+          <a href="/">Home</a>
+        </div>
+        <div className="headerItem">
+          <a href="/thanks">Thank You</a>
+        </div>
+        {/*
+        <div className="headerItem">
+          <a href="/rsvp">RSVP</a>
         </div>
         <div className="headerItem">
           <a href="/details">Details</a>
@@ -18,6 +25,7 @@ function Header () {
         <div className="headerItem">
           <a href="/plans">Plans</a>
         </div>
+        */}
       </div>
     )
 }

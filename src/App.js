@@ -8,8 +8,9 @@ import { Redirect } from 'react-router';
 import './App.css';
 // import ContentTabs from './components/tab.js';
 import Header from './components/header.js';
-// import Counter from './components/counter.js';
-// import Form from './components/form.js';
+import Counter from './components/counter.js';
+import Form from './components/form.js';
+import ThankYou from './components/thanks.js';
 import Detail from './components/detail.js';
 import Events from './components/events.js';
 import Travel from './components/travel.js';
@@ -193,7 +194,10 @@ class App extends Component {
             <div className="tab">
             <Header />
             <Router>
-              <Route exact path='/' component={()=><Redirect to="/rsvp" />} />
+              <Route exact path='/' component={()=><Redirect to="/thanks" />} />
+              <Route path='/thanks' component={()=>
+                <ThankYou />
+              }/>
               <Route path='/rsvp' component={()=>
                   <div className="callout">
                   <h1>See you October 12th!</h1>
@@ -212,8 +216,8 @@ class App extends Component {
                           </p>
                       </div>
                   </div>
-                    {/* <Counter /> */}
-                      {/* <Form
+                    <Counter />
+                      <Form
                           page={this.state.page}
                           name={this.state.name}
                           email={this.state.email}
@@ -227,7 +231,7 @@ class App extends Component {
                           addGuest={this.addGuest.bind(this)}
                           handleGuests={this.handleGuests.bind(this)}
                           removeGuest={this.removeGuest.bind(this)}
-                      /> */}
+                      />
                   </div>
               }/>
               <Route path='/details' component={()=>
