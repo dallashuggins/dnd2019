@@ -30,7 +30,7 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.1",
     "request-promise": "^4.2.2",
-    "underscore": "^1.9.1"
+    "underscore": "^1.12.1"
   },
   "scripts": {
     "start": "concurrently --kill-others-on-fail \"npm run httpServer\" \"npm run client\"",
